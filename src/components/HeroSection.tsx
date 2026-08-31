@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon } from 'lucide-react';
+import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon, MapPin, Sparkles } from 'lucide-react';
 import indiaGateBg from '../assets/images/delhi_india_gate_sunset_1788159975571.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_cutout_trimmed.png';
 import portraitCutout from '../assets/images/astrologer_person_cutout_1788159948116.jpg';
@@ -109,19 +109,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       <div className="max-w-[1360px] mx-auto rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-[#e8ded0] relative bg-[#f5ecdd]">
         
         {/* Full Banner Panoramic India Gate Sunset & Celestial Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={indiaGateBg}
             alt="Delhi India Gate Sunset Vedic Astrology Background"
-            className="w-full h-full object-cover object-center filter contrast-[1.04] brightness-[1.01]"
+            className="w-full h-full object-cover object-[72%_center] sm:object-center filter contrast-[1.05] brightness-[1.02]"
             referrerPolicy="no-referrer"
           />
 
-          {/* Left subtle gradient veil for crystal clear text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:via-[#fbf6ef]/70 lg:via-42%" />
+          {/* Adaptive gradient veil: vertical fade on mobile for text readability while leaving India gate visible on bottom; horizontal on desktop */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6ef]/95 via-[#fbf6ef]/75 via-45% to-transparent lg:bg-gradient-to-r lg:from-[#fbf6ef]/95 lg:via-[#fbf6ef]/70 lg:via-42% lg:to-transparent" />
           
           {/* Top subtle fade */}
-          <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[#fbf6ef]/85 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#fbf6ef]/85 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
 
           {/* Bottom subtle shadow */}
           <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#1f140c]/40 to-transparent pointer-events-none" />
@@ -149,8 +149,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
                 Acharya Ganesh
               </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide">
-                Celebrity Vedic Astrologer
+              <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide flex items-center gap-1">
+                <span>Celebrity Vedic Astrologer</span>
+                <span className="text-[#a85c14] font-bold">• Delhi</span>
               </span>
             </div>
           </div>
@@ -186,8 +187,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             {/* Left Column: Heading, Metrics, Checkpoints & Consultation CTA */}
             <div className="lg:col-span-6 flex flex-col justify-center space-y-3 sm:space-y-3.5 lg:pr-2">
               
-              {/* Main Headline */}
+              {/* Location Badge & Main Headline */}
               <div>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#fdf2e2] border border-[#e5d4bf] text-[#9c5914] text-[10px] sm:text-[11px] font-bold tracking-wide uppercase shadow-2xs mb-1.5">
+                  <MapPin className="w-3 h-3 text-[#b3681b]" />
+                  <span>Delhi NCR #1 Vedic Astrology Center</span>
+                </div>
+
                 <h1 className="font-serif-title text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#231812] tracking-tight leading-[1.08]">
                   Best Astrologer in
                   <span className="block text-[#a85c14] font-serif-title font-bold text-4xl sm:text-5xl lg:text-[54px] mt-0.5 tracking-tight drop-shadow-xs">
@@ -264,7 +270,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Book Consultation Button */}
+              {/* Book Consultation Button & Delhi location prompt */}
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <button
                   onClick={() => onOpenBooking()}
@@ -283,14 +289,77 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   <span>Change Photo</span>
                 </button>
               </div>
+
+              {/* Subtle In-Person Delhi Center & Online Note */}
+              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] text-[#695444] font-medium pt-0.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
+                <span>Delhi Center (Connaught Place) &amp; Worldwide Video Calls</span>
+              </div>
             </div>
 
-            {/* Right Column: Prominent Person Image (Clean transparent PNG, cropped height for instant first-view visibility) */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-2 lg:mt-0">
+            {/* Right Column: Prominent Person Image with uncropped India Gate & Vedic Astrology Chart Halo */}
+            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-3 lg:mt-0">
               
-              {/* Person Image Container */}
-              <div className="relative group w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[450px] flex flex-col items-center">
+              {/* Person Image Container with Dedicated Vedic Kundli & Delhi Sunset Halo */}
+              <div className="relative group w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] flex flex-col items-center">
                 
+                {/* Luminous Vedic Astrology Chart (Kundli & Zodiac Wheel) + India Gate Halo Backdrop */}
+                <div className="absolute inset-0 -top-6 sm:-top-8 flex items-center justify-center pointer-events-none z-0">
+                  {/* Warm Sunset Radial Aura */}
+                  <div className="w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full bg-gradient-to-tr from-[#e67e22]/25 via-[#f39c12]/35 to-[#f1c40f]/20 blur-xl animate-pulse opacity-80" />
+
+                  {/* Golden Vedic Kundli & Celestial Zodiac Chart */}
+                  <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[330px] lg:h-[330px] text-[#d4994e]/70">
+                    <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-md" fill="none" stroke="currentColor">
+                      {/* Outer Cosmic Ring */}
+                      <circle cx="100" cy="100" r="94" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                      <circle cx="100" cy="100" r="88" strokeWidth="1.2" />
+                      <circle cx="100" cy="100" r="74" strokeWidth="0.8" opacity="0.5" />
+
+                      {/* Traditional Vedic Kundli Diamond Chart Frame */}
+                      <rect x="36" y="36" width="128" height="128" strokeWidth="1.4" fill="rgba(255, 238, 210, 0.08)" />
+                      {/* Inner Rotated Diamond (Lagna & 4 Kendra Houses) */}
+                      <polygon points="100,36 164,100 100,164 36,100" strokeWidth="1.4" fill="rgba(255, 220, 160, 0.12)" />
+                      {/* Diagonal Cross Lines */}
+                      <line x1="36" y1="36" x2="164" y2="164" strokeWidth="1.2" />
+                      <line x1="36" y1="164" x2="164" y2="36" strokeWidth="1.2" />
+                      
+                      {/* Central Auspicious Surya Mandala / Sun */}
+                      <circle cx="100" cy="100" r="16" strokeWidth="1.5" fill="rgba(243, 156, 18, 0.25)" />
+                      <circle cx="100" cy="100" r="8" fill="#d4994e" />
+
+                      {/* 12 Sun Rays radiating outwards */}
+                      {[...Array(12)].map((_, i) => (
+                        <line
+                          key={i}
+                          x1="100"
+                          y1="10"
+                          x2="100"
+                          y2="22"
+                          strokeWidth="1.5"
+                          transform={`rotate(${i * 30} 100 100)`}
+                          stroke="#e67e22"
+                        />
+                      ))}
+
+                      {/* Iconic India Gate Delhi Archway Silhouette in background horizon */}
+                      <g transform="translate(70, 128) scale(0.6)" fill="#8c4b12" opacity="0.45" stroke="none">
+                        {/* Base */}
+                        <rect x="0" y="36" width="100" height="8" rx="2" />
+                        <rect x="8" y="30" width="84" height="6" />
+                        {/* Main Pillars */}
+                        <rect x="14" y="6" width="22" height="24" />
+                        <rect x="64" y="6" width="22" height="24" />
+                        {/* Archway Curve */}
+                        <path d="M36,16 Q50,4 64,16 L64,30 L36,30 Z" />
+                        {/* Top Cornice */}
+                        <rect x="8" y="2" width="84" height="4" />
+                        <rect x="22" y="-4" width="56" height="6" />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+
                 {/* Clean Astrologer Transparent PNG Cutout */}
                 <div className="relative z-10 w-full flex items-end justify-center">
                   <img

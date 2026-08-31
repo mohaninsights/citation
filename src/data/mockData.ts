@@ -4,8 +4,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'career-guidance',
     title: 'Career Guidance',
-    description: 'Find the right career path and achieve success.',
+    description: 'Find the right career path, job timing & promotions.',
     iconName: 'Briefcase',
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80',
+    category: 'Career & Wealth',
+    badge: 'High Demand',
+    highlightTags: ['10th House Karma', 'Job & Promotion', 'Govt Exam'],
     longDescription: 'Stuck in your career or facing uncertainty about job changes, promotions, or foreign employment? Get deep insights from your 10th house (Karma Bhava) and D10 Dashamsha chart for tailored career progression.',
     benefits: [
       'Identification of ideal career fields based on birth chart',
@@ -18,8 +22,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'marriage-solutions',
     title: 'Marriage Solutions',
-    description: 'Get solutions for marriage delays & harmony.',
+    description: 'Resolve marriage delays, Manglik dosha & post-marital peace.',
     iconName: 'HeartHandshake',
+    imageUrl: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&auto=format&fit=crop&q=80',
+    category: 'Love & Family',
+    badge: '98% Success',
+    highlightTags: ['36 Guna Milan', 'Mangal Dosha', 'Delay Remedies'],
     longDescription: 'Comprehensive Kundli Milan (Ashtakoot Guna Milan) & analysis of 7th house, Venus & Jupiter to resolve marriage delays, Manglik Dosha, Nadi Dosha, and post-marital harmony issues.',
     benefits: [
       'Kundli Milan with in-depth 36 Guna matching',
@@ -32,8 +40,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'love-relationship',
     title: 'Love & Relationship',
-    description: 'Improve relationships & resolve love problems.',
+    description: 'Heal misunderstandings, emotional bonds & partner compatibility.',
     iconName: 'Heart',
+    imageUrl: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&auto=format&fit=crop&q=80',
+    category: 'Love & Family',
+    badge: 'Popular',
+    highlightTags: ['5th House Venus', 'Emotional Healing', 'Inter-Caste Peace'],
     longDescription: 'Resolve misunderstandings, communication gaps, and familial objections in love relationships with positive Vedic astrological remedies and emotional alignment.',
     benefits: [
       'Analysis of 5th house of love and emotional connection',
@@ -46,8 +58,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'business-astrology',
     title: 'Business Astrology',
-    description: 'Grow your business with the right astrological guidance.',
+    description: 'Grow your enterprise, select partners & minimize financial risk.',
     iconName: 'TrendingUp',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
+    category: 'Business & Growth',
+    badge: 'Corporate',
+    highlightTags: ['Auspicious Muhurat', 'Partnership Sync', 'Loss Mitigation'],
     longDescription: 'Leverage planetary transits of Mercury, Jupiter, and Saturn for auspicious business inaugurations, partnership compatibility, cash-flow expansion, and mitigating losses.',
     benefits: [
       'Auspicious Muhurat for new ventures & office openings',
@@ -60,8 +76,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'health-predictions',
     title: 'Health Predictions',
-    description: 'Know about your health & find preventive solutions.',
+    description: 'Ayur-Jyotish insights for preventive wellness & mental peace.',
     iconName: 'Activity',
+    imageUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=80',
+    category: 'Wellness & Mind',
+    badge: 'Ayur-Jyotish',
+    highlightTags: ['6th & 8th House', 'Mental Peace', 'Chakra Balance'],
     longDescription: 'Medical Astrology (Ayur-Jyotish) analysis of the 6th, 8th, and 12th houses to identify underlying elemental imbalances (Vata, Pitta, Kapha) and timely preventive remedies.',
     benefits: [
       'Early detection of chronic ailments and weakness zones',
@@ -74,8 +94,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'finance-wealth',
     title: 'Finance & Wealth',
-    description: 'Attract wealth, prosperity & financial stability.',
+    description: 'Unlock Dhan Yogas, clear debts & attract financial prosperity.',
     iconName: 'IndianRupee',
+    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
+    category: 'Career & Wealth',
+    badge: 'Lakshmi Yoga',
+    highlightTags: ['Dhan Bhava', 'Debt Clearance', 'Property Timings'],
     longDescription: 'Unlock the wealth potential in your Dhan Bhava (2nd house) and Labha Bhava (11th house). Identify Lakshmi Yogas, remove Kemdrum Dosha, and attract sustained financial growth.',
     benefits: [
       'Strategies for safe investments in stocks, property & gold',
@@ -88,8 +112,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'vastu-consultation',
     title: 'Vastu Consultation',
-    description: 'Bring positivity & balance to your home or office.',
+    description: 'Non-demolition Vastu remedies for positive Prana energy.',
     iconName: 'Home',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80',
+    category: 'Space & Energy',
+    badge: 'Non-Demolition',
+    highlightTags: ['Home & Office', 'Ishanya Zone', 'Energy Helix'],
     longDescription: 'Non-demolition Vastu Shastra remedies for residential apartments, villas, commercial showrooms, and corporate spaces in Delhi NCR to channel positive cosmic energy (Prana).',
     benefits: [
       'Correction of main entrance, kitchen, and master bedroom directions',
@@ -102,8 +130,12 @@ export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'numerology',
     title: 'Numerology',
-    description: 'Discover your numbers & unlock your potential.',
+    description: 'Mulank, Bhagyank & name spelling alignment for good luck.',
     iconName: 'Grid',
+    imageUrl: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop&q=80',
+    category: 'Business & Growth',
+    badge: 'Chaldean',
+    highlightTags: ['Name Correction', 'Lucky Numbers', 'Signature Analysis'],
     longDescription: 'Harness the cosmic vibrations of your Mulank (Driver), Bhagyank (Conductor), and Name Number (Namank) to attract luck, fame, and harmony.',
     benefits: [
       'Name spelling correction for career and marriage success',

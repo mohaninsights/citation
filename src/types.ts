@@ -3,6 +3,10 @@ export interface ServiceItem {
   title: string;
   description: string;
   iconName: string;
+  imageUrl?: string;
+  category?: string;
+  badge?: string;
+  highlightTags?: string[];
   longDescription?: string;
   benefits?: string[];
   remediesOffered?: string[];

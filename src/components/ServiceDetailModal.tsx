@@ -19,29 +19,71 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
       <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-[#d8c7b0] overflow-hidden relative max-h-[90vh] flex flex-col">
         
-        {/* Header */}
-        <div className="bg-gradient-to-r from-[#2c1d13] to-[#3d2719] text-white p-5 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-[#d49b54]/20 border border-[#d49b54]/60 flex items-center justify-center text-[#e6af6c]">
-              <Sparkles className="w-4 h-4" />
+        {/* Image / Header */}
+        {service.imageUrl ? (
+          <div className="relative h-40 w-full overflow-hidden">
+            <img
+              src={service.imageUrl}
+              alt={service.title}
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#20140c] via-[#20140c]/60 to-black/30" />
+            
+            <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#d49b54]/30 backdrop-blur-md border border-[#d49b54]/80 flex items-center justify-center text-[#ffd28e] shadow-md">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-serif-title font-bold text-lg text-[#fbebd6] leading-tight">
+                      {service.title}
+                    </h3>
+                    {service.badge && (
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#d49b54] text-[#24170d]">
+                        {service.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-[#d8c0a8] mt-0.5">
+                    Specialized Vedic Astrology Consultation
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="font-serif-title font-bold text-lg text-[#fbebd6]">
-                {service.title}
-              </h3>
-              <p className="text-xs text-[#d1b89d]">
-                Specialized Vedic Astrology Consultation
-              </p>
-            </div>
+
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md text-white hover:bg-black/80 flex items-center justify-center transition-colors cursor-pointer border border-white/20"
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
-          
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-full bg-white/10 text-gray-300 hover:text-white hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
+        ) : (
+          <div className="bg-gradient-to-r from-[#2c1d13] to-[#3d2719] text-white p-5 flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-[#d49b54]/20 border border-[#d49b54]/60 flex items-center justify-center text-[#e6af6c]">
+                <Sparkles className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="font-serif-title font-bold text-lg text-[#fbebd6]">
+                  {service.title}
+                </h3>
+                <p className="text-xs text-[#d1b89d]">
+                  Specialized Vedic Astrology Consultation
+                </p>
+              </div>
+            </div>
+            
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full bg-white/10 text-gray-300 hover:text-white hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
 
         {/* Modal Body */}
         <div className="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-[#4a3a2d]">
