@@ -36,16 +36,9 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-serif-title font-bold text-lg text-[#fbebd6] leading-tight">
-                      {service.title}
-                    </h3>
-                    {service.badge && (
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#d49b54] text-[#24170d]">
-                        {service.badge}
-                      </span>
-                    )}
-                  </div>
+                  <h3 className="font-serif-title font-bold text-lg text-[#fbebd6] leading-tight">
+                    {service.title}
+                  </h3>
                   <p className="text-xs text-[#d8c0a8] mt-0.5">
                     Specialized Vedic Astrology Consultation
                   </p>

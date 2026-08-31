@@ -8,6 +8,7 @@ import {
   IndianRupee, 
   Home, 
   Grid,
+  Scale,
   ArrowRight,
   Sparkles,
   CheckCircle2,
@@ -27,7 +28,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const categories = [
     { id: 'All', label: 'All Services', count: SERVICES_LIST.length },
     { id: 'Career & Wealth', label: 'Career & Wealth', count: 2 },
-    { id: 'Love & Family', label: 'Love & Marriage', count: 2 },
+    { id: 'Legal & Disputes', label: 'Legal Astrology', count: 1 },
+    { id: 'Love & Family', label: 'Marriage Solutions', count: 1 },
     { id: 'Business & Growth', label: 'Business & Numerology', count: 2 },
     { id: 'Wellness & Energy', label: 'Health & Vastu', count: 2 },
   ];
@@ -49,6 +51,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return <HeartHandshake className="w-5 h-5" />;
       case 'Heart':
         return <Heart className="w-5 h-5" />;
+      case 'Scale':
+        return <Scale className="w-5 h-5" />;
       case 'TrendingUp':
         return <TrendingUp className="w-5 h-5" />;
       case 'Activity':
@@ -137,16 +141,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 {/* Atmospheric Dark & Amber Vignette Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1f140c]/85 via-transparent to-black/20 group-hover:from-[#1f140c]/70 transition-all duration-300" />
                 
-                {/* Floating Top Badge */}
-                {service.badge && (
-                  <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 z-10">
-                    <span className="inline-flex items-center gap-1 bg-[#241710]/85 backdrop-blur-md text-[#fce4c4] text-[8px] sm:text-[9px] font-bold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded-full border border-[#d4994e]/60 shadow-xs">
-                      <Sparkles className="w-2 h-2 text-[#d4994e]" />
-                      {service.badge}
-                    </span>
-                  </div>
-                )}
-
                 {/* Floating Vedic Circular Icon Badge */}
                 <div className="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 z-10">
                   <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-gradient-to-br from-[#c97a29] to-[#914d10] p-0.5 shadow-md group-hover:scale-105 transition-transform duration-200">

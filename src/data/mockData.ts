@@ -1,5 +1,7 @@
 import { ServiceItem, TestimonialItem, FaqItem, DelhiArea, ArticleItem } from '../types';
 import careerGuidanceImg from '../assets/images/regenerated_image_1788178301036.webp';
+import marriageSolutionsImg from '../assets/images/regenerated_image_1788180058561.webp';
+import healthPredictionsImg from '../assets/images/regenerated_image_1788179027010.webp';
 
 export const SERVICES_LIST: ServiceItem[] = [
   {
@@ -25,7 +27,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     title: 'Marriage Solutions',
     description: 'Resolve marriage delays, Manglik dosha & post-marital peace.',
     iconName: 'HeartHandshake',
-    imageUrl: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&auto=format&fit=crop&q=80',
+    imageUrl: marriageSolutionsImg,
     category: 'Love & Family',
     badge: '98% Success',
     highlightTags: ['36 Guna Milan', 'Mangal Dosha', 'Delay Remedies'],
@@ -39,22 +41,22 @@ export const SERVICES_LIST: ServiceItem[] = [
     remediesOffered: ['Kumbh Vivah guidance if applicable', 'Gauri Shankar Rudraksha recommendation', 'Specific fastings & Shukra puja']
   },
   {
-    id: 'love-relationship',
-    title: 'Love & Relationship',
-    description: 'Heal misunderstandings, emotional bonds & partner compatibility.',
-    iconName: 'Heart',
-    imageUrl: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&auto=format&fit=crop&q=80',
-    category: 'Love & Family',
-    badge: 'Popular',
-    highlightTags: ['5th House Venus', 'Emotional Healing', 'Inter-Caste Peace'],
-    longDescription: 'Resolve misunderstandings, communication gaps, and familial objections in love relationships with positive Vedic astrological remedies and emotional alignment.',
+    id: 'legal-astrology',
+    title: 'Legal Astrology',
+    description: 'Court cases, property disputes, litigation timing & dispute settlements.',
+    iconName: 'Scale',
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    category: 'Legal & Disputes',
+    badge: 'High Precision',
+    highlightTags: ['6th House Shatru/Rin', 'Court Victory', 'Dispute Settlement'],
+    longDescription: 'Comprehensive astrological analysis of the 6th House (litigation & disputes), 8th House (sudden obstacles), and 12th House (legal outcomes). Gain precise timing for court hearings, out-of-court settlements, property conflicts, and planetary remedies for legal relief.',
     benefits: [
-      'Analysis of 5th house of love and emotional connection',
-      'Solutions for parental approval in inter-caste marriages',
-      'Healing breakups and attracting soul connection',
-      'Strengthening bond and mutual respect'
+      'Analysis of 6th house (Shatru Bhava) and planetary Dasha for litigation outcomes',
+      'Timings for favorable court hearings, appeals & settlement negotiations',
+      'Remedies for ancestral property disputes & corporate legal conflicts',
+      'Neutralizing enemy hostility and false allegations with Vedic remedies'
     ],
-    remediesOffered: ['Venus strengthening rituals', 'Vashikaran-free sattvic Vedic mantras', 'Rose Quartz & Emerald balancing']
+    remediesOffered: ['Baglamukhi Anushthan & Jaap guidance', 'Mars & Saturn balancing remedies', 'Sudarshan Chakra Kavach & energized Yantras']
   },
   {
     id: 'business-astrology',
@@ -79,7 +81,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     title: 'Health Predictions',
     description: 'Ayur-Jyotish insights for preventive wellness & mental peace.',
     iconName: 'Activity',
-    imageUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=80',
+    imageUrl: healthPredictionsImg,
     category: 'Wellness & Mind',
     badge: 'Ayur-Jyotish',
     highlightTags: ['6th & 8th House', 'Mental Peace', 'Chakra Balance'],
@@ -331,15 +333,15 @@ export const ARTICLES_LIST: ArticleItem[] = [
   },
   {
     id: 'art-4',
-    title: 'Love Problems & Astrological Solutions',
-    category: 'Relationship Guidance',
+    title: 'Legal Astrology: Overcoming Court Cases & Disputes',
+    category: 'Legal Astrology',
     readTime: '4 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&auto=format&fit=crop&q=80',
-    snippet: 'Overcome misunderstandings, parental objections, and emotional distances using positive Vedic astrological principles.',
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    snippet: 'Understand the role of the 6th and 8th houses in litigations, dispute settlements, and Vedic remedies for justice.',
     content: [
-      'Love relationships are governed by the 5th House of romance, Venus (planet of affection), and the Moon (emotional state).',
-      'When affliction by Rahu, Ketu, or retrograde planets occurs, communication breaks down even between soulmates.',
-      'Through non-manipulative, sattvic Vedic mantras, gemological balance, and planetary peace rituals, harmony and understanding can be restored naturally.'
+      'In Vedic Astrology, legal conflicts and court litigations are primarily governed by the 6th House (Shatru Bhava) and influenced by Saturn, Mars, and Rahu.',
+      'A skilled astrologer analyzes transit cycles to determine the most favorable court hearing dates and periods for out-of-court dispute resolution.',
+      'Through authentic Vedic remedies, Maa Baglamukhi Upasana, and planetary pacification, one can protect reputation and achieve fair justice.'
     ]
   }
 ];
