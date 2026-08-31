@@ -180,8 +180,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             referrerPolicy="no-referrer"
           />
 
-          {/* Adaptive soft gradient veil for crisp text readability on the left while keeping the Hanuman image clearly visible */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:bg-gradient-to-r lg:from-[#fbf6ef]/95 lg:via-[#fbf6ef]/70 lg:via-48% lg:to-transparent" />
+          {/* Adaptive soft gradient veil for crisp text readability on the left while keeping the Hanuman image clearly visible in the center */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:bg-gradient-to-r lg:from-[#fbf6ef]/95 lg:via-[#fbf6ef]/50 lg:via-36% lg:to-transparent" />
           
           {/* Subtle top & bottom shadow veils */}
           <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-[#fbf6ef]/60 to-transparent pointer-events-none" />
@@ -315,10 +315,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
             </div>
 
-            {/* Right Column: Astrologer Person with Karol Bagh Hanuman Landmark Backdrop */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-2 lg:mt-0">
+            {/* Right Column: Astrologer Person moved towards right to clearly showcase Hanuman statue in the center */}
+            <div className="lg:col-span-6 flex flex-col items-center lg:items-end justify-end relative mt-2 lg:mt-0 lg:pr-2">
               
-              <div className="relative group w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] flex flex-col items-center">
+              <div className="relative group w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] flex flex-col items-center lg:items-end">
                 
                 {/* Person Portrait Container */}
                 <div className="relative z-10 w-full rounded-2xl overflow-hidden border-2 border-[#d4994e]/60 bg-gradient-to-b from-[#2a1a0f] via-[#1a0e06] to-[#0d0704] shadow-2xl">
@@ -330,7 +330,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   <img
                     src={personImage}
                     alt={personName}
-                    className="w-full h-auto max-h-[320px] sm:max-h-[370px] lg:max-h-[420px] object-cover object-top filter contrast-[1.03] transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="w-full h-auto max-h-[310px] sm:max-h-[360px] lg:max-h-[400px] object-cover object-top filter contrast-[1.03] transition-transform duration-300 group-hover:scale-[1.02]"
                     referrerPolicy="no-referrer"
                   />
 
@@ -339,7 +339,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
 
                 {/* Traditional Golden Engraved Plaque at bottom */}
-                <div className="relative z-20 w-[94%] sm:w-[90%] -mt-4 bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-1.5 px-3 sm:px-4 rounded-lg border-2 border-[#d4994e] shadow-2xl text-center">
+                <div className="relative z-20 w-[94%] sm:w-[90%] mx-auto -mt-4 bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-1.5 px-3 sm:px-4 rounded-lg border-2 border-[#d4994e] shadow-2xl text-center self-center">
                   <div className="border border-[#d4994e]/50 py-1 px-2.5 rounded-xs">
                     <h3 className="font-serif-title font-bold text-sm sm:text-base text-[#f7d7a4] tracking-wide leading-tight flex items-center justify-center gap-1.5">
                       <Sparkles className="w-3 h-3 text-[#d4994e]" />
