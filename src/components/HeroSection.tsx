@@ -105,113 +105,94 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <section className="relative w-full bg-[#fbf8f3] py-2 sm:py-3 lg:py-4 px-2 sm:px-4 lg:px-6">
+    <section className="relative w-full bg-[#fbf8f3] py-2 sm:py-3 lg:py-5 px-2 sm:px-4 lg:px-6">
       {/* Outer Banner Card Container with rounded corners matching reference */}
-      <div className="max-w-[1360px] mx-auto rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-[#e8ded0] relative bg-[#f5ecdd]">
+      <div className="max-w-[1360px] mx-auto rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-[#e5dac9] bg-white">
         
-        {/* Full Banner Panoramic India Gate Sunset & Celestial Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img
-            src={indiaGateBg}
-            alt="Delhi India Gate Sunset Vedic Astrology Background"
-            className="w-full h-full object-cover object-[72%_center] sm:object-center filter contrast-[1.05] brightness-[1.02]"
-            referrerPolicy="no-referrer"
-          />
-
-          {/* Adaptive gradient veil: vertical fade on mobile for text readability while leaving India gate visible on bottom; horizontal on desktop */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6ef]/95 via-[#fbf6ef]/75 via-45% to-transparent lg:bg-gradient-to-r lg:from-[#fbf6ef]/95 lg:via-[#fbf6ef]/70 lg:via-42% lg:to-transparent" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[520px]">
           
-          {/* Top subtle fade */}
-          <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#fbf6ef]/85 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
-
-          {/* Bottom subtle shadow */}
-          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#1f140c]/40 to-transparent pointer-events-none" />
-        </div>
-
-        {/* Top Header Bar Inside Banner */}
-        <div className="relative z-20 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 flex items-center justify-between">
-          {/* Left Brand Identity */}
-          <div className="flex items-center gap-2.5">
-            {/* Intricate Golden Vedic Mandala Icon */}
-            <div className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 flex items-center justify-center text-[#b3681b]">
-              <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-xs" fill="currentColor">
-                <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" strokeWidth="4" />
-                <circle cx="50" cy="50" r="8" fill="currentColor" />
-                <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 3" />
-                {[...Array(12)].map((_, i) => (
-                  <g key={i} transform={`rotate(${i * 30} 50 50)`}>
-                    <polygon points="50,4 53,20 47,20" fill="currentColor" />
-                    <circle cx="50" cy="24" r="2" fill="currentColor" />
-                  </g>
-                ))}
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
-                Acharya Ganesh
-              </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide flex items-center gap-1">
-                <span>Celebrity Vedic Astrologer</span>
-                <span className="text-[#a85c14] font-bold">• Delhi</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Right Floating Google Rating Badge matching image */}
-          <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-lg sm:rounded-xl border border-[#e3d4c0] shadow-xs">
-            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1">
-                <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">4.9/5</span>
-                <div className="flex text-[#f59e0b]">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[11px] leading-none">★</span>
-                  ))}
+          {/* ================= LEFT COLUMN: Clean, Aligned Content & CTA (lg:col-span-6) ================= */}
+          <div className="lg:col-span-6 p-5 sm:p-7 lg:p-9 flex flex-col justify-between bg-gradient-to-br from-[#fefcf8] via-[#faf5ec] to-[#f4ebe0] border-b lg:border-b-0 lg:border-r border-[#eddccb]">
+            
+            {/* Top Brand & Rating Bar */}
+            <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-[#ebdcc9]/70">
+              <div className="flex items-center gap-2.5">
+                {/* Intricate Golden Vedic Mandala Icon */}
+                <div className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 flex items-center justify-center text-[#b3681b]">
+                  <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-xs" fill="currentColor">
+                    <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" strokeWidth="4" />
+                    <circle cx="50" cy="50" r="8" fill="currentColor" />
+                    <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 3" />
+                    {[...Array(12)].map((_, i) => (
+                      <g key={i} transform={`rotate(${i * 30} 50 50)`}>
+                        <polygon points="50,4 53,20 47,20" fill="currentColor" />
+                        <circle cx="50" cy="24" r="2" fill="currentColor" />
+                      </g>
+                    ))}
+                  </svg>
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
+                    Acharya Ganesh
+                  </span>
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide flex items-center gap-1">
+                    <span>Celebrity Vedic Astrologer</span>
+                    <span className="text-[#a85c14] font-bold">• Delhi</span>
+                  </span>
                 </div>
               </div>
-              <span className="text-[9px] text-[#786454] leading-none mt-0.5">Google Rating</span>
-            </div>
-          </div>
-        </div>
 
-        {/* Main Banner Grid Content (Cropped proportionally to fit in first view) */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3 pb-3 sm:pb-4 lg:pb-5">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
-            
-            {/* Left Column: Heading, Metrics, Checkpoints & Consultation CTA */}
-            <div className="lg:col-span-6 flex flex-col justify-center space-y-3 sm:space-y-3.5 lg:pr-2">
+              {/* Google Rating Badge */}
+              <div className="flex items-center gap-2 bg-white px-2.5 sm:px-3 py-1 rounded-xl border border-[#e3d4c0] shadow-xs">
+                <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                  </svg>
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-1">
+                    <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">4.9/5</span>
+                    <div className="flex text-[#f59e0b]">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-[10px] leading-none">★</span>
+                      ))}
+                    </div>
+                  </div>
+                  <span className="text-[8px] sm:text-[9px] text-[#786454] leading-none mt-0.5">Google Rating</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Middle Content: Main Headline, Metrics & Checkpoints */}
+            <div className="space-y-4 sm:space-y-4.5 py-4">
               
-              {/* Location Badge & Main Headline */}
+              {/* Location Badge & Heading */}
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#fdf2e2] border border-[#e5d4bf] text-[#9c5914] text-[10px] sm:text-[11px] font-bold tracking-wide uppercase shadow-2xs mb-1.5">
-                  <MapPin className="w-3 h-3 text-[#b3681b]" />
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbead7] border border-[#e5ceb4] text-[#9c5914] text-[10px] sm:text-xs font-bold tracking-wide uppercase shadow-2xs mb-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#b3681b]" />
                   <span>Delhi NCR #1 Vedic Astrology Center</span>
                 </div>
 
-                <h1 className="font-serif-title text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#231812] tracking-tight leading-[1.08]">
+                <h1 className="font-serif-title text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#231812] tracking-tight leading-[1.1]">
                   Best Astrologer in
-                  <span className="block text-[#a85c14] font-serif-title font-bold text-4xl sm:text-5xl lg:text-[54px] mt-0.5 tracking-tight drop-shadow-xs">
+                  <span className="block text-[#a85c14] font-serif-title font-bold text-4xl sm:text-5xl lg:text-[52px] mt-0.5 tracking-tight">
                     Delhi
                   </span>
                 </h1>
-                <p className="mt-1 text-xs sm:text-sm text-[#523e30] font-medium leading-snug">
-                  Trusted Celebrity Vedic Astrologer for Accurate &amp; Confidential Guidance
+                <p className="mt-2 text-xs sm:text-sm text-[#5c4737] font-medium leading-relaxed">
+                  Trusted Celebrity Vedic Astrologer for Accurate, Confidential &amp; Result-Oriented Life Guidance.
                 </p>
               </div>
 
-              {/* 3 Metric Pills */}
-              <div className="grid grid-cols-3 gap-2 pt-0.5">
+              {/* 3 Metric Badges */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
                 {/* 1. Years of Experience */}
-                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/85 backdrop-blur-xs p-1.5 sm:p-2 rounded-lg sm:rounded-xl border border-[#e5d7c4] shadow-xs">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
-                    <Calendar className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white p-2 sm:p-2.5 rounded-xl border border-[#e5d7c4] shadow-xs">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
+                    <Calendar className="w-4 h-4" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">17+</span>
@@ -220,9 +201,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
 
                 {/* 2. Happy Clients */}
-                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/85 backdrop-blur-xs p-1.5 sm:p-2 rounded-lg sm:rounded-xl border border-[#e5d7c4] shadow-xs">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
-                    <Users className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white p-2 sm:p-2.5 rounded-xl border border-[#e5d7c4] shadow-xs">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
+                    <Users className="w-4 h-4" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">50,000+</span>
@@ -231,9 +212,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
 
                 {/* 3. Accuracy & Trust */}
-                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/85 backdrop-blur-xs p-1.5 sm:p-2 rounded-lg sm:rounded-xl border border-[#e5d7c4] shadow-xs">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white p-2 sm:p-2.5 rounded-xl border border-[#e5d7c4] shadow-xs">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">98%</span>
@@ -242,13 +223,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* 2-Column Checklist with Golden Circle Checks */}
-              <div className="grid grid-cols-2 gap-x-2.5 gap-y-1.5 pt-0.5">
+              {/* 2-Column Services Checklist */}
+              <div className="grid grid-cols-2 gap-x-3 gap-y-2 pt-1 bg-white/70 p-3 rounded-xl border border-[#ebdccb]">
                 <div className="space-y-1.5">
                   {checklistCol1.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#33241a]">
-                      <div className="w-3.5 h-3.5 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
-                        <svg className="w-2 h-2 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div key={idx} className="flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-[#33241a]">
+                      <div className="w-4 h-4 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
+                        <svg className="w-2.5 h-2.5 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -259,9 +240,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
                 <div className="space-y-1.5">
                   {checklistCol2.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#33241a]">
-                      <div className="w-3.5 h-3.5 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
-                        <svg className="w-2 h-2 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div key={idx} className="flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-[#33241a]">
+                      <div className="w-4 h-4 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
+                        <svg className="w-2.5 h-2.5 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -271,19 +252,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Book Consultation Button & Delhi location prompt */}
-              <div className="pt-1 flex flex-wrap items-center gap-3">
+            </div>
+
+            {/* Bottom Actions & Delhi Assurance Note */}
+            <div className="space-y-3 pt-2 border-t border-[#ebdcc9]/70">
+              <div className="flex flex-wrap items-center gap-3">
                 <button
                   onClick={() => onOpenBooking()}
-                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
                 >
-                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <Calendar className="w-4 h-4" />
                   <span>Book Consultation</span>
                 </button>
 
                 <button
                   onClick={() => setShowImageModal(true)}
-                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 sm:py-2.5 bg-white/90 hover:bg-white text-[#573e2c] hover:text-[#9e5a14] font-semibold text-[11px] sm:text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-white hover:bg-[#faf4ec] text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
                   title="Change person image"
                 >
                   <Camera className="w-3.5 h-3.5 text-[#a85c14]" />
@@ -291,165 +275,107 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </button>
               </div>
 
-              {/* Subtle In-Person Delhi Center & Online Note */}
-              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] text-[#695444] font-medium pt-0.5">
+              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] text-[#695444] font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
                 <span>Delhi Center (Connaught Place) &amp; Worldwide Video Calls</span>
               </div>
             </div>
 
-            {/* Right Column: Prominent Person Image with uncropped India Gate & Vedic Astrology Chart Halo */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-3 lg:mt-0">
-              
-              {/* Person Image Container with Dedicated Vedic Kundli & Delhi Sunset Halo */}
-              <div className="relative group w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] flex flex-col items-center">
-                
-                {/* --- MOBILE VIEW: Dedicated India Gate Landmark Portal + Vedic Kundli Chart (lg:hidden) --- */}
-                <div className="lg:hidden absolute inset-0 -top-5 flex items-center justify-center pointer-events-none z-0">
-                  {/* Glowing Sunset Radial Aura */}
-                  <div className="w-[290px] h-[290px] sm:w-[330px] sm:h-[330px] rounded-full bg-gradient-to-tr from-[#e67e22]/35 via-[#f39c12]/45 to-[#f1c40f]/25 blur-xl animate-pulse opacity-90" />
+          </div>
 
-                  {/* Real India Gate Monument Archway Frame for Mobile View */}
-                  <div className="absolute w-[250px] h-[260px] sm:w-[290px] sm:h-[300px] rounded-t-full rounded-b-2xl overflow-hidden border-2 border-[#d4994e]/70 shadow-2xl bg-[#23150c]">
-                    <img
-                      src={indiaGateCentered}
-                      alt="Delhi India Gate Monument Sunset"
-                      className="w-full h-full object-cover object-[center_30%] filter brightness-[1.05] contrast-[1.08]"
-                      referrerPolicy="no-referrer"
-                    />
-                    {/* Amber / Sunset Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#20130a]/85 via-transparent to-black/25" />
-                    
-                    {/* Golden Delhi Landmark Badge on Arch Top */}
-                    <div className="absolute top-2 inset-x-0 text-center">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-black/65 backdrop-blur-xs text-[#ffd28e] text-[9px] font-bold tracking-wider uppercase border border-[#d4994e]/50 shadow-md">
-                        <MapPin className="w-2.5 h-2.5 text-[#e6af6c]" />
-                        <span>India Gate, Delhi</span>
-                      </span>
-                    </div>
-                  </div>
 
-                  {/* Golden Vedic Kundli & Celestial Zodiac Chart Overlay on Mobile */}
-                  <div className="absolute w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] text-[#ffd79e] drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-                    <svg viewBox="0 0 200 200" className="w-full h-full" fill="none" stroke="currentColor">
-                      {/* Outer Cosmic Ring */}
-                      <circle cx="100" cy="100" r="95" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.85" />
-                      <circle cx="100" cy="100" r="88" strokeWidth="1.5" />
-                      <circle cx="100" cy="100" r="74" strokeWidth="1" opacity="0.75" />
+          {/* ================= RIGHT COLUMN: Full, Unified Image Showcase (lg:col-span-6) ================= */}
+          <div className="lg:col-span-6 relative bg-[#1c120a] min-h-[380px] sm:min-h-[460px] lg:min-h-full flex flex-col justify-end overflow-hidden">
+            
+            {/* Background Image: Panoramic Delhi Sunset & India Gate */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={indiaGateBg}
+                alt="Delhi India Gate Sunset Vedic Astrology Background"
+                className="w-full h-full object-cover object-[center_35%] filter contrast-[1.06] brightness-[1.02]"
+                referrerPolicy="no-referrer"
+              />
+              {/* Atmospheric Warm Golden & Dark Vignette */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#150c06] via-[#150c06]/35 to-black/25" />
+              <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#1a0e07]/20 to-[#120a05]/70" />
+            </div>
 
-                      {/* Traditional Vedic Kundli Diamond Chart Frame */}
-                      <rect x="36" y="36" width="128" height="128" strokeWidth="1.8" stroke="#ffe0a3" fill="none" />
-                      {/* Inner Rotated Diamond (Lagna & 4 Kendra Houses) */}
-                      <polygon points="100,36 164,100 100,164 36,100" strokeWidth="1.8" stroke="#ffe0a3" fill="rgba(212, 153, 78, 0.12)" />
-                      {/* Diagonal Cross Lines */}
-                      <line x1="36" y1="36" x2="164" y2="164" strokeWidth="1.5" stroke="#ffe0a3" />
-                      <line x1="36" y1="164" x2="164" y2="36" strokeWidth="1.5" stroke="#ffe0a3" />
-                      
-                      {/* Central Auspicious Surya Mandala / Sun */}
-                      <circle cx="100" cy="100" r="16" strokeWidth="1.8" stroke="#ffe0a3" fill="rgba(243, 156, 18, 0.35)" />
-                      <circle cx="100" cy="100" r="8" fill="#ffd79e" />
-
-                      {/* 12 Sun Rays radiating outwards */}
-                      {[...Array(12)].map((_, i) => (
-                        <line
-                          key={i}
-                          x1="100"
-                          y1="8"
-                          x2="100"
-                          y2="22"
-                          strokeWidth="1.8"
-                          transform={`rotate(${i * 30} 100 100)`}
-                          stroke="#ffd79e"
-                        />
-                      ))}
-                    </svg>
-                  </div>
-                </div>
-
-                {/* --- DESKTOP VIEW: Untouched Halo Backdrop (hidden lg:flex) --- */}
-                <div className="hidden lg:flex absolute inset-0 -top-6 sm:-top-8 items-center justify-center pointer-events-none z-0">
-                  {/* Warm Sunset Radial Aura */}
-                  <div className="w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full bg-gradient-to-tr from-[#e67e22]/25 via-[#f39c12]/35 to-[#f1c40f]/20 blur-xl animate-pulse opacity-80" />
-
-                  {/* Golden Vedic Kundli & Celestial Zodiac Chart */}
-                  <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[330px] lg:h-[330px] text-[#d4994e]/70">
-                    <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-md" fill="none" stroke="currentColor">
-                      {/* Outer Cosmic Ring */}
-                      <circle cx="100" cy="100" r="94" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
-                      <circle cx="100" cy="100" r="88" strokeWidth="1.2" />
-                      <circle cx="100" cy="100" r="74" strokeWidth="0.8" opacity="0.5" />
-
-                      {/* Traditional Vedic Kundli Diamond Chart Frame */}
-                      <rect x="36" y="36" width="128" height="128" strokeWidth="1.4" fill="rgba(255, 238, 210, 0.08)" />
-                      {/* Inner Rotated Diamond (Lagna & 4 Kendra Houses) */}
-                      <polygon points="100,36 164,100 100,164 36,100" strokeWidth="1.4" fill="rgba(255, 220, 160, 0.12)" />
-                      {/* Diagonal Cross Lines */}
-                      <line x1="36" y1="36" x2="164" y2="164" strokeWidth="1.2" />
-                      <line x1="36" y1="164" x2="164" y2="36" strokeWidth="1.2" />
-                      
-                      {/* Central Auspicious Surya Mandala / Sun */}
-                      <circle cx="100" cy="100" r="16" strokeWidth="1.5" fill="rgba(243, 156, 18, 0.25)" />
-                      <circle cx="100" cy="100" r="8" fill="#d4994e" />
-
-                      {/* 12 Sun Rays radiating outwards */}
-                      {[...Array(12)].map((_, i) => (
-                        <line
-                          key={i}
-                          x1="100"
-                          y1="10"
-                          x2="100"
-                          y2="22"
-                          strokeWidth="1.5"
-                          transform={`rotate(${i * 30} 100 100)`}
-                          stroke="#e67e22"
-                        />
-                      ))}
-
-                      {/* Iconic India Gate Delhi Archway Silhouette in background horizon */}
-                      <g transform="translate(70, 128) scale(0.6)" fill="#8c4b12" opacity="0.45" stroke="none">
-                        {/* Base */}
-                        <rect x="0" y="36" width="100" height="8" rx="2" />
-                        <rect x="8" y="30" width="84" height="6" />
-                        {/* Main Pillars */}
-                        <rect x="14" y="6" width="22" height="24" />
-                        <rect x="64" y="6" width="22" height="24" />
-                        {/* Archway Curve */}
-                        <path d="M36,16 Q50,4 64,16 L64,30 L36,30 Z" />
-                        {/* Top Cornice */}
-                        <rect x="8" y="2" width="84" height="4" />
-                        <rect x="22" y="-4" width="56" height="6" />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Clean Astrologer Transparent PNG Cutout */}
-                <div className="relative z-10 w-full flex items-end justify-center">
-                  <img
-                    src={personImage}
-                    alt={personName}
-                    className="w-full h-auto max-h-[300px] sm:max-h-[340px] lg:max-h-[380px] object-contain object-bottom filter drop-shadow-xl transition-transform duration-300 group-hover:scale-[1.01]"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-
-                {/* Traditional Golden Engraved Plaque on Desk */}
-                <div className="relative z-20 w-[90%] sm:w-[84%] -mt-3.5 bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-1.5 px-3 sm:px-4 rounded-lg border-2 border-[#d4994e] shadow-2xl text-center">
-                  <div className="border border-[#d4994e]/50 py-1 px-2.5 rounded-xs">
-                    <h3 className="font-serif-title font-bold text-sm sm:text-base text-[#f7d7a4] tracking-wide leading-tight">
-                      {personName}
-                    </h3>
-                    <p className="text-[9px] sm:text-[10px] text-[#e0b87c] font-medium tracking-wider uppercase mt-0.5">
-                      {personTitle}
-                    </p>
-                  </div>
-                </div>
-
+            {/* Floating Top Delhi Landmark Badge */}
+            <div className="absolute top-4 right-4 z-20">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#d4994e]/60 text-[#ffd599] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-lg">
+                <MapPin className="w-3 h-3 text-[#d4994e]" />
+                <span>India Gate, Delhi</span>
               </div>
+            </div>
 
+            {/* Luminous Vedic Kundli / Surya Chakra Background Halo behind the Astrologer */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              {/* Glowing Warm Solar Core */}
+              <div className="w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] rounded-full bg-gradient-to-tr from-[#d35400]/25 via-[#f39c12]/35 to-[#f1c40f]/20 blur-2xl animate-pulse" />
+
+              {/* Crisp Sacred Geometric Kundli Diagram */}
+              <div className="absolute w-[270px] h-[270px] sm:w-[340px] sm:h-[340px] text-[#ffd899] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
+                <svg viewBox="0 0 200 200" className="w-full h-full" fill="none" stroke="currentColor">
+                  {/* Outer Cosmic Rings */}
+                  <circle cx="100" cy="100" r="95" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.8" />
+                  <circle cx="100" cy="100" r="88" strokeWidth="1.2" />
+                  <circle cx="100" cy="100" r="74" strokeWidth="0.8" opacity="0.6" />
+
+                  {/* Traditional Vedic Kundli Square & Diamond Frame */}
+                  <rect x="36" y="36" width="128" height="128" strokeWidth="1.6" stroke="#ffe0a3" />
+                  <polygon points="100,36 164,100 100,164 36,100" strokeWidth="1.6" stroke="#ffe0a3" fill="rgba(212, 153, 78, 0.1)" />
+                  <line x1="36" y1="36" x2="164" y2="164" strokeWidth="1.3" stroke="#ffe0a3" />
+                  <line x1="36" y1="164" x2="164" y2="36" strokeWidth="1.3" stroke="#ffe0a3" />
+                  
+                  {/* Central Surya */}
+                  <circle cx="100" cy="100" r="15" strokeWidth="1.5" stroke="#ffe0a3" fill="rgba(243, 156, 18, 0.3)" />
+                  <circle cx="100" cy="100" r="7" fill="#ffd79e" />
+
+                  {/* Radiating Sun Rays */}
+                  {[...Array(12)].map((_, i) => (
+                    <line
+                      key={i}
+                      x1="100"
+                      y1="8"
+                      x2="100"
+                      y2="20"
+                      strokeWidth="1.5"
+                      transform={`rotate(${i * 30} 100 100)`}
+                      stroke="#ffd79e"
+                    />
+                  ))}
+                </svg>
+              </div>
+            </div>
+
+            {/* Prominent Astrologer Full Image (Centered & Grounded at Bottom) */}
+            <div className="relative z-20 w-full flex items-end justify-center pt-8">
+              <img
+                src={personImage}
+                alt={personName}
+                className="w-auto h-auto max-h-[340px] sm:max-h-[420px] lg:max-h-[460px] object-contain object-bottom filter drop-shadow-2xl transition-transform duration-300 hover:scale-[1.01]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            {/* Bottom Premium Golden Name Plaque */}
+            <div className="relative z-30 w-full bg-gradient-to-t from-[#120b06] via-[#1a0f08]/95 to-transparent pt-6 pb-4 px-4 sm:px-6">
+              <div className="max-w-md mx-auto bg-gradient-to-r from-[#28190f] via-[#1c1109] to-[#28190f] text-white py-2 px-4 rounded-xl border border-[#d4994e]/70 shadow-2xl text-center backdrop-blur-md">
+                <div className="flex items-center justify-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-[#d4994e]" />
+                  <h3 className="font-serif-title font-bold text-sm sm:text-base text-[#fbebd6] tracking-wide leading-tight">
+                    {personName}
+                  </h3>
+                  <Sparkles className="w-3.5 h-3.5 text-[#d4994e]" />
+                </div>
+                <p className="text-[10px] sm:text-[11px] text-[#e0b87c] font-medium tracking-wider uppercase mt-0.5">
+                  {personTitle}
+                </p>
+              </div>
             </div>
 
           </div>
+
         </div>
 
       </div>
