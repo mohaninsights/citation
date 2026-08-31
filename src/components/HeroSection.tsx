@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon, MapPin, Sparkles } from 'lucide-react';
-import bannerBg from '../assets/images/delhi_india_gate_pure_scenery_1788172181656.jpg';
-import indiaGateSunsetBg from '../assets/images/delhi_india_gate_sunset_1788159975571.jpg';
+import bannerBg from '../assets/images/karol_bagh_hanuman_statue_pure_1788172967038.jpg';
+import indiaGateSunsetBg from '../assets/images/karol_bagh_hanuman_statue_pure_1788172967038.jpg';
 import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788172234610.webp';
 import portraitIndiaGateDesktop from '../assets/images/delhi_acharya_ganesh_india_gate_1788170672200.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_person_cutout_clean.png';
@@ -20,18 +20,18 @@ interface PersonPreset {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
-  // Available Presets with India Gate behind
+  // Available Presets
   const presets: PersonPreset[] = [
     {
       id: 'acharya-india-gate',
-      name: 'Acharya Ganesh (India Gate Behind)',
+      name: 'Acharya Ganesh (Vedic Portrait)',
       subtitle: 'Celebrity Vedic Astrologer in Delhi',
       src: portraitIndiaGateMobile
     },
     {
       id: 'acharya-india-gate-wide',
       name: 'Acharya Ganesh (Delhi Heritage)',
-      subtitle: 'India Gate Sunset Atmosphere',
+      subtitle: 'Delhi Sunset Atmosphere',
       src: portraitIndiaGateDesktop
     },
     {
@@ -116,11 +116,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       {/* Outer Banner Card Container with rounded corners matching reference screenshot */}
       <div className="max-w-[1360px] mx-auto rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-[#e8ded0] relative bg-[#f5ecdd]">
         
-        {/* Full Banner Panoramic Delhi India Gate & Golden Zodiac Background */}
+        {/* Full Banner Panoramic Karol Bagh Hanuman Statue Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={bannerBg}
-            alt="Best Astrologer in Delhi - India Gate & Vedic Astrology Background"
+            alt="Best Astrologer in Delhi - Karol Bagh Hanuman Statue & Vedic Astrology Background"
             className="w-full h-full object-cover object-[center_center] filter contrast-[1.03] brightness-[1.02]"
             referrerPolicy="no-referrer"
           />
@@ -301,7 +301,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-[#e2a850]/70 text-[#fde3ba] text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-lg">
                     <MapPin className="w-3 h-3 text-[#f59e0b]" />
-                    <span>India Gate, Delhi</span>
+                    <span>Karol Bagh, Delhi</span>
                   </div>
                 </div>
 
