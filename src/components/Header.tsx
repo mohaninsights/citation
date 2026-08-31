@@ -8,19 +8,19 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   return (
     <header className="sticky top-0 z-40 bg-[#faf7f2]/95 backdrop-blur-md border-b border-[#e9dfd0] transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#c97a29] to-[#914d10] p-0.5 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#c97a29] to-[#914d10] p-0.5 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
             <div className="w-full h-full rounded-full bg-[#24170d] flex items-center justify-center border border-[#d8974a]/40">
-              <Sparkles className="w-5 h-5 text-[#d8974a] animate-pulse" />
+              <Sparkles className="w-4 h-4 text-[#d8974a] animate-pulse" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-serif-title font-bold text-xl sm:text-2xl text-[#2b2118] tracking-tight leading-none group-hover:text-[#b5681c] transition-colors">
+            <span className="font-serif-title font-bold text-lg sm:text-xl text-[#2b2118] tracking-tight leading-none group-hover:text-[#b5681c] transition-colors">
               Acharya Ganesh
             </span>
-            <span className="text-[11px] sm:text-xs tracking-wider uppercase text-[#b3681b] font-semibold mt-0.5">
+            <span className="text-[10px] sm:text-[11px] tracking-wider uppercase text-[#b3681b] font-semibold mt-0.5">
               Celebrity Vedic Astrologer
             </span>
           </div>

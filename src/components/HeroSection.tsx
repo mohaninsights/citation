@@ -104,9 +104,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <section className="relative w-full bg-[#fbf8f3] py-4 sm:py-6 lg:py-8 px-3 sm:px-6 lg:px-8">
+    <section className="relative w-full bg-[#fbf8f3] py-2 sm:py-3 lg:py-4 px-2 sm:px-4 lg:px-6">
       {/* Outer Banner Card Container with rounded corners matching reference */}
-      <div className="max-w-[1400px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#e8ded0] relative bg-[#f5ecdd]">
+      <div className="max-w-[1360px] mx-auto rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-[#e8ded0] relative bg-[#f5ecdd]">
         
         {/* Full Banner Panoramic India Gate Sunset & Celestial Background */}
         <div className="absolute inset-0 z-0">
@@ -121,18 +121,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:via-[#fbf6ef]/70 lg:via-42%" />
           
           {/* Top subtle fade */}
-          <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#fbf6ef]/85 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[#fbf6ef]/85 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
 
           {/* Bottom subtle shadow */}
-          <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#1f140c]/40 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#1f140c]/40 to-transparent pointer-events-none" />
         </div>
 
         {/* Top Header Bar Inside Banner */}
-        <div className="relative z-20 px-5 sm:px-8 lg:px-12 pt-6 sm:pt-7 flex items-center justify-between">
+        <div className="relative z-20 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 flex items-center justify-between">
           {/* Left Brand Identity */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {/* Intricate Golden Vedic Mandala Icon */}
-            <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center text-[#b3681b]">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 flex items-center justify-center text-[#b3681b]">
               <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-xs" fill="currentColor">
                 <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" strokeWidth="4" />
                 <circle cx="50" cy="50" r="8" fill="currentColor" />
@@ -146,19 +146,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="font-serif-title font-bold text-xl sm:text-2xl text-[#241710] tracking-tight leading-tight">
+              <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
                 Acharya Ganesh
               </span>
-              <span className="text-[11px] sm:text-xs font-semibold text-[#665040] tracking-wide">
+              <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide">
                 Celebrity Vedic Astrologer
               </span>
             </div>
           </div>
 
           {/* Right Floating Google Rating Badge matching image */}
-          <div className="flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-[#e3d4c0] shadow-md">
-            <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg className="w-4 h-4" viewBox="0 0 24 24">
+          <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-lg sm:rounded-xl border border-[#e3d4c0] shadow-xs">
+            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
@@ -166,82 +166,82 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </svg>
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1">
                 <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">4.9/5</span>
                 <div className="flex text-[#f59e0b]">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-xs leading-none">★</span>
+                    <span key={i} className="text-[11px] leading-none">★</span>
                   ))}
                 </div>
               </div>
-              <span className="text-[10px] text-[#786454] leading-none mt-0.5">Google Rating</span>
+              <span className="text-[9px] text-[#786454] leading-none mt-0.5">Google Rating</span>
             </div>
           </div>
         </div>
 
-        {/* Main Banner Grid Content (Without form overlay covering the person) */}
-        <div className="relative z-10 px-5 sm:px-8 lg:px-12 pt-6 pb-6 sm:pb-8 lg:pb-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Main Banner Grid Content (Cropped proportionally to fit in first view) */}
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3 pb-3 sm:pb-4 lg:pb-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
             
             {/* Left Column: Heading, Metrics, Checkpoints & Consultation CTA */}
-            <div className="lg:col-span-6 flex flex-col justify-center space-y-5 lg:pr-4">
+            <div className="lg:col-span-6 flex flex-col justify-center space-y-3 sm:space-y-3.5 lg:pr-2">
               
               {/* Main Headline */}
               <div>
-                <h1 className="font-serif-title text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#231812] tracking-tight leading-[1.06]">
+                <h1 className="font-serif-title text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#231812] tracking-tight leading-[1.08]">
                   Best Astrologer in
-                  <span className="block text-[#a85c14] font-serif-title font-bold text-5xl sm:text-6xl lg:text-[70px] mt-0.5 tracking-tight drop-shadow-xs">
+                  <span className="block text-[#a85c14] font-serif-title font-bold text-4xl sm:text-5xl lg:text-[54px] mt-0.5 tracking-tight drop-shadow-xs">
                     Delhi
                   </span>
                 </h1>
-                <p className="mt-2 text-base sm:text-lg text-[#523e30] font-medium leading-snug">
+                <p className="mt-1 text-xs sm:text-sm text-[#523e30] font-medium leading-snug">
                   Trusted Celebrity Vedic Astrologer for Accurate &amp; Confidential Guidance
                 </p>
               </div>
 
               {/* 3 Metric Pills */}
-              <div className="grid grid-cols-3 gap-2.5 pt-1">
+              <div className="grid grid-cols-3 gap-2 pt-0.5">
                 {/* 1. Years of Experience */}
-                <div className="flex items-center gap-2 bg-white/85 backdrop-blur-xs p-2 sm:p-2.5 rounded-xl border border-[#e5d7c4] shadow-xs">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
-                    <Calendar className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/85 backdrop-blur-xs p-1.5 sm:p-2 rounded-lg sm:rounded-xl border border-[#e5d7c4] shadow-xs">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
+                    <Calendar className="w-3.5 h-3.5" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-sm sm:text-base text-[#241710] leading-none">17+</span>
-                    <span className="text-[10px] text-[#715c4d] leading-tight mt-0.5">Years of Experience</span>
+                    <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">17+</span>
+                    <span className="text-[9px] sm:text-[10px] text-[#715c4d] leading-tight mt-0.5">Years Exp.</span>
                   </div>
                 </div>
 
                 {/* 2. Happy Clients */}
-                <div className="flex items-center gap-2 bg-white/85 backdrop-blur-xs p-2 sm:p-2.5 rounded-xl border border-[#e5d7c4] shadow-xs">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
-                    <Users className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/85 backdrop-blur-xs p-1.5 sm:p-2 rounded-lg sm:rounded-xl border border-[#e5d7c4] shadow-xs">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
+                    <Users className="w-3.5 h-3.5" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-sm sm:text-base text-[#241710] leading-none">50,000+</span>
-                    <span className="text-[10px] text-[#715c4d] leading-tight mt-0.5">Happy Clients</span>
+                    <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">50,000+</span>
+                    <span className="text-[9px] sm:text-[10px] text-[#715c4d] leading-tight mt-0.5">Happy Clients</span>
                   </div>
                 </div>
 
                 {/* 3. Accuracy & Trust */}
-                <div className="flex items-center gap-2 bg-white/85 backdrop-blur-xs p-2 sm:p-2.5 rounded-xl border border-[#e5d7c4] shadow-xs">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
-                    <ShieldCheck className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/85 backdrop-blur-xs p-1.5 sm:p-2 rounded-lg sm:rounded-xl border border-[#e5d7c4] shadow-xs">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#fcf2e4] flex items-center justify-center flex-shrink-0 text-[#a85c14]">
+                    <ShieldCheck className="w-3.5 h-3.5" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-sm sm:text-base text-[#241710] leading-none">98%</span>
-                    <span className="text-[10px] text-[#715c4d] leading-tight mt-0.5">Accuracy &amp; Trust</span>
+                    <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">98%</span>
+                    <span className="text-[9px] sm:text-[10px] text-[#715c4d] leading-tight mt-0.5">Accuracy</span>
                   </div>
                 </div>
               </div>
 
               {/* 2-Column Checklist with Golden Circle Checks */}
-              <div className="grid grid-cols-2 gap-x-3 gap-y-2 pt-1">
-                <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-x-2.5 gap-y-1.5 pt-0.5">
+                <div className="space-y-1.5">
                   {checklistCol1.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#33241a]">
-                      <div className="w-4 h-4 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
-                        <svg className="w-2.5 h-2.5 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div key={idx} className="flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#33241a]">
+                      <div className="w-3.5 h-3.5 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
+                        <svg className="w-2 h-2 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -250,11 +250,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   ))}
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   {checklistCol2.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#33241a]">
-                      <div className="w-4 h-4 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
-                        <svg className="w-2.5 h-2.5 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div key={idx} className="flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#33241a]">
+                      <div className="w-3.5 h-3.5 rounded-full bg-[#a85c14] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
+                        <svg className="w-2 h-2 stroke-white" viewBox="0 0 24 24" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -265,49 +265,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
 
               {/* Book Consultation Button */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
+              <div className="pt-1 flex flex-wrap items-center gap-3">
                 <button
                   onClick={() => onOpenBooking()}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Book Consultation</span>
                 </button>
 
                 <button
                   onClick={() => setShowImageModal(true)}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white/90 hover:bg-white text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs sm:text-sm rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 sm:py-2.5 bg-white/90 hover:bg-white text-[#573e2c] hover:text-[#9e5a14] font-semibold text-[11px] sm:text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
                   title="Change person image"
                 >
-                  <Camera className="w-4 h-4 text-[#a85c14]" />
-                  <span>Change Person Photo</span>
+                  <Camera className="w-3.5 h-3.5 text-[#a85c14]" />
+                  <span>Change Photo</span>
                 </button>
               </div>
             </div>
 
-            {/* Right Column: Prominent Person Image (Clean transparent PNG, no white border or card box) */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-4 lg:mt-0">
+            {/* Right Column: Prominent Person Image (Clean transparent PNG, cropped height for instant first-view visibility) */}
+            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-2 lg:mt-0">
               
               {/* Person Image Container */}
-              <div className="relative group w-full max-w-[460px] sm:max-w-[500px] lg:max-w-[540px] flex flex-col items-center">
+              <div className="relative group w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[450px] flex flex-col items-center">
                 
-                {/* Clean Astrologer Transparent PNG Cutout - No White Border */}
+                {/* Clean Astrologer Transparent PNG Cutout */}
                 <div className="relative z-10 w-full flex items-end justify-center">
                   <img
                     src={personImage}
                     alt={personName}
-                    className="w-full h-auto max-h-[420px] sm:max-h-[480px] lg:max-h-[520px] object-contain object-bottom filter drop-shadow-2xl transition-transform duration-300 group-hover:scale-[1.01]"
+                    className="w-full h-auto max-h-[300px] sm:max-h-[340px] lg:max-h-[380px] object-contain object-bottom filter drop-shadow-xl transition-transform duration-300 group-hover:scale-[1.01]"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
                 {/* Traditional Golden Engraved Plaque on Desk */}
-                <div className="relative z-20 w-[90%] sm:w-[85%] -mt-4 bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-2 px-3 sm:px-4 rounded-lg border-2 border-[#d4994e] shadow-2xl text-center">
-                  <div className="border border-[#d4994e]/50 py-1 px-3 rounded-xs">
-                    <h3 className="font-serif-title font-bold text-base sm:text-lg text-[#f7d7a4] tracking-wide leading-tight">
+                <div className="relative z-20 w-[90%] sm:w-[84%] -mt-3.5 bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-1.5 px-3 sm:px-4 rounded-lg border-2 border-[#d4994e] shadow-2xl text-center">
+                  <div className="border border-[#d4994e]/50 py-1 px-2.5 rounded-xs">
+                    <h3 className="font-serif-title font-bold text-sm sm:text-base text-[#f7d7a4] tracking-wide leading-tight">
                       {personName}
                     </h3>
-                    <p className="text-[10px] sm:text-[11px] text-[#e0b87c] font-medium tracking-wider uppercase mt-0.5">
+                    <p className="text-[9px] sm:text-[10px] text-[#e0b87c] font-medium tracking-wider uppercase mt-0.5">
                       {personTitle}
                     </p>
                   </div>
