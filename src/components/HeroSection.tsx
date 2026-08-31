@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon, MapPin, Sparkles } from 'lucide-react';
-import bannerBg from '../assets/images/karol_bagh_hanuman_statue_pure_1788172967038.jpg';
-import indiaGateSunsetBg from '../assets/images/karol_bagh_hanuman_statue_pure_1788172967038.jpg';
+import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon, MapPin, Sparkles, SlidersHorizontal } from 'lucide-react';
+import hanumanChestOpenBg from '../assets/images/karol_bagh_hanuman_chest_open_banner_1788173520131.jpg';
+import hanumanPureBg from '../assets/images/karol_bagh_hanuman_statue_pure_1788172967038.jpg';
+import hanumanFrontCloseBg from '../assets/images/karol_bagh_hanuman_front_close_1788173133646.jpg';
+import hanumanTwilightBg from '../assets/images/karol_bagh_hanuman_twilight_1788173155256.jpg';
+import hanumanWideBg from '../assets/images/karol_bagh_hanuman_statue_delhi_1788172818530.jpg';
 import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788172234610.webp';
 import portraitIndiaGateDesktop from '../assets/images/delhi_acharya_ganesh_india_gate_1788170672200.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_person_cutout_clean.png';
@@ -12,7 +15,7 @@ interface HeroSectionProps {
   onOpenBooking: (service?: string, prefill?: any) => void;
 }
 
-interface PersonPreset {
+interface ImagePreset {
   id: string;
   name: string;
   subtitle: string;
@@ -20,8 +23,8 @@ interface PersonPreset {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
-  // Available Presets
-  const presets: PersonPreset[] = [
+  // Available Astrologer Presets
+  const personPresets: ImagePreset[] = [
     {
       id: 'acharya-india-gate',
       name: 'Acharya Ganesh (Vedic Portrait)',
@@ -54,12 +57,50 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
     }
   ];
 
+  // Available Karol Bagh Hanuman Mandir Presets
+  const hanumanPresets: ImagePreset[] = [
+    {
+      id: 'hanuman-chest-open',
+      name: '108-Ft Karol Bagh Hanuman (Center)',
+      subtitle: 'Hands on Chest Blessing Pose',
+      src: hanumanChestOpenBg
+    },
+    {
+      id: 'hanuman-pure',
+      name: 'Karol Bagh Saffron Colossal Statue',
+      subtitle: 'Authentic Delhi Mandir Landmark',
+      src: hanumanPureBg
+    },
+    {
+      id: 'hanuman-front-close',
+      name: 'Hanuman Ji Front View with Gada',
+      subtitle: 'Frontal Grand Statue',
+      src: hanumanFrontCloseBg
+    },
+    {
+      id: 'hanuman-twilight',
+      name: 'Twilight Temple Illumination',
+      subtitle: 'Sacred Golden Hour Glow',
+      src: hanumanTwilightBg
+    },
+    {
+      id: 'hanuman-wide',
+      name: 'Delhi Karol Bagh Panorama',
+      subtitle: 'Wide Temple Complex View',
+      src: hanumanWideBg
+    }
+  ];
+
   const [personImage, setPersonImage] = useState<string>(portraitIndiaGateMobile);
+  const [hanumanImage, setHanumanImage] = useState<string>(hanumanChestOpenBg);
   const [personName, setPersonName] = useState<string>('Acharya Ganesh');
   const [personTitle, setPersonTitle] = useState<string>('Vedic Astro Vastu Expert');
   const [showImageModal, setShowImageModal] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<'hanuman' | 'person'>('hanuman');
   const [customUrlInput, setCustomUrlInput] = useState<string>('');
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  
+  const personFileInputRef = useRef<HTMLInputElement>(null);
+  const hanumanFileInputRef = useRef<HTMLInputElement>(null);
 
   const checklistCol1 = [
     'Career Guidance',
@@ -75,8 +116,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
     'Spiritual Healing'
   ];
 
-  // Handle local file upload
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle local file uploads
+  const handlePersonFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -90,22 +131,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
     }
   };
 
+  const handleHanumanFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (uploadEvent) => {
+        if (uploadEvent.target?.result) {
+          setHanumanImage(uploadEvent.target.result as string);
+          setShowImageModal(false);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleApplyUrl = (e: React.FormEvent) => {
     e.preventDefault();
     if (customUrlInput.trim()) {
-      setPersonImage(customUrlInput.trim());
+      if (activeTab === 'hanuman') {
+        setHanumanImage(customUrlInput.trim());
+      } else {
+        setPersonImage(customUrlInput.trim());
+      }
       setCustomUrlInput('');
       setShowImageModal(false);
     }
   };
 
-  const handleSelectPreset = (preset: PersonPreset) => {
-    setPersonImage(preset.src);
-    setShowImageModal(false);
-  };
-
   const handleReset = () => {
     setPersonImage(portraitIndiaGateMobile);
+    setHanumanImage(hanumanChestOpenBg);
     setPersonName('Acharya Ganesh');
     setPersonTitle('Vedic Astro Vastu Expert');
     setShowImageModal(false);
@@ -113,20 +168,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
   return (
     <section className="relative w-full bg-[#fbf8f3] py-2 sm:py-3 lg:py-4 px-2 sm:px-4 lg:px-6">
-      {/* Outer Banner Card Container with rounded corners matching reference screenshot */}
+      {/* Outer Banner Card Container */}
       <div className="max-w-[1360px] mx-auto rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl border border-[#e8ded0] relative bg-[#f5ecdd]">
         
-        {/* Full Banner Panoramic Karol Bagh Hanuman Statue Background */}
+        {/* Full Banner Panoramic Karol Bagh Hanuman Statue Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src={bannerBg}
-            alt="Best Astrologer in Delhi - Karol Bagh Hanuman Statue & Vedic Astrology Background"
-            className="w-full h-full object-cover object-[center_center] filter contrast-[1.03] brightness-[1.02]"
+            src={hanumanImage}
+            alt="Best Astrologer in Delhi - Karol Bagh Hanuman Mandir Statue"
+            className="w-full h-full object-cover object-[center_center] filter contrast-[1.03] brightness-[1.02] transition-all duration-500"
             referrerPolicy="no-referrer"
           />
 
-          {/* Adaptive soft gradient veil for crisp text readability on the left while keeping the background panoramic */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:bg-gradient-to-r lg:from-[#fbf6ef]/95 lg:via-[#fbf6ef]/75 lg:via-45% lg:to-transparent" />
+          {/* Adaptive soft gradient veil for crisp text readability on the left while keeping the Hanuman image clearly visible */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:bg-gradient-to-r lg:from-[#fbf6ef]/95 lg:via-[#fbf6ef]/70 lg:via-48% lg:to-transparent" />
           
           {/* Subtle top & bottom shadow veils */}
           <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-[#fbf6ef]/60 to-transparent pointer-events-none" />
@@ -161,26 +216,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          {/* Right Floating Google Rating Badge */}
-          <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-lg sm:rounded-xl border border-[#e3d4c0] shadow-xs">
-            <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1">
-                <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">4.9/5</span>
-                <div className="flex text-[#f59e0b]">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[11px] leading-none">★</span>
-                  ))}
-                </div>
+          {/* Right Floating Google Rating Badge & Quick Change Hanuman Button */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                setActiveTab('hanuman');
+                setShowImageModal(true);
+              }}
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-black/60 hover:bg-black/80 backdrop-blur-md border border-[#e2a850]/70 text-[#fde3ba] text-[10px] sm:text-xs font-bold shadow-md transition-all cursor-pointer"
+              title="Change Hanuman Mandir image"
+            >
+              <ImageIcon className="w-3.5 h-3.5 text-[#f59e0b]" />
+              <span className="hidden sm:inline">Change Hanuman Image</span>
+              <span className="sm:hidden">Hanuman Photo</span>
+            </button>
+
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-lg sm:rounded-xl border border-[#e3d4c0] shadow-xs">
+              <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
               </div>
-              <span className="text-[9px] text-[#786454] leading-none mt-0.5">Google Rating</span>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1">
+                  <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">4.9/5</span>
+                  <div className="flex text-[#f59e0b]">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-[11px] leading-none">★</span>
+                    ))}
+                  </div>
+                </div>
+                <span className="text-[9px] text-[#786454] leading-none mt-0.5">Google Rating</span>
+              </div>
             </div>
           </div>
         </div>
@@ -270,35 +340,73 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Book Consultation Button & Change Person Photo */}
-              <div className="pt-1.5 flex flex-wrap items-center gap-3">
+              {/* Buttons: Book Consultation, Change Hanuman Image, Change Person Photo */}
+              <div className="pt-1.5 flex flex-wrap items-center gap-2.5">
                 <button
                   onClick={() => onOpenBooking()}
-                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
                 >
                   <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Book Consultation</span>
                 </button>
 
                 <button
-                  onClick={() => setShowImageModal(true)}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:py-3 bg-white hover:bg-[#faf4ec] text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
-                  title="Change person image"
+                  onClick={() => {
+                    setActiveTab('hanuman');
+                    setShowImageModal(true);
+                  }}
+                  className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white hover:bg-[#faf4ec] text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
+                  title="Change Karol Bagh Hanuman Mandir background image"
+                >
+                  <ImageIcon className="w-3.5 h-3.5 text-[#e07010]" />
+                  <span>Change Hanuman Image</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveTab('person');
+                    setShowImageModal(true);
+                  }}
+                  className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white hover:bg-[#faf4ec] text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
+                  title="Change person photo"
                 >
                   <Camera className="w-3.5 h-3.5 text-[#a85c14]" />
                   <span>Change Person Photo</span>
                 </button>
               </div>
 
+              {/* Quick Hanuman Image Preset Switcher Strip */}
+              <div className="pt-2 flex items-center gap-2 overflow-x-auto pb-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#705542] flex-shrink-0">
+                  Hanuman Views:
+                </span>
+                <div className="flex items-center gap-1.5">
+                  {hanumanPresets.map((hp) => (
+                    <button
+                      key={hp.id}
+                      onClick={() => setHanumanImage(hp.src)}
+                      className={`relative w-11 h-8 rounded-md overflow-hidden border transition-all cursor-pointer flex-shrink-0 ${
+                        hanumanImage === hp.src
+                          ? 'border-[#e07010] ring-2 ring-[#e07010]/50 scale-105'
+                          : 'border-[#d0beab] opacity-75 hover:opacity-100 hover:border-[#b3681b]'
+                      }`}
+                      title={hp.name}
+                    >
+                      <img src={hp.src} alt={hp.name} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
-            {/* Right Column: Astrologer Person with India Gate Landmark Backdrop */}
+            {/* Right Column: Astrologer Person with Karol Bagh Hanuman Landmark Backdrop */}
             <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-2 lg:mt-0">
               
               <div className="relative group w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] flex flex-col items-center">
                 
-                {/* Floating Delhi Landmark Badge on top-right of the astrologer frame */}
-                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30">
+                {/* Floating Delhi Landmark Badge on top-right */}
+                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30 flex items-center gap-1.5">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-[#e2a850]/70 text-[#fde3ba] text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-lg">
                     <MapPin className="w-3 h-3 text-[#f59e0b]" />
                     <span>Karol Bagh, Delhi</span>
@@ -311,7 +419,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   {/* Subtle Background Glow behind Astrologer */}
                   <div className="absolute inset-0 bg-radial-at-c from-[#f59e0b]/20 via-transparent to-black/40 pointer-events-none" />
 
-                  {/* Main Astrologer Image with India Gate */}
+                  {/* Main Astrologer Image */}
                   <img
                     src={personImage}
                     alt={personName}
@@ -346,20 +454,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
       </div>
 
-      {/* Change Person Image Modal */}
+      {/* Image Customizer Modal (Handles both Hanuman Mandir Background & Astrologer Photo) */}
       {showImageModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-[#e3d7c5] relative max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl border border-[#e3d7c5] relative max-h-[90vh] overflow-y-auto">
             
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#f0e6d6]">
+            <div className="flex items-center justify-between pb-3.5 border-b border-[#f0e6d6]">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#fdf4e9] text-[#b3681b] flex items-center justify-center">
-                  <Camera className="w-4 h-4" />
+                  <SlidersHorizontal className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-serif-title font-bold text-lg text-[#241710]">Change Person Photo</h3>
-                  <p className="text-xs text-[#735f4f]">Upload custom image, choose preset, or paste URL</p>
+                  <h3 className="font-serif-title font-bold text-base sm:text-lg text-[#241710]">
+                    Customize Banner &amp; Photo
+                  </h3>
+                  <p className="text-xs text-[#735f4f]">Select presets, upload file, or paste custom URL</p>
                 </div>
               </div>
               <button
@@ -370,77 +480,192 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </button>
             </div>
 
-            {/* Modal Content */}
-            <div className="space-y-5 pt-4">
-              
-              {/* 1. Upload Local Photo */}
-              <div>
-                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
-                  1. Upload Photo from Device
-                </label>
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  onChange={handleFileUpload}
-                  accept="image/*"
-                  className="hidden"
-                />
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-dashed border-[#b3681b]/50 hover:border-[#b3681b] bg-[#fdfaf5] hover:bg-[#faefe0] text-[#8d4b0d] font-semibold text-sm transition-all cursor-pointer"
-                >
-                  <Upload className="w-4 h-4" />
-                  <span>Choose Image File (JPG, PNG, WebP)</span>
-                </button>
-              </div>
+            {/* Tab Selection */}
+            <div className="flex border-b border-[#e8ded0] mt-3 mb-4">
+              <button
+                type="button"
+                onClick={() => setActiveTab('hanuman')}
+                className={`flex-1 py-2.5 text-xs sm:text-sm font-bold transition-all border-b-2 flex items-center justify-center gap-1.5 cursor-pointer ${
+                  activeTab === 'hanuman'
+                    ? 'border-[#e07010] text-[#a85009] bg-[#fdf8f3]'
+                    : 'border-transparent text-[#705a48] hover:text-[#241710]'
+                }`}
+              >
+                <ImageIcon className="w-4 h-4 text-[#e07010]" />
+                <span>Hanuman Mandir Image</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('person')}
+                className={`flex-1 py-2.5 text-xs sm:text-sm font-bold transition-all border-b-2 flex items-center justify-center gap-1.5 cursor-pointer ${
+                  activeTab === 'person'
+                    ? 'border-[#b3681b] text-[#934f0d] bg-[#fdf8f3]'
+                    : 'border-transparent text-[#705a48] hover:text-[#241710]'
+                }`}
+              >
+                <Camera className="w-4 h-4 text-[#b3681b]" />
+                <span>Astrologer Person Photo</span>
+              </button>
+            </div>
 
-              {/* 2. Choose from Astrologer Presets */}
-              <div>
-                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
-                  2. Choose Preset Astrologer Portrait
-                </label>
-                <div className="grid grid-cols-2 gap-3">
-                  {presets.map((preset) => (
-                    <button
-                      key={preset.id}
-                      onClick={() => handleSelectPreset(preset)}
-                      className={`flex flex-col items-center text-left p-2.5 rounded-xl border transition-all cursor-pointer relative overflow-hidden group ${
-                        personImage === preset.src
-                          ? 'border-[#b3681b] bg-[#fbf5ec] ring-2 ring-[#b3681b]/30'
-                          : 'border-[#e4d7c5] hover:border-[#b3681b]/50 bg-white'
-                      }`}
-                    >
-                      <div className="w-full h-24 rounded-lg overflow-hidden mb-2 bg-[#1b120c]">
-                        <img
-                          src={preset.src}
-                          alt={preset.name}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
-                        />
-                      </div>
-                      <span className="font-bold text-xs text-[#241710] line-clamp-1 w-full text-center">
-                        {preset.name}
-                      </span>
-                      <span className="text-[10px] text-[#715c4d] line-clamp-1 w-full text-center">
-                        {preset.subtitle}
-                      </span>
-                      {personImage === preset.src && (
-                        <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-[#b3681b] text-white flex items-center justify-center">
-                          <Check className="w-3 h-3" />
+            {/* Tab 1: Hanuman Mandir Image Controls */}
+            {activeTab === 'hanuman' && (
+              <div className="space-y-4">
+                {/* 1. Upload Local Hanuman Photo */}
+                <div>
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-1.5">
+                    1. Upload Hanuman Image from Device
+                  </label>
+                  <input
+                    type="file"
+                    ref={hanumanFileInputRef}
+                    onChange={handleHanumanFileUpload}
+                    accept="image/*"
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => hanumanFileInputRef.current?.click()}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border-2 border-dashed border-[#e07010]/60 hover:border-[#e07010] bg-[#fef9f4] hover:bg-[#faefe0] text-[#9c4c05] font-semibold text-xs sm:text-sm transition-all cursor-pointer"
+                  >
+                    <Upload className="w-4 h-4 text-[#e07010]" />
+                    <span>Choose Hanuman Image (JPG, PNG, WebP)</span>
+                  </button>
+                </div>
+
+                {/* 2. Choose from Karol Bagh Hanuman Presets */}
+                <div>
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
+                    2. Choose Karol Bagh Hanuman Statue Preset
+                  </label>
+                  <div className="grid grid-cols-2 gap-2.5">
+                    {hanumanPresets.map((preset) => (
+                      <button
+                        key={preset.id}
+                        onClick={() => setHanumanImage(preset.src)}
+                        className={`flex flex-col items-center text-left p-2 rounded-xl border transition-all cursor-pointer relative overflow-hidden group ${
+                          hanumanImage === preset.src
+                            ? 'border-[#e07010] bg-[#fdf5eb] ring-2 ring-[#e07010]/30'
+                            : 'border-[#e4d7c5] hover:border-[#e07010]/50 bg-white'
+                        }`}
+                      >
+                        <div className="w-full h-24 rounded-lg overflow-hidden mb-1.5 bg-[#1b120c]">
+                          <img
+                            src={preset.src}
+                            alt={preset.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                          />
                         </div>
-                      )}
+                        <span className="font-bold text-xs text-[#241710] line-clamp-1 w-full text-center">
+                          {preset.name}
+                        </span>
+                        <span className="text-[10px] text-[#715c4d] line-clamp-1 w-full text-center">
+                          {preset.subtitle}
+                        </span>
+                        {hanumanImage === preset.src && (
+                          <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-[#e07010] text-white flex items-center justify-center shadow-xs">
+                            <Check className="w-3 h-3" />
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. Paste Custom Image URL */}
+                <div>
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-1.5">
+                    3. Or Paste Hanuman Image URL
+                  </label>
+                  <form onSubmit={handleApplyUrl} className="flex gap-2">
+                    <input
+                      type="url"
+                      placeholder="https://example.com/hanuman-statue.jpg"
+                      value={customUrlInput}
+                      onChange={(e) => setCustomUrlInput(e.target.value)}
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#e07010] text-gray-800"
+                    />
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-[#e07010] hover:bg-[#c45e07] text-white font-bold text-xs rounded-lg transition-colors cursor-pointer flex-shrink-0"
+                    >
+                      Apply URL
                     </button>
-                  ))}
+                  </form>
                 </div>
               </div>
+            )}
 
-              {/* 3. Paste Custom Image URL */}
-              <div>
-                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
-                  3. Or Paste Image URL
-                </label>
-                <form onSubmit={handleApplyUrl} className="flex gap-2">
-                  <div className="relative flex-1">
+            {/* Tab 2: Person Portrait Controls */}
+            {activeTab === 'person' && (
+              <div className="space-y-4">
+                {/* 1. Upload Local Photo */}
+                <div>
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-1.5">
+                    1. Upload Astrologer Photo from Device
+                  </label>
+                  <input
+                    type="file"
+                    ref={personFileInputRef}
+                    onChange={handlePersonFileUpload}
+                    accept="image/*"
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => personFileInputRef.current?.click()}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border-2 border-dashed border-[#b3681b]/50 hover:border-[#b3681b] bg-[#fdfaf5] hover:bg-[#faefe0] text-[#8d4b0d] font-semibold text-xs sm:text-sm transition-all cursor-pointer"
+                  >
+                    <Upload className="w-4 h-4 text-[#b3681b]" />
+                    <span>Choose Person Image (JPG, PNG, WebP)</span>
+                  </button>
+                </div>
+
+                {/* 2. Choose from Astrologer Presets */}
+                <div>
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
+                    2. Choose Preset Astrologer Portrait
+                  </label>
+                  <div className="grid grid-cols-2 gap-2.5">
+                    {personPresets.map((preset) => (
+                      <button
+                        key={preset.id}
+                        onClick={() => setPersonImage(preset.src)}
+                        className={`flex flex-col items-center text-left p-2 rounded-xl border transition-all cursor-pointer relative overflow-hidden group ${
+                          personImage === preset.src
+                            ? 'border-[#b3681b] bg-[#fbf5ec] ring-2 ring-[#b3681b]/30'
+                            : 'border-[#e4d7c5] hover:border-[#b3681b]/50 bg-white'
+                        }`}
+                      >
+                        <div className="w-full h-24 rounded-lg overflow-hidden mb-1.5 bg-[#1b120c]">
+                          <img
+                            src={preset.src}
+                            alt={preset.name}
+                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
+                          />
+                        </div>
+                        <span className="font-bold text-xs text-[#241710] line-clamp-1 w-full text-center">
+                          {preset.name}
+                        </span>
+                        <span className="text-[10px] text-[#715c4d] line-clamp-1 w-full text-center">
+                          {preset.subtitle}
+                        </span>
+                        {personImage === preset.src && (
+                          <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-[#b3681b] text-white flex items-center justify-center">
+                            <Check className="w-3 h-3" />
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. Paste Custom Image URL */}
+                <div>
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-1.5">
+                    3. Or Paste Image URL
+                  </label>
+                  <form onSubmit={handleApplyUrl} className="flex gap-2">
                     <input
                       type="url"
                       placeholder="https://example.com/photo.jpg"
@@ -448,50 +673,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                       onChange={(e) => setCustomUrlInput(e.target.value)}
                       className="w-full px-3 py-2 text-xs bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#b3681b] text-gray-800"
                     />
-                  </div>
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-[#b3681b] hover:bg-[#995512] text-white font-bold text-xs rounded-lg transition-colors cursor-pointer"
-                  >
-                    Apply URL
-                  </button>
-                </form>
-              </div>
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-[#b3681b] hover:bg-[#995512] text-white font-bold text-xs rounded-lg transition-colors cursor-pointer flex-shrink-0"
+                    >
+                      Apply URL
+                    </button>
+                  </form>
+                </div>
 
-              {/* Optional Name & Title Edit */}
-              <div className="pt-2 border-t border-[#f0e6d6]">
-                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
-                  Astrologer Name &amp; Title
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  <input
-                    type="text"
-                    value={personName}
-                    onChange={(e) => setPersonName(e.target.value)}
-                    placeholder="Astrologer Name"
-                    className="w-full px-3 py-1.5 text-xs bg-white border border-[#d6c7b2] rounded-lg text-gray-800"
-                  />
-                  <input
-                    type="text"
-                    value={personTitle}
-                    onChange={(e) => setPersonTitle(e.target.value)}
-                    placeholder="Title / Credentials"
-                    className="w-full px-3 py-1.5 text-xs bg-white border border-[#d6c7b2] rounded-lg text-gray-800"
-                  />
+                {/* Name & Title Edit */}
+                <div className="pt-2 border-t border-[#f0e6d6]">
+                  <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-1.5">
+                    Astrologer Name &amp; Title
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <input
+                      type="text"
+                      value={personName}
+                      onChange={(e) => setPersonName(e.target.value)}
+                      placeholder="Astrologer Name"
+                      className="w-full px-3 py-1.5 text-xs bg-white border border-[#d6c7b2] rounded-lg text-gray-800"
+                    />
+                    <input
+                      type="text"
+                      value={personTitle}
+                      onChange={(e) => setPersonTitle(e.target.value)}
+                      placeholder="Title / Credentials"
+                      className="w-full px-3 py-1.5 text-xs bg-white border border-[#d6c7b2] rounded-lg text-gray-800"
+                    />
+                  </div>
                 </div>
               </div>
-
-            </div>
+            )}
 
             {/* Modal Footer */}
             <div className="mt-5 pt-3 border-t border-[#f0e6d6] flex items-center justify-between">
               <button
                 type="button"
                 onClick={handleReset}
-                className="flex items-center gap-1.5 text-xs font-semibold text-[#8a5d3b] hover:text-[#241710] transition-colors"
+                className="flex items-center gap-1.5 text-xs font-semibold text-[#8a5d3b] hover:text-[#241710] transition-colors cursor-pointer"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
-                <span>Reset to Default</span>
+                <span>Reset All Defaults</span>
               </button>
               
               <button
