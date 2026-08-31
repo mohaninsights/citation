@@ -1,33 +1,57 @@
-import React, { useState } from 'react';
-import { Calendar, Users, ShieldCheck, Lock, UserCheck, ChevronDown } from 'lucide-react';
-import { SERVICES_LIST } from '../data/mockData';
-import bannerImage from '../assets/images/delhi_astrologer_banner_1788159520467.jpg';
+import React, { useState, useRef } from 'react';
+import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon } from 'lucide-react';
+import indiaGateBg from '../assets/images/delhi_india_gate_sunset_1788159975571.jpg';
+import portraitPng from '../assets/images/acharya_ganesh_cutout_trimmed.png';
+import portraitCutout from '../assets/images/astrologer_person_cutout_1788159948116.jpg';
+import portraitSenior from '../assets/images/astrologer_person_portrait_2_1788159992121.jpg';
+import portraitBanner from '../assets/images/delhi_astrologer_banner_1788159520467.jpg';
 
 interface HeroSectionProps {
   onOpenBooking: (service?: string, prefill?: any) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    mobileNumber: '',
-    emailAddress: '',
-    selectedService: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+interface PersonPreset {
+  id: string;
+  name: string;
+  subtitle: string;
+  src: string;
+}
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.fullName || !formData.mobileNumber) {
-      alert('Please enter your full name and mobile number.');
-      return;
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
+  // Available Presets
+  const presets: PersonPreset[] = [
+    {
+      id: 'acharya-png',
+      name: 'Acharya Ganesh (Transparent Cutout)',
+      subtitle: 'Celebrity Vedic Astrologer',
+      src: portraitPng
+    },
+    {
+      id: 'acharya-vest',
+      name: 'Acharya Ganesh (Golden Vest)',
+      subtitle: 'Vedic & Vastu Expert',
+      src: portraitCutout
+    },
+    {
+      id: 'acharya-senior',
+      name: 'Senior Vedic Acharya',
+      subtitle: 'Namaste Blessing',
+      src: portraitSenior
+    },
+    {
+      id: 'acharya-delhi',
+      name: 'Acharya Ganesh (Full Atmosphere)',
+      subtitle: 'Executive Desk Portrait',
+      src: portraitBanner
     }
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      onOpenBooking(formData.selectedService, formData);
-    }, 350);
-  };
+  ];
+
+  const [personImage, setPersonImage] = useState<string>(portraitPng);
+  const [personName, setPersonName] = useState<string>('Acharya Ganesh');
+  const [personTitle, setPersonTitle] = useState<string>('Celebrity Vedic Astrologer & Vastu Shastra Mentor');
+  const [showImageModal, setShowImageModal] = useState<boolean>(false);
+  const [customUrlInput, setCustomUrlInput] = useState<string>('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const checklistCol1 = [
     'Career Guidance',
@@ -43,29 +67,64 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
     'Spiritual Healing'
   ];
 
+  // Handle local file upload
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (uploadEvent) => {
+        if (uploadEvent.target?.result) {
+          setPersonImage(uploadEvent.target.result as string);
+          setShowImageModal(false);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleApplyUrl = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (customUrlInput.trim()) {
+      setPersonImage(customUrlInput.trim());
+      setCustomUrlInput('');
+      setShowImageModal(false);
+    }
+  };
+
+  const handleSelectPreset = (preset: PersonPreset) => {
+    setPersonImage(preset.src);
+    setShowImageModal(false);
+  };
+
+  const handleReset = () => {
+    setPersonImage(portraitPng);
+    setPersonName('Acharya Ganesh');
+    setPersonTitle('Celebrity Vedic Astrologer & Vastu Shastra Mentor');
+    setShowImageModal(false);
+  };
+
   return (
     <section className="relative w-full bg-[#fbf8f3] py-4 sm:py-6 lg:py-8 px-3 sm:px-6 lg:px-8">
       {/* Outer Banner Card Container with rounded corners matching reference */}
       <div className="max-w-[1400px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#e8ded0] relative bg-[#f5ecdd]">
         
-        {/* Full Banner Background: Combined Artwork & Panoramic Sunset Backdrop */}
+        {/* Full Banner Panoramic India Gate Sunset & Celestial Background */}
         <div className="absolute inset-0 z-0">
-          {/* Main photorealistic banner image */}
           <img
-            src={bannerImage}
-            alt="Acharya Ganesh - Best Astrologer in Delhi"
-            className="w-full h-full object-cover object-center filter contrast-[1.03] brightness-[1.02]"
+            src={indiaGateBg}
+            alt="Delhi India Gate Sunset Vedic Astrology Background"
+            className="w-full h-full object-cover object-center filter contrast-[1.04] brightness-[1.01]"
             referrerPolicy="no-referrer"
           />
 
-          {/* Left subtle gradient veil to ensure text readability while keeping landscape visible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-45% to-transparent lg:via-[#fbf6ef]/70 lg:via-40%" />
+          {/* Left subtle gradient veil for crystal clear text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fbf6ef]/95 via-[#fbf6ef]/85 via-50% to-transparent lg:via-[#fbf6ef]/70 lg:via-42%" />
           
           {/* Top subtle fade */}
-          <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#fbf6ef]/80 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#fbf6ef]/85 via-[#fbf6ef]/40 to-transparent pointer-events-none" />
 
-          {/* Right side subtle glow behind form */}
-          <div className="absolute top-0 right-0 w-full lg:w-[450px] h-full bg-gradient-to-l from-[#20150d]/20 via-transparent to-transparent pointer-events-none" />
+          {/* Bottom subtle shadow */}
+          <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#1f140c]/40 to-transparent pointer-events-none" />
         </div>
 
         {/* Top Header Bar Inside Banner */}
@@ -75,7 +134,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             {/* Intricate Golden Vedic Mandala Icon */}
             <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center text-[#b3681b]">
               <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-xs" fill="currentColor">
-                {/* 16-point Vedic Sun Mandala */}
                 <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" strokeWidth="4" />
                 <circle cx="50" cy="50" r="8" fill="currentColor" />
                 <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 3" />
@@ -99,7 +157,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
           {/* Right Floating Google Rating Badge matching image */}
           <div className="flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-[#e3d4c0] shadow-md">
-            {/* Google Multicolor Logo */}
             <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0">
               <svg className="w-4 h-4" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -122,18 +179,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           </div>
         </div>
 
-        {/* Main Banner Grid Content */}
-        <div className="relative z-10 px-5 sm:px-8 lg:px-12 pt-6 pb-8 sm:pb-10 lg:pb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+        {/* Main Banner Grid Content (Without form overlay covering the person) */}
+        <div className="relative z-10 px-5 sm:px-8 lg:px-12 pt-6 pb-6 sm:pb-8 lg:pb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             
-            {/* Left Column: Heading, Metrics, Checkpoints & CTA */}
-            <div className="lg:col-span-5 flex flex-col justify-center space-y-5 lg:pr-2">
+            {/* Left Column: Heading, Metrics, Checkpoints & Consultation CTA */}
+            <div className="lg:col-span-6 flex flex-col justify-center space-y-5 lg:pr-4">
               
               {/* Main Headline */}
               <div>
-                <h1 className="font-serif-title text-4xl sm:text-5xl lg:text-[54px] font-bold text-[#231812] tracking-tight leading-[1.06]">
+                <h1 className="font-serif-title text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#231812] tracking-tight leading-[1.06]">
                   Best Astrologer in
-                  <span className="block text-[#a85c14] font-serif-title font-bold text-5xl sm:text-6xl lg:text-[68px] mt-0.5 tracking-tight drop-shadow-xs">
+                  <span className="block text-[#a85c14] font-serif-title font-bold text-5xl sm:text-6xl lg:text-[70px] mt-0.5 tracking-tight drop-shadow-xs">
                     Delhi
                   </span>
                 </h1>
@@ -208,7 +265,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
 
               {/* Book Consultation Button */}
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => onOpenBooking()}
                   className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer active:scale-[0.98]"
@@ -216,114 +273,218 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   <Calendar className="w-4 h-4" />
                   <span>Book Consultation</span>
                 </button>
+
+                <button
+                  onClick={() => setShowImageModal(true)}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white/90 hover:bg-white text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs sm:text-sm rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
+                  title="Change person image"
+                >
+                  <Camera className="w-4 h-4 text-[#a85c14]" />
+                  <span>Change Person Photo</span>
+                </button>
               </div>
             </div>
 
-            {/* Center Area: Visual Space & Nameplate Plaque (Aligned with background imagery) */}
-            <div className="lg:col-span-3 min-h-[160px] lg:min-h-[380px] flex flex-col justify-end items-center relative">
-              {/* Traditional Golden Plaque on Desk matching exact reference */}
-              <div className="w-full max-w-[270px] bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-2 px-3 rounded-md border-2 border-[#d4994e] shadow-2xl text-center backdrop-blur-xs mb-2">
-                <div className="border border-[#d4994e]/50 py-1.5 px-2 rounded-xs">
-                  <h3 className="font-serif-title font-bold text-sm sm:text-base text-[#f7d7a4] tracking-wide leading-tight">
-                    Acharya Ganesh
-                  </h3>
-                  <p className="text-[9px] sm:text-[10px] text-[#e0b87c] font-medium tracking-wider uppercase mt-0.5">
-                    Celebrity Vedic Astrologer &amp; Vastu Shastra Mentor
-                  </p>
+            {/* Right Column: Prominent Person Image (Clean transparent PNG, no white border or card box) */}
+            <div className="lg:col-span-6 flex flex-col items-center justify-end relative mt-4 lg:mt-0">
+              
+              {/* Person Image Container */}
+              <div className="relative group w-full max-w-[460px] sm:max-w-[500px] lg:max-w-[540px] flex flex-col items-center">
+                
+                {/* Clean Astrologer Transparent PNG Cutout - No White Border */}
+                <div className="relative z-10 w-full flex items-end justify-center">
+                  <img
+                    src={personImage}
+                    alt={personName}
+                    className="w-full h-auto max-h-[420px] sm:max-h-[480px] lg:max-h-[520px] object-contain object-bottom filter drop-shadow-2xl transition-transform duration-300 group-hover:scale-[1.01]"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-              </div>
-            </div>
 
-            {/* Right Column: "Book Your Consultation" Card matching reference */}
-            <div className="lg:col-span-4 flex justify-end">
-              <div className="w-full max-w-[360px] bg-white rounded-2xl p-5 sm:p-6 shadow-xl border border-[#e2d5c2] relative">
-                <h2 className="font-serif-title font-bold text-xl text-[#221811] text-center mb-4">
-                  Book Your Consultation
-                </h2>
-
-                <form onSubmit={handleSubmit} className="space-y-3.5">
-                  <div>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Full Name"
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-sm bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#b3681b] focus:border-[#b3681b] placeholder-gray-400 text-gray-800 transition-all shadow-2xs"
-                    />
-                  </div>
-
-                  <div>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="Mobile Number"
-                      value={formData.mobileNumber}
-                      onChange={(e) => setFormData({ ...formData, mobileNumber: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-sm bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#b3681b] focus:border-[#b3681b] placeholder-gray-400 text-gray-800 transition-all shadow-2xs"
-                    />
-                  </div>
-
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      value={formData.emailAddress}
-                      onChange={(e) => setFormData({ ...formData, emailAddress: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-sm bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#b3681b] focus:border-[#b3681b] placeholder-gray-400 text-gray-800 transition-all shadow-2xs"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <select
-                      value={formData.selectedService}
-                      onChange={(e) => setFormData({ ...formData, selectedService: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-sm bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#b3681b] focus:border-[#b3681b] text-gray-700 transition-all cursor-pointer appearance-none shadow-2xs pr-9"
-                    >
-                      <option value="">Select Service</option>
-                      {SERVICES_LIST.map((srv) => (
-                        <option key={srv.id} value={srv.title}>
-                          {srv.title}
-                        </option>
-                      ))}
-                      <option value="Complete Kundli Reading">Complete Kundli Reading</option>
-                      <option value="Vedic Gemstone Consultation">Vedic Gemstone Consultation</option>
-                      <option value="Career & Business Astrology">Career &amp; Business Astrology</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-gray-500">
-                      <ChevronDown className="w-4 h-4" />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-3 px-4 bg-gradient-to-r from-[#b3681b] via-[#a05a14] to-[#8d4b0d] hover:from-[#9c5914] hover:to-[#763d08] text-white font-bold text-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] mt-1"
-                  >
-                    <Calendar className="w-4 h-4" />
-                    <span>{isSubmitting ? 'Securing Slot...' : 'Book Consultation'}</span>
-                  </button>
-                </form>
-
-                {/* Bottom Guarantee Badges */}
-                <div className="mt-4 pt-3.5 border-t border-[#f0e6d6] flex items-center justify-between text-[11px] font-semibold text-[#6e5849]">
-                  <div className="flex items-center gap-1.5">
-                    <Lock className="w-3.5 h-3.5 text-[#a85c14]" />
-                    <span>100% Confidential</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <UserCheck className="w-3.5 h-3.5 text-[#a85c14]" />
-                    <span>1-on-1 Consultation</span>
+                {/* Traditional Golden Engraved Plaque on Desk */}
+                <div className="relative z-20 w-[90%] sm:w-[85%] -mt-4 bg-gradient-to-b from-[#241710] via-[#1a100a] to-[#0d0704] text-white py-2 px-3 sm:px-4 rounded-lg border-2 border-[#d4994e] shadow-2xl text-center">
+                  <div className="border border-[#d4994e]/50 py-1 px-3 rounded-xs">
+                    <h3 className="font-serif-title font-bold text-base sm:text-lg text-[#f7d7a4] tracking-wide leading-tight">
+                      {personName}
+                    </h3>
+                    <p className="text-[10px] sm:text-[11px] text-[#e0b87c] font-medium tracking-wider uppercase mt-0.5">
+                      {personTitle}
+                    </p>
                   </div>
                 </div>
+
               </div>
+
             </div>
 
           </div>
         </div>
 
       </div>
+
+      {/* Change Person Image Modal */}
+      {showImageModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-[#e3d7c5] relative max-h-[90vh] overflow-y-auto">
+            
+            {/* Modal Header */}
+            <div className="flex items-center justify-between pb-4 border-b border-[#f0e6d6]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#fdf4e9] text-[#b3681b] flex items-center justify-center">
+                  <Camera className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="font-serif-title font-bold text-lg text-[#241710]">Change Person Photo</h3>
+                  <p className="text-xs text-[#735f4f]">Upload custom image, choose preset, or paste URL</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowImageModal(false)}
+                className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-800 transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="space-y-5 pt-4">
+              
+              {/* 1. Upload Local Photo */}
+              <div>
+                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
+                  1. Upload Photo from Device
+                </label>
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileUpload}
+                  accept="image/*"
+                  className="hidden"
+                />
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-dashed border-[#b3681b]/50 hover:border-[#b3681b] bg-[#fdfaf5] hover:bg-[#faefe0] text-[#8d4b0d] font-semibold text-sm transition-all cursor-pointer"
+                >
+                  <Upload className="w-4 h-4" />
+                  <span>Choose Image File (JPG, PNG, WebP)</span>
+                </button>
+              </div>
+
+              {/* 2. Choose from Astrologer Presets */}
+              <div>
+                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
+                  2. Choose Preset Astrologer Portrait
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  {presets.map((preset) => (
+                    <button
+                      key={preset.id}
+                      onClick={() => handleSelectPreset(preset)}
+                      className={`flex flex-col items-center text-left p-2.5 rounded-xl border transition-all cursor-pointer relative overflow-hidden group ${
+                        personImage === preset.src
+                          ? 'border-[#b3681b] bg-[#fbf5ec] ring-2 ring-[#b3681b]/30'
+                          : 'border-[#e4d7c5] hover:border-[#b3681b]/50 bg-white'
+                      }`}
+                    >
+                      <div className="w-full h-24 rounded-lg overflow-hidden mb-2 bg-[#1b120c]">
+                        <img
+                          src={preset.src}
+                          alt={preset.name}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
+                        />
+                      </div>
+                      <span className="font-bold text-xs text-[#241710] line-clamp-1 w-full text-center">
+                        {preset.name}
+                      </span>
+                      <span className="text-[10px] text-[#715c4d] line-clamp-1 w-full text-center">
+                        {preset.subtitle}
+                      </span>
+                      {personImage === preset.src && (
+                        <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-[#b3681b] text-white flex items-center justify-center">
+                          <Check className="w-3 h-3" />
+                        </div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 3. Paste Custom Image URL */}
+              <div>
+                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
+                  3. Or Paste Image URL
+                </label>
+                <form onSubmit={handleApplyUrl} className="flex gap-2">
+                  <div className="relative flex-1">
+                    <input
+                      type="url"
+                      placeholder="https://example.com/photo.jpg"
+                      value={customUrlInput}
+                      onChange={(e) => setCustomUrlInput(e.target.value)}
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#d6c7b2] rounded-lg focus:outline-hidden focus:ring-1.5 focus:ring-[#b3681b] text-gray-800"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-[#b3681b] hover:bg-[#995512] text-white font-bold text-xs rounded-lg transition-colors cursor-pointer"
+                  >
+                    Apply URL
+                  </button>
+                </form>
+              </div>
+
+              {/* Optional Name & Title Edit */}
+              <div className="pt-2 border-t border-[#f0e6d6]">
+                <label className="block text-xs font-bold text-[#35251a] uppercase tracking-wider mb-2">
+                  Astrologer Name &amp; Title
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  <input
+                    type="text"
+                    value={personName}
+                    onChange={(e) => setPersonName(e.target.value)}
+                    placeholder="Astrologer Name"
+                    className="w-full px-3 py-1.5 text-xs bg-white border border-[#d6c7b2] rounded-lg text-gray-800"
+                  />
+                  <input
+                    type="text"
+                    value={personTitle}
+                    onChange={(e) => setPersonTitle(e.target.value)}
+                    placeholder="Title / Credentials"
+                    className="w-full px-3 py-1.5 text-xs bg-white border border-[#d6c7b2] rounded-lg text-gray-800"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+            {/* Modal Footer */}
+            <div className="mt-5 pt-3 border-t border-[#f0e6d6] flex items-center justify-between">
+              <button
+                type="button"
+                onClick={handleReset}
+                className="flex items-center gap-1.5 text-xs font-semibold text-[#8a5d3b] hover:text-[#241710] transition-colors"
+              >
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>Reset to Default</span>
+              </button>
+              
+              <button
+                type="button"
+                onClick={() => setShowImageModal(false)}
+                className="px-5 py-2 bg-[#241710] hover:bg-[#3d271c] text-white font-semibold text-xs rounded-lg transition-colors cursor-pointer"
+              >
+                Done
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };
+
 
