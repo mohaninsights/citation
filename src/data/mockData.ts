@@ -1,4 +1,5 @@
 import { ServiceItem, TestimonialItem, FaqItem, DelhiArea, ArticleItem } from '../types';
+import careerGuidanceImg from '../assets/images/regenerated_image_1788178301036.webp';
 
 export const SERVICES_LIST: ServiceItem[] = [
   {
@@ -6,7 +7,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     title: 'Career Guidance',
     description: 'Find the right career path, job timing & promotions.',
     iconName: 'Briefcase',
-    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80',
+    imageUrl: careerGuidanceImg,
     category: 'Career & Wealth',
     badge: 'High Demand',
     highlightTags: ['10th House Karma', 'Job & Promotion', 'Govt Exam'],
@@ -234,7 +235,7 @@ export const TESTIMONIALS_LIST: TestimonialItem[] = [
     name: 'Vikram Malhotra',
     location: 'South Delhi',
     rating: 5,
-    quote: 'Acharya Ganesh Ji\'s Vastu guidance for our South Extension home cleared months of stress without breaking any walls.',
+    quote: 'Hanish Bagga\'s Vastu guidance for our South Extension home cleared months of stress without breaking any walls.',
     avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
     serviceCategory: 'Vastu Consultation'
   },
@@ -273,7 +274,7 @@ export const FAQ_LIST: FaqItem[] = [
   {
     id: 'faq-5',
     question: 'Can you predict future accurately?',
-    answer: 'Vedic Astrology is an empirical cosmic science practiced for over 5,000 years. Acharya Ganesh Ji combines multi-chart verification (Lagna, Moon, Navamsha, and Vimshottari Dasha transits) to deliver predictions with a proven 98% accuracy track record.'
+    answer: 'Vedic Astrology is an empirical cosmic science practiced for over 5,000 years. Hanish Bagga combines multi-chart verification (Lagna, Moon, Navamsha, and Vimshottari Dasha transits) to deliver predictions with a proven 98% accuracy track record.'
   }
 ];
 
@@ -312,7 +313,7 @@ export const ARTICLES_LIST: ArticleItem[] = [
     content: [
       'Kundli Matching is not just about counting matching points out of 36; it involves a deep psychological and emotional compatibility study through the Navamsha (D9) chart.',
       'Many people live in unnecessary fear of Manglik Dosha. In authentic Vedic treatises, over 70% of Manglik doshas have natural cancellations depending on placement and the partner’s chart.',
-      'Acharya Ganesh provides clear, practical remedies to overcome delayed marriage and foster understanding between couples.'
+      'Hanish Bagga provides clear, practical remedies to overcome delayed marriage and foster understanding between couples.'
     ]
   },
   {

@@ -18,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           </div>
           <div className="flex flex-col">
             <span className="font-serif-title font-bold text-lg sm:text-xl text-[#2b2118] tracking-tight leading-none group-hover:text-[#b5681c] transition-colors">
-              Acharya Ganesh
+              Hanish Bagga
             </span>
             <span className="text-[10px] sm:text-[11px] tracking-wider uppercase text-[#b3681b] font-semibold mt-0.5">
               Celebrity Vedic Astrologer

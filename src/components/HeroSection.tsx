@@ -5,7 +5,7 @@ import hanumanPureBg from '../assets/images/karol_bagh_hanuman_statue_pure_17881
 import hanumanFrontCloseBg from '../assets/images/karol_bagh_hanuman_front_close_1788173133646.jpg';
 import hanumanTwilightBg from '../assets/images/karol_bagh_hanuman_twilight_1788173155256.jpg';
 import hanumanWideBg from '../assets/images/karol_bagh_hanuman_statue_delhi_1788172818530.jpg';
-import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788174954609.jpg';
+import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788176044195.jpg';
 import portraitIndiaGateDesktop from '../assets/images/delhi_acharya_ganesh_india_gate_1788170672200.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_person_cutout_clean.png';
 import portraitCutout from '../assets/images/astrologer_person_cutout_1788159948116.jpg';
@@ -26,31 +26,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   // Available Astrologer Presets
   const personPresets: ImagePreset[] = [
     {
-      id: 'acharya-india-gate',
-      name: 'Acharya Ganesh (Vedic Portrait)',
+      id: 'hanish-india-gate',
+      name: 'Hanish Bagga (Vedic Portrait)',
       subtitle: 'Celebrity Vedic Astrologer in Delhi',
       src: portraitIndiaGateMobile
     },
     {
-      id: 'acharya-india-gate-wide',
-      name: 'Acharya Ganesh (Delhi Heritage)',
+      id: 'hanish-india-gate-wide',
+      name: 'Hanish Bagga (Delhi Heritage)',
       subtitle: 'Delhi Sunset Atmosphere',
       src: portraitIndiaGateDesktop
     },
     {
-      id: 'acharya-png',
-      name: 'Acharya Ganesh (Classic Cutout)',
+      id: 'hanish-png',
+      name: 'Hanish Bagga (Classic Cutout)',
       subtitle: 'Red Shawl & Kundli Chart',
       src: portraitPng
     },
     {
-      id: 'acharya-vest',
-      name: 'Acharya Ganesh (Golden Vest)',
+      id: 'hanish-vest',
+      name: 'Hanish Bagga (Golden Vest)',
       subtitle: 'Vedic & Vastu Expert',
       src: portraitCutout
     },
     {
-      id: 'acharya-senior',
+      id: 'hanish-senior',
       name: 'Senior Vedic Acharya',
       subtitle: 'Namaste Blessing',
       src: portraitSenior
@@ -93,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
   const [personImage, setPersonImage] = useState<string>(portraitIndiaGateMobile);
   const [hanumanImage, setHanumanImage] = useState<string>(hanumanChestOpenBg);
-  const [personName, setPersonName] = useState<string>('Acharya Ganesh');
+  const [personName, setPersonName] = useState<string>('Hanish Bagga');
   const [personTitle, setPersonTitle] = useState<string>('Vedic Astro Vastu Expert');
   const [showImageModal, setShowImageModal] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'hanuman' | 'person'>('hanuman');
@@ -161,7 +161,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   const handleReset = () => {
     setPersonImage(portraitIndiaGateMobile);
     setHanumanImage(hanumanChestOpenBg);
-    setPersonName('Acharya Ganesh');
+    setPersonName('Hanish Bagga');
     setPersonTitle('Vedic Astro Vastu Expert');
     setShowImageModal(false);
   };
@@ -208,7 +208,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             </div>
             <div className="flex flex-col">
               <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
-                Acharya Ganesh
+                Hanish Bagga
               </span>
               <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide">
                 Celebrity Vedic Astrologer

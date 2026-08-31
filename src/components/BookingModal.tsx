@@ -78,7 +78,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 Book Vedic Consultation
               </h3>
               <p className="text-xs text-[#d1b89d]">
-                1-on-1 Confidential Guidance with Acharya Ganesh
+                1-on-1 Confidential Guidance with Hanish Bagga
               </p>
             </div>
           </div>
@@ -265,7 +265,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </h4>
 
               <p className="text-xs sm:text-sm text-[#5d493a] max-w-md mx-auto leading-relaxed">
-                Thank you <strong className="text-[#2b1f15]">{formData.fullName}</strong>. Acharya Ganesh Ji's Delhi coordination desk will connect with you on <strong className="text-[#2b1f15]">{formData.mobileNumber}</strong> within 15 minutes to share the Google Meet / In-person appointment link.
+                Thank you <strong className="text-[#2b1f15]">{formData.fullName}</strong>. Hanish Bagga's Delhi coordination desk will connect with you on <strong className="text-[#2b1f15]">{formData.mobileNumber}</strong> within 15 minutes to share the Google Meet / In-person appointment link.
               </p>
 
               <div className="bg-[#faf6ee] p-4 rounded-xl border border-[#e5d6c1] text-xs text-left max-w-md mx-auto space-y-1.5">

@@ -52,7 +52,7 @@ export default function App() {
         {/* 4. Our Astrology Services: 8 Grid Cards */}
         <ServicesSection onSelectService={(srv) => setActiveServiceModal(srv)} />
 
-        {/* 5. Why People in Delhi Trust Acharya Ganesh? + Featured On TV + Google Reviews */}
+        {/* 5. Why People in Delhi Trust Hanish Bagga? + Featured On TV + Google Reviews */}
         <WhyTrustSection />
 
         {/* 6. How Our Consultation Works: 6 Step Flow */}

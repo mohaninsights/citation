@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif-title font-bold text-xl text-[#221810] leading-none">
-                  Acharya Ganesh
+                  Hanish Bagga
                 </span>
                 <span className="text-[10px] tracking-wider uppercase text-[#b3681b] font-semibold mt-1">
                   Celebrity Vedic Astrologer
@@ -154,7 +154,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
         {/* Bottom Copyright & Legal Links */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#735e4e] gap-3">
-          <p>© 2025 Acharya Ganesh. All Rights Reserved.</p>
+          <p>© 2025 Hanish Bagga. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-[#b3681b] transition-colors">Privacy Policy</a>
             <span>•</span>

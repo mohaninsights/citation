@@ -32,7 +32,7 @@ export const WhyTrustSection: React.FC = () => {
               <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-[#decbb2]">
                 <img
                   src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=700&auto=format&fit=crop&q=80"
-                  alt="Acharya Ganesh Vedic Astrologer"
+                  alt="Hanish Bagga Vedic Astrologer"
                   className="w-full h-full object-cover object-top filter contrast-[1.05]"
                   referrerPolicy="no-referrer"
                 />
@@ -49,10 +49,10 @@ export const WhyTrustSection: React.FC = () => {
             {/* Content Column */}
             <div className="w-full md:w-7/12 flex flex-col justify-center">
               <h2 className="font-serif-title text-2xl sm:text-3xl font-bold text-[#231912] leading-tight mb-3">
-                Why People in Delhi Trust Acharya Ganesh?
+                Why People in Delhi Trust Hanish Bagga?
               </h2>
               <p className="text-xs sm:text-sm text-[#665243] leading-relaxed mb-5">
-                Acharya Ganesh Ji combines ancient Vedic wisdom with modern understanding to provide accurate predictions and practical remedies.
+                Hanish Bagga combines ancient Vedic wisdom with modern understanding to provide accurate predictions and practical remedies.
               </p>
 
               {/* 6 Trust Points with Gold Checks */}

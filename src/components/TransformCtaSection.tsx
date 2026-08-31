@@ -71,7 +71,7 @@ export const TransformCtaSection: React.FC<TransformCtaSectionProps> = ({ onOpen
             </h2>
             
             <p className="text-xs sm:text-sm text-[#cbd5e1] leading-relaxed max-w-lg">
-              Book a consultation with Acharya Ganesh Ji today and take the first step towards a better tomorrow.
+              Book a consultation with Hanish Bagga today and take the first step towards a better tomorrow.
             </p>
 
             {/* 4 Badges */}

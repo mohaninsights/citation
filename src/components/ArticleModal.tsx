@@ -56,7 +56,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
             <span>•</span>
             <span className="flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5 text-[#b3681b]" />
-              By Acharya Ganesh
+              By Hanish Bagga
             </span>
           </div>
 
@@ -70,7 +70,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
               Need personalized Vedic guidance on this topic?
             </h4>
             <p className="text-xs text-[#635041]">
-              Consult Acharya Ganesh Ji to analyze your specific birth chart (Kundli) and receive customized Vedic gemstone & mantra remedies.
+              Consult Hanish Bagga to analyze your specific birth chart (Kundli) and receive customized Vedic gemstone & mantra remedies.
             </p>
             <button
               onClick={() => {
