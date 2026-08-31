@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon, MapPin, Sparkles } from 'lucide-react';
-import bannerBg from '../assets/images/delhi_astrologer_banner_1788159520467.jpg';
+import bannerBg from '../assets/images/delhi_india_gate_pure_scenery_1788172181656.jpg';
 import indiaGateSunsetBg from '../assets/images/delhi_india_gate_sunset_1788159975571.jpg';
+import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788172234610.webp';
 import portraitIndiaGateDesktop from '../assets/images/delhi_acharya_ganesh_india_gate_1788170672200.jpg';
-import portraitIndiaGateMobile from '../assets/images/delhi_astrologer_india_gate_mobile_1788170688819.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_person_cutout_clean.png';
 import portraitCutout from '../assets/images/astrologer_person_cutout_1788159948116.jpg';
 import portraitSenior from '../assets/images/astrologer_person_portrait_2_1788159992121.jpg';
@@ -56,7 +56,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
   const [personImage, setPersonImage] = useState<string>(portraitIndiaGateMobile);
   const [personName, setPersonName] = useState<string>('Acharya Ganesh');
-  const [personTitle, setPersonTitle] = useState<string>('CELEBRITY VEDIC ASTROLOGER & VASTU SHASTRA MENTOR');
+  const [personTitle, setPersonTitle] = useState<string>('Vedic Astro Vastu Expert');
   const [showImageModal, setShowImageModal] = useState<boolean>(false);
   const [customUrlInput, setCustomUrlInput] = useState<string>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -107,7 +107,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   const handleReset = () => {
     setPersonImage(portraitIndiaGateMobile);
     setPersonName('Acharya Ganesh');
-    setPersonTitle('CELEBRITY VEDIC ASTROLOGER & VASTU SHASTRA MENTOR');
+    setPersonTitle('Vedic Astro Vastu Expert');
     setShowImageModal(false);
   };
 
