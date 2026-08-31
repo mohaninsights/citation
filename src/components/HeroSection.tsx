@@ -5,7 +5,7 @@ import hanumanPureBg from '../assets/images/karol_bagh_hanuman_statue_pure_17881
 import hanumanFrontCloseBg from '../assets/images/karol_bagh_hanuman_front_close_1788173133646.jpg';
 import hanumanTwilightBg from '../assets/images/karol_bagh_hanuman_twilight_1788173155256.jpg';
 import hanumanWideBg from '../assets/images/karol_bagh_hanuman_statue_delhi_1788172818530.jpg';
-import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788172234610.webp';
+import portraitIndiaGateMobile from '../assets/images/regenerated_image_1788174954609.jpg';
 import portraitIndiaGateDesktop from '../assets/images/delhi_acharya_ganesh_india_gate_1788170672200.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_person_cutout_clean.png';
 import portraitCutout from '../assets/images/astrologer_person_cutout_1788159948116.jpg';
@@ -215,44 +215,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </span>
             </div>
           </div>
-
-          {/* Right Floating Google Rating Badge & Quick Change Hanuman Button */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                setActiveTab('hanuman');
-                setShowImageModal(true);
-              }}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-black/60 hover:bg-black/80 backdrop-blur-md border border-[#e2a850]/70 text-[#fde3ba] text-[10px] sm:text-xs font-bold shadow-md transition-all cursor-pointer"
-              title="Change Hanuman Mandir image"
-            >
-              <ImageIcon className="w-3.5 h-3.5 text-[#f59e0b]" />
-              <span className="hidden sm:inline">Change Hanuman Image</span>
-              <span className="sm:hidden">Hanuman Photo</span>
-            </button>
-
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-lg sm:rounded-xl border border-[#e3d4c0] shadow-xs">
-              <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1">
-                  <span className="font-bold text-xs sm:text-sm text-[#241710] leading-none">4.9/5</span>
-                  <div className="flex text-[#f59e0b]">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-[11px] leading-none">★</span>
-                    ))}
-                  </div>
-                </div>
-                <span className="text-[9px] text-[#786454] leading-none mt-0.5">Google Rating</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Main Banner Grid Content */}
@@ -340,62 +302,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Buttons: Book Consultation, Change Hanuman Image, Change Person Photo */}
-              <div className="pt-1.5 flex flex-wrap items-center gap-2.5">
+              {/* Book Consultation Button */}
+              <div className="pt-2 flex items-center">
                 <button
                   onClick={() => onOpenBooking()}
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 bg-gradient-to-r from-[#b3681b] via-[#a35c15] to-[#8d4b0d] hover:from-[#9e5a14] hover:to-[#783e09] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98]"
                 >
-                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <Calendar className="w-4 h-4" />
                   <span>Book Consultation</span>
                 </button>
-
-                <button
-                  onClick={() => {
-                    setActiveTab('hanuman');
-                    setShowImageModal(true);
-                  }}
-                  className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white hover:bg-[#faf4ec] text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
-                  title="Change Karol Bagh Hanuman Mandir background image"
-                >
-                  <ImageIcon className="w-3.5 h-3.5 text-[#e07010]" />
-                  <span>Change Hanuman Image</span>
-                </button>
-
-                <button
-                  onClick={() => {
-                    setActiveTab('person');
-                    setShowImageModal(true);
-                  }}
-                  className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2.5 sm:py-3 bg-white hover:bg-[#faf4ec] text-[#573e2c] hover:text-[#9e5a14] font-semibold text-xs rounded-xl border border-[#d6c7b2] shadow-xs transition-all duration-150 cursor-pointer"
-                  title="Change person photo"
-                >
-                  <Camera className="w-3.5 h-3.5 text-[#a85c14]" />
-                  <span>Change Person Photo</span>
-                </button>
-              </div>
-
-              {/* Quick Hanuman Image Preset Switcher Strip */}
-              <div className="pt-2 flex items-center gap-2 overflow-x-auto pb-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#705542] flex-shrink-0">
-                  Hanuman Views:
-                </span>
-                <div className="flex items-center gap-1.5">
-                  {hanumanPresets.map((hp) => (
-                    <button
-                      key={hp.id}
-                      onClick={() => setHanumanImage(hp.src)}
-                      className={`relative w-11 h-8 rounded-md overflow-hidden border transition-all cursor-pointer flex-shrink-0 ${
-                        hanumanImage === hp.src
-                          ? 'border-[#e07010] ring-2 ring-[#e07010]/50 scale-105'
-                          : 'border-[#d0beab] opacity-75 hover:opacity-100 hover:border-[#b3681b]'
-                      }`}
-                      title={hp.name}
-                    >
-                      <img src={hp.src} alt={hp.name} className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
               </div>
 
             </div>
@@ -405,14 +320,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               
               <div className="relative group w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] flex flex-col items-center">
                 
-                {/* Floating Delhi Landmark Badge on top-right */}
-                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30 flex items-center gap-1.5">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-[#e2a850]/70 text-[#fde3ba] text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-lg">
-                    <MapPin className="w-3 h-3 text-[#f59e0b]" />
-                    <span>Karol Bagh, Delhi</span>
-                  </div>
-                </div>
-
                 {/* Person Portrait Container */}
                 <div className="relative z-10 w-full rounded-2xl overflow-hidden border-2 border-[#d4994e]/60 bg-gradient-to-b from-[#2a1a0f] via-[#1a0e06] to-[#0d0704] shadow-2xl">
                   
