@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Calendar, Users, ShieldCheck, Camera, Upload, RefreshCw, X, Check, Image as ImageIcon, Link as LinkIcon, MapPin, Sparkles } from 'lucide-react';
 import indiaGateBg from '../assets/images/delhi_india_gate_sunset_1788159975571.jpg';
+import indiaGateCentered from '../assets/images/delhi_india_gate_centered.jpg';
 import portraitPng from '../assets/images/acharya_ganesh_cutout_trimmed.png';
 import portraitCutout from '../assets/images/astrologer_person_cutout_1788159948116.jpg';
 import portraitSenior from '../assets/images/astrologer_person_portrait_2_1788159992121.jpg';
@@ -303,8 +304,70 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               {/* Person Image Container with Dedicated Vedic Kundli & Delhi Sunset Halo */}
               <div className="relative group w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] flex flex-col items-center">
                 
-                {/* Luminous Vedic Astrology Chart (Kundli & Zodiac Wheel) + India Gate Halo Backdrop */}
-                <div className="absolute inset-0 -top-6 sm:-top-8 flex items-center justify-center pointer-events-none z-0">
+                {/* --- MOBILE VIEW: Dedicated India Gate Landmark Portal + Vedic Kundli Chart (lg:hidden) --- */}
+                <div className="lg:hidden absolute inset-0 -top-5 flex items-center justify-center pointer-events-none z-0">
+                  {/* Glowing Sunset Radial Aura */}
+                  <div className="w-[290px] h-[290px] sm:w-[330px] sm:h-[330px] rounded-full bg-gradient-to-tr from-[#e67e22]/35 via-[#f39c12]/45 to-[#f1c40f]/25 blur-xl animate-pulse opacity-90" />
+
+                  {/* Real India Gate Monument Archway Frame for Mobile View */}
+                  <div className="absolute w-[250px] h-[260px] sm:w-[290px] sm:h-[300px] rounded-t-full rounded-b-2xl overflow-hidden border-2 border-[#d4994e]/70 shadow-2xl bg-[#23150c]">
+                    <img
+                      src={indiaGateCentered}
+                      alt="Delhi India Gate Monument Sunset"
+                      className="w-full h-full object-cover object-[center_30%] filter brightness-[1.05] contrast-[1.08]"
+                      referrerPolicy="no-referrer"
+                    />
+                    {/* Amber / Sunset Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#20130a]/85 via-transparent to-black/25" />
+                    
+                    {/* Golden Delhi Landmark Badge on Arch Top */}
+                    <div className="absolute top-2 inset-x-0 text-center">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-black/65 backdrop-blur-xs text-[#ffd28e] text-[9px] font-bold tracking-wider uppercase border border-[#d4994e]/50 shadow-md">
+                        <MapPin className="w-2.5 h-2.5 text-[#e6af6c]" />
+                        <span>India Gate, Delhi</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Golden Vedic Kundli & Celestial Zodiac Chart Overlay on Mobile */}
+                  <div className="absolute w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] text-[#ffd79e] drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+                    <svg viewBox="0 0 200 200" className="w-full h-full" fill="none" stroke="currentColor">
+                      {/* Outer Cosmic Ring */}
+                      <circle cx="100" cy="100" r="95" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.85" />
+                      <circle cx="100" cy="100" r="88" strokeWidth="1.5" />
+                      <circle cx="100" cy="100" r="74" strokeWidth="1" opacity="0.75" />
+
+                      {/* Traditional Vedic Kundli Diamond Chart Frame */}
+                      <rect x="36" y="36" width="128" height="128" strokeWidth="1.8" stroke="#ffe0a3" fill="none" />
+                      {/* Inner Rotated Diamond (Lagna & 4 Kendra Houses) */}
+                      <polygon points="100,36 164,100 100,164 36,100" strokeWidth="1.8" stroke="#ffe0a3" fill="rgba(212, 153, 78, 0.12)" />
+                      {/* Diagonal Cross Lines */}
+                      <line x1="36" y1="36" x2="164" y2="164" strokeWidth="1.5" stroke="#ffe0a3" />
+                      <line x1="36" y1="164" x2="164" y2="36" strokeWidth="1.5" stroke="#ffe0a3" />
+                      
+                      {/* Central Auspicious Surya Mandala / Sun */}
+                      <circle cx="100" cy="100" r="16" strokeWidth="1.8" stroke="#ffe0a3" fill="rgba(243, 156, 18, 0.35)" />
+                      <circle cx="100" cy="100" r="8" fill="#ffd79e" />
+
+                      {/* 12 Sun Rays radiating outwards */}
+                      {[...Array(12)].map((_, i) => (
+                        <line
+                          key={i}
+                          x1="100"
+                          y1="8"
+                          x2="100"
+                          y2="22"
+                          strokeWidth="1.8"
+                          transform={`rotate(${i * 30} 100 100)`}
+                          stroke="#ffd79e"
+                        />
+                      ))}
+                    </svg>
+                  </div>
+                </div>
+
+                {/* --- DESKTOP VIEW: Untouched Halo Backdrop (hidden lg:flex) --- */}
+                <div className="hidden lg:flex absolute inset-0 -top-6 sm:-top-8 items-center justify-center pointer-events-none z-0">
                   {/* Warm Sunset Radial Aura */}
                   <div className="w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full bg-gradient-to-tr from-[#e67e22]/25 via-[#f39c12]/35 to-[#f1c40f]/20 blur-xl animate-pulse opacity-80" />
 
