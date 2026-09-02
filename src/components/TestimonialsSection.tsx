@@ -1,6 +1,36 @@
 import React, { useState } from 'react';
+import { motion, type Variants } from 'motion/react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { TESTIMONIALS_LIST } from '../data/mockData';
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 240,
+      damping: 22,
+    },
+  },
+};
 
 export const TestimonialsSection: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
@@ -18,11 +48,17 @@ export const TestimonialsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: -16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-10"
+        >
           <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-[#271b12] tracking-tight">
             What Our Clients Say
           </h2>
-        </div>
+        </motion.div>
 
         {/* Carousel / Multi-Card Row */}
         <div className="relative">
@@ -44,11 +80,19 @@ export const TestimonialsSection: React.FC = () => {
           </button>
 
           {/* 4 Cards Grid matching exact layout in the image */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 px-2">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 px-2"
+          >
             {TESTIMONIALS_LIST.slice(0, 4).map((testimonial) => (
-              <div
+              <motion.div
                 key={testimonial.id}
-                className="bg-white rounded-xl p-5 border border-[#e5d8c6] shadow-2xs flex flex-col justify-between hover:shadow-md hover:border-[#c97a29]/50 transition-all duration-300 relative group"
+                variants={cardVariants}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className="bg-white rounded-xl p-5 border border-[#e5d8c6] shadow-2xs flex flex-col justify-between hover:shadow-md hover:border-[#c97a29]/50 transition-colors duration-300 relative group"
               >
                 <div>
                   {/* Top: Avatar & 5 Stars */}
@@ -78,9 +122,9 @@ export const TestimonialsSection: React.FC = () => {
                     — {testimonial.name}, {testimonial.location}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
       </div>

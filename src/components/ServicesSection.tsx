@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, type Variants } from 'motion/react';
 import { 
   Briefcase, 
   HeartHandshake, 
@@ -24,6 +25,50 @@ interface ServicesSectionProps {
   onSelectService: (service: ServiceItem) => void;
   onBookDirect?: (serviceTitle: string) => void;
 }
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    scale: 0.93,
+    filter: 'blur(4px)',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      type: 'spring',
+      stiffness: 260,
+      damping: 24,
+      mass: 0.75,
+    },
+  },
+};
+
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectService, onBookDirect }) => {
 
@@ -78,7 +123,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-8">
+        <motion.div 
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-center max-w-3xl mx-auto mb-7 sm:mb-8"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#f6ebdc] border border-[#e2d0ba] text-[#9c5914] text-[11px] font-bold tracking-wide uppercase mb-2">
             <Sparkles className="w-3 h-3 text-[#b3681b]" />
             <span>Divine Vedic Solutions</span>
@@ -90,15 +141,27 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           <p className="mt-1.5 text-xs sm:text-sm text-[#6f5a49] font-medium max-w-xl mx-auto">
             Accurate, confidential &amp; tailored Vedic guidance with practical, result-driven remedies.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Compact Service Cards Grid with Only Service Name */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4.5">
+        {/* Compact Service Cards Grid with One-by-One Staggered Entry Animation */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.05 }}
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4.5"
+        >
           {SERVICES_LIST.map((service) => (
-            <div
+            <motion.div
               key={service.id}
+              variants={cardVariants}
+              whileHover={{ 
+                y: -6,
+                transition: { duration: 0.25, ease: [0.25, 1, 0.5, 1] } 
+              }}
+              whileTap={{ scale: 0.97 }}
               onClick={() => onSelectService(service)}
-              className="group bg-white rounded-xl sm:rounded-2xl border border-[#e5d8c7] shadow-xs hover:shadow-xl hover:border-[#c97a29] transition-all duration-300 flex flex-col overflow-hidden cursor-pointer hover:-translate-y-1"
+              className="group bg-white rounded-xl sm:rounded-2xl border border-[#e5d8c7] shadow-xs hover:shadow-xl hover:border-[#c97a29] transition-colors duration-300 flex flex-col overflow-hidden cursor-pointer"
             >
               {/* Short Compact Image Container */}
               <div className="relative h-24 sm:h-28 lg:h-32 w-full overflow-hidden bg-[#241710]">
@@ -132,9 +195,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom Assurance Note */}
         <div className="mt-8 text-center">
