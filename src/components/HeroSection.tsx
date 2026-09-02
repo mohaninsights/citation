@@ -188,37 +188,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
         </div>
 
-        {/* Top Header Bar Inside Banner */}
-        <div className="relative z-20 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 flex items-center justify-between">
-          {/* Left Brand Identity */}
-          <div className="flex items-center gap-2.5">
-            {/* Intricate Golden Vedic Mandala Icon */}
-            <div className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 flex items-center justify-center text-[#b3681b]">
-              <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-xs" fill="currentColor">
-                <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" strokeWidth="4" />
-                <circle cx="50" cy="50" r="8" fill="currentColor" />
-                <circle cx="50" cy="28" r="28" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 3" />
-                {[...Array(12)].map((_, i) => (
-                  <g key={i} transform={`rotate(${i * 30} 50 50)`}>
-                    <polygon points="50,4 53,20 47,20" fill="currentColor" />
-                    <circle cx="50" cy="24" r="2" fill="currentColor" />
-                  </g>
-                ))}
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
-                Hanish Bagga
-              </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide">
-                Astro Vastu Expert
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* Main Banner Grid Content */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 pb-4 sm:pb-6">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-4 sm:pb-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             {/* Left Column: Heading, Metrics, Checkpoints & Consultation CTA */}
