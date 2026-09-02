@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   };
 
   return (
-    <footer className="bg-[#faf7f2] border-t border-[#e2d5c3] pt-12 pb-8 text-[#3c2e22]">
+    <footer className="bg-[#faf7f2] border-t border-[#e2d5c3] pt-8 pb-6 text-[#3c2e22]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main 5-Column Grid */}

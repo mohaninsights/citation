@@ -188,8 +188,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
         </div>
 
+        {/* Top Header Bar Inside Banner */}
+        <div className="relative z-20 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 flex items-center justify-between">
+          {/* Left Brand Identity */}
+          <div className="flex flex-col">
+            <span className="font-serif-title font-bold text-lg sm:text-xl text-[#241710] tracking-tight leading-tight">
+              Hanish Bagga
+            </span>
+            <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide">
+              Astro Vastu Expert
+            </span>
+          </div>
+        </div>
+
         {/* Main Banner Grid Content */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-4 sm:pb-6">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3 pb-4 sm:pb-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             {/* Left Column: Heading, Metrics, Checkpoints & Consultation CTA */}

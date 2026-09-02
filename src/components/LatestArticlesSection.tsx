@@ -39,7 +39,7 @@ const cardVariants: Variants = {
 
 export const LatestArticlesSection: React.FC<LatestArticlesSectionProps> = ({ onSelectArticle }) => {
   return (
-    <section className="py-14 sm:py-18 bg-[#faf7f2]">
+    <section className="py-6 sm:py-8 bg-[#faf7f2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Top: Title Left, View All Button Right */}
