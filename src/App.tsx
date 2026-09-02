@@ -9,6 +9,7 @@ import { VideoSection } from './components/VideoSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { SeoContentSection } from './components/SeoContentSection';
+import { QuestionCtaSection } from './components/QuestionCtaSection';
 import { FaqAndAreasSection } from './components/FaqAndAreasSection';
 import { LatestArticlesSection } from './components/LatestArticlesSection';
 import { Footer } from './components/Footer';
@@ -72,7 +73,10 @@ export default function App() {
         {/* 10. 500+ Words SEO-Friendly Guide on Vedic Astrology & Astro Vastu in Delhi */}
         <SeoContentSection />
 
-        {/* 11. Frequently Asked Questions + Serving All Areas of Delhi NCR */}
+        {/* 11. Still Have a Question Regarding Consultation in Delhi? CTA Banner */}
+        <QuestionCtaSection onOpenBooking={handleOpenBooking} />
+
+        {/* 12. Frequently Asked Questions + Serving All Areas of Delhi NCR */}
         <FaqAndAreasSection />
 
         {/* 12. Latest Articles: 4 Grid Cards */}

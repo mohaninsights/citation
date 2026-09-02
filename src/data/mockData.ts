@@ -259,20 +259,6 @@ export const HOW_IT_WORKS_STEPS = [
     subtitle: '(Call / Video)',
     icon: 'PhoneCall',
     description: 'Engage in a deep 1-on-1 confidential session with clear answers to all your life questions.'
-  },
-  {
-    step: 5,
-    title: '5. Remedies',
-    subtitle: '& Guidance',
-    icon: 'Sparkles',
-    description: 'Receive personalized, practical, non-fear based Vedic remedies and clear action items.'
-  },
-  {
-    step: 6,
-    title: '6. Follow Up',
-    subtitle: 'Support',
-    icon: 'Headphones',
-    description: 'Enjoy complimentary follow-up support to track improvements and adjust remedies.'
   }
 ];
 
