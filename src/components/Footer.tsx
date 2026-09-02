@@ -98,11 +98,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               Our Services
             </h4>
             <ul className="space-y-2 text-xs text-[#675445] font-medium">
-              <li><button onClick={() => onOpenBooking('Career Guidance')} className="hover:text-[#b3681b] transition-colors text-left">Career Guidance</button></li>
-              <li><button onClick={() => onOpenBooking('Marriage Solutions')} className="hover:text-[#b3681b] transition-colors text-left">Marriage Solutions</button></li>
-              <li><button onClick={() => onOpenBooking('Legal Astrology')} className="hover:text-[#b3681b] transition-colors text-left">Legal Astrology</button></li>
-              <li><button onClick={() => onOpenBooking('Business Astrology')} className="hover:text-[#b3681b] transition-colors text-left">Business Astrology</button></li>
-              <li><button onClick={() => onOpenBooking('Vastu Consultation')} className="hover:text-[#b3681b] transition-colors text-left">Vastu Consultation</button></li>
+              <li><button onClick={() => onOpenBooking('Career Astrology')} className="hover:text-[#b3681b] transition-colors text-left">Career Astrology</button></li>
+              <li><button onClick={() => onOpenBooking('Match Making')} className="hover:text-[#b3681b] transition-colors text-left">Match Making</button></li>
+              <li><button onClick={() => onOpenBooking('Litigation Astrology')} className="hover:text-[#b3681b] transition-colors text-left">Litigation Astrology</button></li>
+              <li><button onClick={() => onOpenBooking('Muhurta Consultation')} className="hover:text-[#b3681b] transition-colors text-left">Muhurta Consultation</button></li>
+              <li><button onClick={() => onOpenBooking('Health Astrology')} className="hover:text-[#b3681b] transition-colors text-left">Health Astrology</button></li>
+              <li><button onClick={() => onOpenBooking('Astrology Guidance')} className="hover:text-[#b3681b] transition-colors text-left">Astrology Guidance</button></li>
             </ul>
           </div>
 

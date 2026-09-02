@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Briefcase, 
   HeartHandshake, 
@@ -23,25 +23,6 @@ interface ServicesSectionProps {
 }
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectService, onBookDirect }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-
-  const categories = [
-    { id: 'All', label: 'All Services', count: SERVICES_LIST.length },
-    { id: 'Career & Wealth', label: 'Career & Wealth', count: 2 },
-    { id: 'Legal & Disputes', label: 'Legal Astrology', count: 1 },
-    { id: 'Love & Family', label: 'Marriage Solutions', count: 1 },
-    { id: 'Business & Growth', label: 'Business & Numerology', count: 2 },
-    { id: 'Wellness & Energy', label: 'Health & Vastu', count: 2 },
-  ];
-
-  const filteredServices = activeCategory === 'All' 
-    ? SERVICES_LIST 
-    : SERVICES_LIST.filter(s => {
-        if (activeCategory === 'Wellness & Energy') {
-          return s.category === 'Wellness & Mind' || s.category === 'Space & Energy';
-        }
-        return s.category === activeCategory;
-      });
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -53,6 +34,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return <Heart className="w-5 h-5" />;
       case 'Scale':
         return <Scale className="w-5 h-5" />;
+      case 'Calendar':
+        return <Calendar className="w-5 h-5" />;
       case 'TrendingUp':
         return <TrendingUp className="w-5 h-5" />;
       case 'Activity':
@@ -63,8 +46,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return <Home className="w-5 h-5" />;
       case 'Grid':
         return <Grid className="w-5 h-5" />;
+      case 'Sparkles':
+        return <Sparkles className="w-5 h-5" />;
       default:
-        return <Briefcase className="w-5 h-5" />;
+        return <Sparkles className="w-5 h-5" />;
     }
   };
 
@@ -96,33 +81,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           <p className="mt-1.5 text-xs sm:text-sm text-[#6f5a49] font-medium max-w-xl mx-auto">
             Accurate, confidential &amp; tailored Vedic guidance with practical, result-driven remedies.
           </p>
-
-          {/* Interactive Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-5">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
-                  activeCategory === cat.id
-                    ? 'bg-[#241710] text-[#f7d7a4] shadow-xs scale-[1.01] border border-[#d4994e]/50'
-                    : 'bg-white/85 text-[#5e4b3d] hover:bg-white hover:text-[#241710] border border-[#e8ded0] shadow-2xs'
-                }`}
-              >
-                <span>{cat.label}</span>
-                <span className={`text-[9px] px-1.5 py-0.2 rounded-full font-bold ${
-                  activeCategory === cat.id ? 'bg-[#d4994e] text-[#241710]' : 'bg-[#f0e4d2] text-[#705a49]'
-                }`}>
-                  {cat.count}
-                </span>
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Compact Service Cards Grid with Only Service Name */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4.5">
-          {filteredServices.map((service) => (
+          {SERVICES_LIST.map((service) => (
             <div
               key={service.id}
               onClick={() => onSelectService(service)}

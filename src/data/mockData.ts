@@ -2,11 +2,17 @@ import { ServiceItem, TestimonialItem, FaqItem, DelhiArea, ArticleItem } from '.
 import careerGuidanceImg from '../assets/images/regenerated_image_1788178301036.webp';
 import marriageSolutionsImg from '../assets/images/regenerated_image_1788180058561.webp';
 import healthPredictionsImg from '../assets/images/regenerated_image_1788179027010.webp';
+import legalAstrologyImg from '../assets/images/regenerated_image_1788325376258.webp';
+import muhurtaImg from '../assets/images/regenerated_image_1788325549625.webp';
+import wealthAstrologyImg from '../assets/images/regenerated_image_1788325991964.webp';
+import vastuConsultationImg from '../assets/images/regenerated_image_1788326310122.webp';
+import loveAstrologyImg from '../assets/images/regenerated_image_1788327796760.webp';
+import astrologyGuidanceImg from '../assets/images/regenerated_image_1788327798134.webp';
 
 export const SERVICES_LIST: ServiceItem[] = [
   {
-    id: 'career-guidance',
-    title: 'Career Guidance',
+    id: 'career-astrology',
+    title: 'Career Astrology',
     description: 'Find the right career path, job timing & promotions.',
     iconName: 'Briefcase',
     imageUrl: careerGuidanceImg,
@@ -23,29 +29,29 @@ export const SERVICES_LIST: ServiceItem[] = [
     remediesOffered: ['Specific Gemstone suggestions', 'Mantra Upasana for Sun and Saturn', 'Customized Yantra energization']
   },
   {
-    id: 'marriage-solutions',
-    title: 'Marriage Solutions',
-    description: 'Resolve marriage delays, Manglik dosha & post-marital peace.',
+    id: 'match-making',
+    title: 'Match Making',
+    description: 'Kundli Milan, 36 Guna matching & marriage compatibility.',
     iconName: 'HeartHandshake',
     imageUrl: marriageSolutionsImg,
     category: 'Love & Family',
     badge: '98% Success',
-    highlightTags: ['36 Guna Milan', 'Mangal Dosha', 'Delay Remedies'],
-    longDescription: 'Comprehensive Kundli Milan (Ashtakoot Guna Milan) & analysis of 7th house, Venus & Jupiter to resolve marriage delays, Manglik Dosha, Nadi Dosha, and post-marital harmony issues.',
+    highlightTags: ['36 Guna Milan', 'Mangal Dosha', 'Compatibility'],
+    longDescription: 'Comprehensive Kundli Milan (Ashtakoot Guna Milan) & analysis of 7th house, Venus & Jupiter to ensure lasting compatibility, emotional harmony, Manglik Dosha resolution, and prosperous married life.',
     benefits: [
-      'Kundli Milan with in-depth 36 Guna matching',
-      'Effective Mangal Dosha & Nadi Dosha neutralization',
-      'Remedies for delay in finding an ideal life partner',
-      'Restoring peace, trust, and intimacy in married life'
+      'Kundli Milan with in-depth 36 Guna matching and Bhakoot/Nadi analysis',
+      'Effective Mangal Dosha & Nadi Dosha neutralization remedies',
+      'Evaluating emotional, financial, and family compatibility of partners',
+      'Restoring peace, trust, and mutual understanding in married life'
     ],
     remediesOffered: ['Kumbh Vivah guidance if applicable', 'Gauri Shankar Rudraksha recommendation', 'Specific fastings & Shukra puja']
   },
   {
-    id: 'legal-astrology',
-    title: 'Legal Astrology',
+    id: 'litigation-astrology',
+    title: 'Litigation Astrology',
     description: 'Court cases, property disputes, litigation timing & dispute settlements.',
     iconName: 'Scale',
-    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    imageUrl: legalAstrologyImg,
     category: 'Legal & Disputes',
     badge: 'High Precision',
     highlightTags: ['6th House Shatru/Rin', 'Court Victory', 'Dispute Settlement'],
@@ -59,26 +65,26 @@ export const SERVICES_LIST: ServiceItem[] = [
     remediesOffered: ['Baglamukhi Anushthan & Jaap guidance', 'Mars & Saturn balancing remedies', 'Sudarshan Chakra Kavach & energized Yantras']
   },
   {
-    id: 'business-astrology',
-    title: 'Business Astrology',
-    description: 'Grow your enterprise, select partners & minimize financial risk.',
-    iconName: 'TrendingUp',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
-    category: 'Business & Growth',
-    badge: 'Corporate',
-    highlightTags: ['Auspicious Muhurat', 'Partnership Sync', 'Loss Mitigation'],
-    longDescription: 'Leverage planetary transits of Mercury, Jupiter, and Saturn for auspicious business inaugurations, partnership compatibility, cash-flow expansion, and mitigating losses.',
+    id: 'muhurta-consultation',
+    title: 'Muhurta Consultation',
+    description: 'Auspicious timings for marriage, Griha Pravesh, business launch & key milestones.',
+    iconName: 'Calendar',
+    imageUrl: muhurtaImg,
+    category: 'Muhurta & Timing',
+    badge: 'Shubh Muhurat',
+    highlightTags: ['Griha Pravesh', 'Vivah Muhurat', 'Business Launch'],
+    longDescription: 'Unlock the power of cosmic timing with authentic Vedic Shubh Muhurta analysis. Calculate the most auspicious Choghadiya, Nakshatra, Tithi, and Lagna for wedding ceremonies, Griha Pravesh (housewarming), property registration, business inaugurations, and vehicle purchases to maximize success and eliminate obstacles.',
     benefits: [
-      'Auspicious Muhurat for new ventures & office openings',
-      'Partnership compatibility analysis (7th & 11th houses)',
-      'Forecasting high-profit and high-risk periods',
-      'Remedies to recover bad debts and remove business blockages'
+      'Auspicious Vivah (Wedding) & Sagai (Engagement) Muhurats synchronized with both Kundlis',
+      'Griha Pravesh, Bhoomi Pujan & property registration Shubh Muhurats',
+      'High-growth inauguration timings for business ventures, startups & major contracts',
+      'Avoiding Rahu Kaal, Bhadra, Gandmool, and inauspicious planetary transits'
     ],
-    remediesOffered: ['Shree Yantra installation guide', 'Kuber Puja remedies', 'Business name numerology alignment']
+    remediesOffered: ['Personalized Shubh Muhurat Time-Window Report', 'Choghadiya & Hora alignment checklist', 'Sankalp & Shubh Puja vidhi guidelines']
   },
   {
-    id: 'health-predictions',
-    title: 'Health Predictions',
+    id: 'health-astrology',
+    title: 'Health Astrology',
     description: 'Ayur-Jyotish insights for preventive wellness & mental peace.',
     iconName: 'Activity',
     imageUrl: healthPredictionsImg,
@@ -95,11 +101,11 @@ export const SERVICES_LIST: ServiceItem[] = [
     remediesOffered: ['Maha Mrityunjaya Jaap recommendations', 'Ayurvedic gemstone balancing', 'Chakra healing consultation']
   },
   {
-    id: 'finance-wealth',
-    title: 'Finance & Wealth',
+    id: 'wealth-astrology',
+    title: 'Wealth Astrology',
     description: 'Unlock Dhan Yogas, clear debts & attract financial prosperity.',
     iconName: 'IndianRupee',
-    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
+    imageUrl: wealthAstrologyImg,
     category: 'Career & Wealth',
     badge: 'Lakshmi Yoga',
     highlightTags: ['Dhan Bhava', 'Debt Clearance', 'Property Timings'],
@@ -117,7 +123,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     title: 'Vastu Consultation',
     description: 'Non-demolition Vastu remedies for positive Prana energy.',
     iconName: 'Home',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80',
+    imageUrl: vastuConsultationImg,
     category: 'Space & Energy',
     badge: 'Non-Demolition',
     highlightTags: ['Home & Office', 'Ishanya Zone', 'Energy Helix'],
@@ -131,22 +137,40 @@ export const SERVICES_LIST: ServiceItem[] = [
     remediesOffered: ['Copper pyramids & energy helixes', 'Directional mirrors & colors', 'Vastu Yantras for 16 directional zones']
   },
   {
-    id: 'numerology',
-    title: 'Numerology',
-    description: 'Mulank, Bhagyank & name spelling alignment for good luck.',
-    iconName: 'Grid',
-    imageUrl: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop&q=80',
-    category: 'Business & Growth',
-    badge: 'Chaldean',
-    highlightTags: ['Name Correction', 'Lucky Numbers', 'Signature Analysis'],
-    longDescription: 'Harness the cosmic vibrations of your Mulank (Driver), Bhagyank (Conductor), and Name Number (Namank) to attract luck, fame, and harmony.',
+    id: 'love-astrology',
+    title: 'Love Astrology',
+    description: 'Love relationship guidance, break-up recovery & attraction harmony.',
+    iconName: 'Heart',
+    imageUrl: loveAstrologyImg,
+    category: 'Love & Family',
+    badge: 'Relationship',
+    highlightTags: ['5th & 7th House', 'Venus Blessing', 'Emotional Sync'],
+    longDescription: 'Navigate complex love relationships, misunderstandings, long-distance strain, and attraction dynamics through the 5th House (Romance) and 7th House (Partnership) and planetary blessings of Venus and Moon.',
     benefits: [
-      'Name spelling correction for career and marriage success',
-      'Lucky mobile numbers, vehicle numbers, and house numbers',
-      'Lucky colors, favorable dates, and friendly gemstones',
-      'Brand and company name numerological optimization'
+      'Deep relationship compatibility and emotional bonding analysis',
+      'Remedies to overcome communication gaps and relationship turbulence',
+      'Healing after break-ups and guidance for reviving true love',
+      'Astrological insights for inter-caste or family-opposed relationship harmony'
     ],
-    remediesOffered: ['Personalized Chaldean numerology chart', 'Signature analysis & correction', 'Annual numerology forecast']
+    remediesOffered: ['Radha Krishna Stotram & Shukra remedies', 'Rose Quartz & Emerald balancing guidance', 'Personalized relationship harmony yantra']
+  },
+  {
+    id: 'astrology-guidance',
+    title: 'Astrology Guidance',
+    description: 'Comprehensive 360° Kundli reading for destiny, life roadmap & clarity.',
+    iconName: 'Sparkles',
+    imageUrl: astrologyGuidanceImg,
+    category: 'Life & Destiny',
+    badge: 'Comprehensive',
+    highlightTags: ['360° Kundli', 'Life Roadmap', 'Dasha Analysis'],
+    longDescription: 'Deep 360-degree Vedic horoscope assessment analyzing your Lagna chart, Moon chart, Navamsha (D9), and current Vimshottari Mahadasha to illuminate your true life purpose, navigate critical transitions, and clear persistent roadblocks.',
+    benefits: [
+      'Comprehensive 360° Kundli reading covering career, wealth, health & relationships',
+      'Accurate timing of favorable & challenging life phases (Vimshottari Dasha)',
+      'Guidance for major life decisions, relocations, and spiritual alignment',
+      'Customized non-fear based Vedic remedies for holistic peace of mind'
+    ],
+    remediesOffered: ['Personalized Kundli Dasha Report', 'Energized Rudraksha & Yantra recommendations', 'Daily Vedic Mantra & Ishta Devta Upasana']
   }
 ];
 
@@ -203,7 +227,7 @@ export const TESTIMONIALS_LIST: TestimonialItem[] = [
     rating: 5,
     quote: 'Acharya Ji guided me at the right time. My career and financial situation improved tremendously.',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    serviceCategory: 'Career Guidance'
+    serviceCategory: 'Career Astrology'
   },
   {
     id: 't-2',
@@ -212,25 +236,25 @@ export const TESTIMONIALS_LIST: TestimonialItem[] = [
     rating: 5,
     quote: 'His predictions are accurate and remedies very effective. Highly recommended!',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-    serviceCategory: 'Marriage Solutions'
+    serviceCategory: 'Match Making'
   },
   {
     id: 't-3',
     name: 'Neha Verma',
     location: 'Delhi',
     rating: 5,
-    quote: 'We got the best solution for our marriage delay. Thank you Acharya Ji!',
+    quote: 'We got the best solution for our relationship and marriage. Thank you Acharya Ji!',
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
-    serviceCategory: 'Relationship'
+    serviceCategory: 'Love Astrology'
   },
   {
     id: 't-4',
     name: 'Amit Kapoor',
     location: 'Delhi',
     rating: 5,
-    quote: 'Business growth after consultation has been amazing. Grateful!',
+    quote: 'Found the most auspicious Shubh Muhurat for our new business launch. Truly grateful!',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    serviceCategory: 'Business Astrology'
+    serviceCategory: 'Muhurta Consultation'
   },
   {
     id: 't-5',
@@ -248,7 +272,7 @@ export const TESTIMONIALS_LIST: TestimonialItem[] = [
     rating: 5,
     quote: 'Extremely polite, logical, and scientific approach to Vedic astrology. The health predictions were astonishingly precise.',
     avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
-    serviceCategory: 'Health Predictions'
+    serviceCategory: 'Health Astrology'
   }
 ];
 
@@ -336,7 +360,7 @@ export const ARTICLES_LIST: ArticleItem[] = [
     title: 'Legal Astrology: Overcoming Court Cases & Disputes',
     category: 'Legal Astrology',
     readTime: '4 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    imageUrl: legalAstrologyImg,
     snippet: 'Understand the role of the 6th and 8th houses in litigations, dispute settlements, and Vedic remedies for justice.',
     content: [
       'In Vedic Astrology, legal conflicts and court litigations are primarily governed by the 6th House (Shatru Bhava) and influenced by Saturn, Mars, and Rahu.',

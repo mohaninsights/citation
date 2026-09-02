@@ -103,17 +103,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   const hanumanFileInputRef = useRef<HTMLInputElement>(null);
 
   const checklistCol1 = [
-    'Career Guidance',
-    'Marriage Solutions',
-    'Love & Relationship',
-    'Health Predictions'
+    'Career Astrology',
+    'Match Making',
+    'Litigation Astrology',
+    'Health Astrology'
   ];
 
   const checklistCol2 = [
-    'Business & Finance',
-    'Vastu Consultation',
-    'Numerology',
-    'Spiritual Healing'
+    'Wealth Astrology',
+    'Love Astrology',
+    'Muhurta Consultation',
+    'Astrology Guidance'
   ];
 
   // Handle local file uploads
