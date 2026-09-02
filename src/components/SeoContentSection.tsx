@@ -27,7 +27,7 @@ export const SeoContentSection: React.FC = () => {
             <span>Vedic Knowledge Hub</span>
           </div>
 
-          <h2 className="font-serif-title text-2xl sm:text-3xl lg:text-4xl font-bold text-[#271b12] tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#b7651a] tracking-tight leading-tight">
             Best Astrologer in Delhi: Authentic Vedic Guidance for Clarity &amp; Success
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-[#6f5a49] font-medium max-w-2xl mx-auto">
@@ -39,7 +39,7 @@ export const SeoContentSection: React.FC = () => {
         <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-[#e4d7c5] shadow-xs">
           
           {/* Article Lead Introduction (Always Visible) */}
-          <div className="prose prose-stone max-w-none text-[#4a392c] text-xs sm:text-sm lg:text-[15px] leading-relaxed space-y-4">
+          <div className="prose prose-stone max-w-none text-[#374151] text-xs sm:text-sm lg:text-[15px] leading-relaxed space-y-4">
             <p>
               In today’s fast-paced metropolitan environment of <strong>Delhi NCR</strong>, balancing career aspirations, commercial ventures, marital relationships, and personal peace often brings moments of uncertainty. Vedic Astrology (<em>Jyotish Shastra</em>) is an ancient, mathematical science that decodes planetary configurations at the exact moment of birth to provide actionable clarity. When looking for the <strong>Best Astrologer in Delhi</strong>, seekers seek not just predictions, but rational, practical, and non-fear based guidance that transforms challenges into tangible opportunities.
             </p>
@@ -84,13 +84,12 @@ export const SeoContentSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Deep Editorial Subsections (Expandable / Fully Rendered) */}
-          <div className="space-y-6 text-[#4a392c] text-xs sm:text-sm lg:text-[14.5px] leading-relaxed pt-2">
+          {/* Deep Editorial Subsections */}
+          <div className="space-y-6 text-[#374151] text-xs sm:text-sm lg:text-[14.5px] leading-relaxed pt-2">
             
             {/* Section 1 */}
             <div>
-              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-[#24180f] mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#c97a29]" />
+              <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
                 1. Janam Kundli Analysis: Decoding Your Cosmic Blueprint
               </h3>
               <p>
@@ -100,8 +99,7 @@ export const SeoContentSection: React.FC = () => {
 
             {/* Section 2 */}
             <div>
-              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-[#24180f] mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#c97a29]" />
+              <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
                 2. Kundali Milan &amp; Marital Harmony Solutions
               </h3>
               <p>
@@ -111,8 +109,7 @@ export const SeoContentSection: React.FC = () => {
 
             {/* Section 3 */}
             <div>
-              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-[#24180f] mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#c97a29]" />
+              <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
                 3. Career Growth, Corporate Transitions &amp; Business Astrology
               </h3>
               <p>
@@ -122,8 +119,7 @@ export const SeoContentSection: React.FC = () => {
 
             {/* Section 4 */}
             <div>
-              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-[#24180f] mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#c97a29]" />
+              <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
                 4. Astro-Vastu: Harmonizing Physical Spaces with Planetary Energy
               </h3>
               <p>
@@ -133,10 +129,10 @@ export const SeoContentSection: React.FC = () => {
 
             {/* Section 5 */}
             <div className="bg-[#faf6f0] p-4 sm:p-5 rounded-xl border border-[#e6d8c7]">
-              <h4 className="font-serif text-sm sm:text-base font-bold text-[#24180f] mb-1.5 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#b3681b]" />
+              <h3 className="font-serif text-base sm:text-lg font-bold text-black mb-1.5 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[#b7651a]" />
                 Practical &amp; Result-Oriented Vedic Remedies
-              </h4>
+              </h3>
               <p className="text-xs sm:text-[13.5px] text-[#5e4b3c] leading-relaxed">
                 Astrological remedies are designed to strengthen weak benefic planets and pacify malefic planetary friction. Recommendations include pure certified natural gemstones, energized Rudraksha beads, Vedic mantra chanting (<em>Japa</em>), planetary charity (<em>Daan</em>), and behavioral modifications tailored specifically to your birth chart.
               </p>

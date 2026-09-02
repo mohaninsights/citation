@@ -43,7 +43,7 @@ export const WhyTrustSection: React.FC = () => {
               <span>Trusted Vedic Mastery</span>
             </div>
 
-            <h2 className="font-serif-title text-2xl sm:text-3xl lg:text-4xl font-bold text-[#231912] leading-tight mb-3.5">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#b7651a] leading-tight mb-3.5">
               Why People in Delhi Trust Hanish Bagga?
             </h2>
             <p className="text-xs sm:text-sm lg:text-base text-[#665243] leading-relaxed mb-6">

@@ -50,7 +50,7 @@ export const LatestArticlesSection: React.FC<LatestArticlesSectionProps> = ({ on
           transition={{ duration: 0.5 }}
           className="flex items-center justify-between mb-8 pb-3 border-b border-[#eaddca]"
         >
-          <h2 className="font-serif-title text-2xl sm:text-3xl font-bold text-[#271b12]">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#b7651a]">
             Latest Articles
           </h2>
 
@@ -96,7 +96,7 @@ export const LatestArticlesSection: React.FC<LatestArticlesSectionProps> = ({ on
               {/* Card Body */}
               <div className="p-4 flex flex-col flex-grow justify-between">
                 <div>
-                  <h3 className="font-bold text-sm sm:text-[15px] text-[#281b13] group-hover:text-[#b3681b] transition-colors leading-snug line-clamp-2">
+                  <h3 className="font-serif font-bold text-sm sm:text-[15px] text-black group-hover:text-[#b7651a] transition-colors leading-snug line-clamp-2">
                     {article.title}
                   </h3>
                   <p className="mt-1.5 text-xs text-[#715c4d] line-clamp-2 leading-relaxed">

@@ -135,7 +135,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             <span>Divine Vedic Solutions</span>
           </div>
 
-          <h2 className="font-serif-title text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#271b12] tracking-tight leading-tight">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#b7651a] tracking-tight leading-tight">
             Our Astrology Services
           </h2>
           <p className="mt-1.5 text-xs sm:text-sm text-[#6f5a49] font-medium max-w-xl mx-auto">
@@ -188,7 +188,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
               {/* Card Body - Clean & Minimal: Only Service Name */}
               <div className="p-2.5 sm:p-3 flex items-center justify-between bg-white flex-grow">
-                <h3 className="font-serif-title font-bold text-xs sm:text-sm text-[#25170e] group-hover:text-[#a85c14] transition-colors leading-snug">
+                <h3 className="font-serif font-bold text-xs sm:text-sm text-black group-hover:text-[#b7651a] transition-colors leading-snug">
                   {service.title}
                 </h3>
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#fbf5ed] group-hover:bg-[#a85c14] flex items-center justify-center text-[#a85c14] group-hover:text-white transition-all duration-200 flex-shrink-0 ml-1.5 shadow-2xs">

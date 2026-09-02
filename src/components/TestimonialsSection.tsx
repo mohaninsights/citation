@@ -55,7 +55,7 @@ export const TestimonialsSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-10"
         >
-          <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-[#271b12] tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#b7651a] tracking-tight">
             What Our Clients Say
           </h2>
         </motion.div>

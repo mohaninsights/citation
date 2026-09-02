@@ -24,7 +24,7 @@ export const FaqAndAreasSection: React.FC = () => {
           
           {/* Left Column: Frequently Asked Questions */}
           <div className="lg:col-span-6">
-            <h2 className="font-serif-title text-2xl sm:text-3xl font-bold text-[#271b12] mb-6">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#b7651a] mb-6">
               Frequently Asked Questions
             </h2>
 
@@ -62,7 +62,7 @@ export const FaqAndAreasSection: React.FC = () => {
             
             {/* Content Top */}
             <div className="relative z-10">
-              <h2 className="font-serif-title text-2xl sm:text-3xl font-bold text-[#271b12] text-center mb-6">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#b7651a] text-center mb-6">
                 Serving All Areas of Delhi NCR
               </h2>
 

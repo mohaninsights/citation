@@ -71,7 +71,7 @@ export const HowItWorksSection: React.FC = () => {
             <span>Simple 4-Step Process</span>
           </div>
 
-          <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-[#271b12] tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#b7651a] tracking-tight">
             How Our Consultation Works
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-[#715c4c] font-medium max-w-lg mx-auto">
@@ -106,7 +106,7 @@ export const HowItWorksSection: React.FC = () => {
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="font-bold text-base sm:text-lg text-[#241912] leading-tight">
+              <h3 className="font-serif font-bold text-base sm:text-lg text-black leading-tight">
                 {stepItem.title}
               </h3>
               <p className="text-xs sm:text-sm text-[#9c5914] font-semibold mt-1 leading-tight">
