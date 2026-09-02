@@ -11,12 +11,9 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { SeoContentSection } from './components/SeoContentSection';
 import { QuestionCtaSection } from './components/QuestionCtaSection';
 import { FaqAndAreasSection } from './components/FaqAndAreasSection';
-import { LatestArticlesSection } from './components/LatestArticlesSection';
-import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { ServiceDetailModal } from './components/ServiceDetailModal';
-import { ArticleModal } from './components/ArticleModal';
-import { ServiceItem, ArticleItem, BookingFormData } from './types';
+import { ServiceItem, BookingFormData } from './types';
 import { MessageCircle } from 'lucide-react';
 
 export default function App() {
@@ -26,7 +23,6 @@ export default function App() {
   const [prefillBookingData, setPrefillBookingData] = useState<Partial<BookingFormData> | undefined>();
 
   const [activeServiceModal, setActiveServiceModal] = useState<ServiceItem | null>(null);
-  const [activeArticleModal, setActiveArticleModal] = useState<ArticleItem | null>(null);
 
   const handleOpenBooking = (service?: string, prefill?: Partial<BookingFormData>) => {
     if (service) setSelectedServiceForBooking(service);
@@ -78,13 +74,7 @@ export default function App() {
 
         {/* 12. Serving All Areas of Delhi + Frequently Asked Questions */}
         <FaqAndAreasSection />
-
-        {/* 13. Latest Articles: 4 Grid Cards */}
-        <LatestArticlesSection onSelectArticle={(art) => setActiveArticleModal(art)} />
       </main>
-
-      {/* 14. Footer */}
-      <Footer onOpenBooking={handleOpenBooking} />
 
       {/* Floating Action Button for Instant WhatsApp / Call Assistance */}
       <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-2.5">
@@ -114,12 +104,6 @@ export default function App() {
         onBookThisService={(title) => {
           handleOpenBooking(title);
         }}
-      />
-
-      <ArticleModal
-        article={activeArticleModal}
-        onClose={() => setActiveArticleModal(null)}
-        onBookConsultation={() => handleOpenBooking()}
       />
     </div>
   );
