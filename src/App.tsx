@@ -61,11 +61,11 @@ export default function App() {
         {/* 7. What Our Clients Say: Testimonials with 5-Stars */}
         <TestimonialsSection />
 
-        {/* 8. Frequently Asked Questions + Serving All Areas of Delhi NCR */}
-        <FaqAndAreasSection />
-
-        {/* 9. Ready to Transform Your Life? Vedic Night CTA Banner */}
+        {/* 8. Ready to Transform Your Life? Golden CTA Banner with rolling zodiac */}
         <TransformCtaSection onOpenBooking={handleOpenBooking} />
+
+        {/* 9. Frequently Asked Questions + Serving All Areas of Delhi NCR */}
+        <FaqAndAreasSection />
 
         {/* 10. Latest Articles: 4 Grid Cards */}
         <LatestArticlesSection onSelectArticle={(art) => setActiveArticleModal(art)} />

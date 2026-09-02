@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Star } from 'lucide-react';
+import hanishBaggaImg from '../assets/images/regenerated_image_1788330560485.webp';
 
 export const WhyTrustSection: React.FC = () => {
   const trustPoints = [
@@ -31,7 +32,7 @@ export const WhyTrustSection: React.FC = () => {
             <div className="w-full md:w-5/12 flex-shrink-0">
               <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-[#decbb2]">
                 <img
-                  src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=700&auto=format&fit=crop&q=80"
+                  src={hanishBaggaImg}
                   alt="Hanish Bagga Vedic Astrologer"
                   className="w-full h-full object-cover object-top filter contrast-[1.05]"
                   referrerPolicy="no-referrer"
