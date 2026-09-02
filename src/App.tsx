@@ -4,10 +4,12 @@ import { HeroSection } from './components/HeroSection';
 import { MetricsBar } from './components/MetricsBar';
 import { ServicesSection } from './components/ServicesSection';
 import { WhyTrustSection } from './components/WhyTrustSection';
+import { TransformCtaSection } from './components/TransformCtaSection';
+import { VideoSection } from './components/VideoSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { SeoContentSection } from './components/SeoContentSection';
 import { FaqAndAreasSection } from './components/FaqAndAreasSection';
-import { TransformCtaSection } from './components/TransformCtaSection';
 import { LatestArticlesSection } from './components/LatestArticlesSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -52,22 +54,28 @@ export default function App() {
         {/* 4. Our Astrology Services: 8 Grid Cards */}
         <ServicesSection onSelectService={(srv) => setActiveServiceModal(srv)} />
 
-        {/* 5. Why People in Delhi Trust Hanish Bagga? + Featured On TV + Google Reviews */}
+        {/* 5. Why People in Delhi Trust Hanish Bagga? */}
         <WhyTrustSection />
 
-        {/* 6. How Our Consultation Works: 6 Step Flow */}
-        <HowItWorksSection />
-
-        {/* 7. What Our Clients Say: Testimonials with 5-Stars */}
-        <TestimonialsSection />
-
-        {/* 8. Ready to Transform Your Life? Golden CTA Banner with rolling zodiac */}
+        {/* 6. Ready to Transform Your Life? Golden CTA Banner with rolling zodiac (Thin & Sleek) */}
         <TransformCtaSection onOpenBooking={handleOpenBooking} />
 
-        {/* 9. Frequently Asked Questions + Serving All Areas of Delhi NCR */}
+        {/* 7. YouTube Video Insights & Discourses by Hanish Bagga */}
+        <VideoSection />
+
+        {/* 8. How Our Consultation Works: 6 Step Flow */}
+        <HowItWorksSection />
+
+        {/* 9. What Our Clients Say: Testimonials with 5-Stars */}
+        <TestimonialsSection />
+
+        {/* 10. 500+ Words SEO-Friendly Guide on Vedic Astrology & Astro Vastu in Delhi */}
+        <SeoContentSection />
+
+        {/* 11. Frequently Asked Questions + Serving All Areas of Delhi NCR */}
         <FaqAndAreasSection />
 
-        {/* 10. Latest Articles: 4 Grid Cards */}
+        {/* 12. Latest Articles: 4 Grid Cards */}
         <LatestArticlesSection onSelectArticle={(art) => setActiveArticleModal(art)} />
       </main>
 
