@@ -8,6 +8,9 @@ import wealthAstrologyImg from '../assets/images/regenerated_image_1788325991964
 import vastuConsultationImg from '../assets/images/regenerated_image_1788326310122.webp';
 import loveAstrologyImg from '../assets/images/regenerated_image_1788327796760.webp';
 import astrologyGuidanceImg from '../assets/images/regenerated_image_1788327798134.webp';
+import divorceAstrologyImg from '../assets/images/regenerated_image_1788179337214.webp';
+import kundliAnalysisImg from '../assets/images/regenerated_image_1788180294455.webp';
+import propertyAstrologyImg from '../assets/images/regenerated_image_1788175921390.webp';
 
 export const SERVICES_LIST: ServiceItem[] = [
   {
@@ -171,6 +174,60 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Customized non-fear based Vedic remedies for holistic peace of mind'
     ],
     remediesOffered: ['Personalized Kundli Dasha Report', 'Energized Rudraksha & Yantra recommendations', 'Daily Vedic Mantra & Ishta Devta Upasana']
+  },
+  {
+    id: 'divorce-astrology',
+    title: 'Divorce Astrology',
+    description: 'Marital discord resolution, separation timing & mutual reconciliation guidance.',
+    iconName: 'HeartCrack',
+    imageUrl: divorceAstrologyImg,
+    category: 'Love & Family',
+    badge: 'High Accuracy',
+    highlightTags: ['7th & 8th House', 'Reconciliation', 'Alimony & Settlement'],
+    longDescription: 'Facing severe marital turbulence, separation risk, or contested divorce proceedings? Comprehensive Vedic analysis of the 7th house (spouse), 8th house (marital longevity), and 12th house (separation) to explore reconciliation possibilities, minimize emotional trauma, and safeguard your future.',
+    benefits: [
+      'Accurate analysis of separation indicators vs. temporary planetary affliction',
+      'Effective astrological remedies for marital reconciliation and harmony',
+      'Favorable timing for legal separation, mutual consent, and alimony settlement',
+      'Remedies to overcome negative planetary transits affecting marital peace'
+    ],
+    remediesOffered: ['Katyayani Mantra & Shukra Shanti Puja for reconciliation', 'Gauri Shankar Rudraksha & planetary gemstone alignment', 'Vedic peace protocols to defuse emotional hostility']
+  },
+  {
+    id: 'kundli-analysis',
+    title: 'Kundli Analysis',
+    description: 'Detailed birth chart calculation, planetary yogas, Dasha timeline & life roadmap.',
+    iconName: 'Compass',
+    imageUrl: kundliAnalysisImg,
+    category: 'Life & Destiny',
+    badge: 'Deep Reading',
+    highlightTags: ['D1 Lagna & D9', 'Planetary Yogas', 'Mahadasha Timeline'],
+    longDescription: 'In-depth Janam Kundli reading examining your 12 houses, planetary placements, Bhavat Bhavam, Raja Yogas, and Vimshottari Mahadasha cycles to uncover your core strengths, past karma, and upcoming life roadmap.',
+    benefits: [
+      'Precision analysis of Lagna, Moon sign, and Nakshatra influences',
+      'Identification of auspicious Raja Yogas & Dhan Yogas in birth chart',
+      'Comprehensive timeline mapping of Mahadasha, Antardasha & transits',
+      'Personalized non-fear based Vedic remedies tailored to your planetary chart'
+    ],
+    remediesOffered: ['Birth chart specific gemstone & metal recommendations', 'Customized Vedic Mantra Japa guidelines for weak benefic planets', 'Vedic Daan (charity) and fasts for malefic planetary pacification']
+  },
+  {
+    id: 'property-astrology',
+    title: 'Property Astrology',
+    description: 'Land purchase, home ownership timing, real estate investments & dispute relief.',
+    iconName: 'Building2',
+    imageUrl: propertyAstrologyImg,
+    category: 'Space & Wealth',
+    badge: 'Bhoomi Yoga',
+    highlightTags: ['4th House Bhoomi', 'Real Estate Yogas', 'Home Buying Timing'],
+    longDescription: 'Unlock the potential of your 4th house (Sukha & Bhoomi Bhava) and Mars (Karaka of land/property). Discover the most auspicious timing to buy your dream home, invest in commercial real estate, resolve ancestral property disputes, and secure land acquisitions.',
+    benefits: [
+      'Analysis of 4th House & Mars for home purchase and real estate gains',
+      'Accurate timing for booking, registry, and possession of properties',
+      'Astrological remedies for delayed construction or property disputes',
+      'Evaluating profitability of real estate & agricultural land investments'
+    ],
+    remediesOffered: ['Mars (Mangal) & Saturn (Shani) propitiation rituals for property gains', 'Bhoomi Pujan & Vastu Yantra energization protocols', 'Kuber & Prithvi Gayatri Mantra guidelines for asset accumulation']
   }
 ];
 

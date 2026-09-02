@@ -12,7 +12,10 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
-  Calendar
+  Calendar,
+  HeartCrack,
+  Compass,
+  Building2
 } from 'lucide-react';
 import { SERVICES_LIST } from '../data/mockData';
 import { ServiceItem } from '../types';
@@ -48,6 +51,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return <Grid className="w-5 h-5" />;
       case 'Sparkles':
         return <Sparkles className="w-5 h-5" />;
+      case 'HeartCrack':
+        return <HeartCrack className="w-5 h-5" />;
+      case 'Compass':
+        return <Compass className="w-5 h-5" />;
+      case 'Building2':
+        return <Building2 className="w-5 h-5" />;
       default:
         return <Sparkles className="w-5 h-5" />;
     }
