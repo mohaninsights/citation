@@ -8,14 +8,14 @@ interface QuestionCtaSectionProps {
 
 export const QuestionCtaSection: React.FC<QuestionCtaSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section id="contact" className="py-10 sm:py-14 bg-[#faf7f2]">
+    <section id="contact" className="py-5 sm:py-7 bg-[#faf7f2]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
-          className="relative rounded-2xl sm:rounded-3xl p-7 sm:p-10 lg:p-12 text-center overflow-hidden shadow-xl border border-[#d49a55]/40"
+          className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center overflow-hidden shadow-xl border border-[#d49a55]/40"
           style={{
             background: 'radial-gradient(ellipse at center top, #4a240c 0%, #261307 60%, #150a04 100%)'
           }}
@@ -25,12 +25,12 @@ export const QuestionCtaSection: React.FC<QuestionCtaSectionProps> = ({ onOpenBo
           <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#f5c278]/60 to-transparent" />
 
           {/* Heading */}
-          <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold tracking-wider uppercase text-[#f7d6a5] drop-shadow-sm mb-3.5 leading-tight">
+          <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold tracking-wider uppercase text-[#f7d6a5] drop-shadow-sm mb-2.5 leading-tight">
             Still Have a Question Regarding Consultation in Delhi?
           </h2>
 
           {/* Subtitle */}
-          <p className="text-xs sm:text-sm lg:text-base text-[#ebd6c3] font-normal max-w-2xl mx-auto leading-relaxed mb-7 sm:mb-8">
+          <p className="text-xs sm:text-sm lg:text-base text-[#ebd6c3] font-normal max-w-2xl mx-auto leading-relaxed mb-5 sm:mb-6">
             Our Vedic astrology support desk is available to assist you with appointment slots, report delivery timelines, and queries.
           </p>
 

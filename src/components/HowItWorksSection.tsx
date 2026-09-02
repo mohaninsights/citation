@@ -56,7 +56,7 @@ export const HowItWorksSection: React.FC = () => {
   };
 
   return (
-    <section className="py-14 sm:py-18 bg-[#faf7f2] relative overflow-hidden">
+    <section className="py-6 sm:py-8 bg-[#faf7f2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -65,7 +65,7 @@ export const HowItWorksSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center max-w-2xl mx-auto mb-12 sm:mb-14"
+          className="text-center max-w-2xl mx-auto mb-6 sm:mb-8"
         >
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#f6ebdc] border border-[#e2d0ba] text-[#9c5914] text-[11px] font-bold tracking-wide uppercase mb-2">
             <span>Simple 4-Step Process</span>

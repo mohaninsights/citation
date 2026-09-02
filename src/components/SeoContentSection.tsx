@@ -17,11 +17,11 @@ export const SeoContentSection: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="py-14 sm:py-18 bg-[#fdfbf8] border-t border-[#ebdfcf] relative">
+    <section className="py-6 sm:py-8 bg-[#fdfbf8] border-t border-[#ebdfcf] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-5">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#f6ebdc] border border-[#e2d0ba] text-[#9c5914] text-[11px] font-bold tracking-wide uppercase mb-2.5">
             <BookOpen className="w-3 h-3 text-[#b3681b]" />
             <span>Vedic Knowledge Hub</span>

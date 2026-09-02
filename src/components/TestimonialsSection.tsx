@@ -44,7 +44,7 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-14 sm:py-18 bg-[#faf7f2] border-t border-[#ebdfce]">
+    <section className="py-6 sm:py-8 bg-[#faf7f2] border-t border-[#ebdfce]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -53,7 +53,7 @@ export const TestimonialsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-10"
+          className="text-center max-w-2xl mx-auto mb-5"
         >
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#b7651a] tracking-tight">
             What Our Clients Say

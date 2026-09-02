@@ -10,20 +10,20 @@ export const FaqAndAreasSection: React.FC = () => {
   };
 
   return (
-    <section className="py-14 sm:py-20 bg-[#faf7f2]">
+    <section className="py-6 sm:py-8 bg-[#faf7f2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* 1. Serving All Areas of Delhi (East, West, North, South) */}
-        <div className="bg-gradient-to-br from-[#fcf9f4] via-[#f7f0e4] to-[#f4e8d8] rounded-2xl p-6 sm:p-10 border border-[#e8dac6] shadow-xs">
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#faebd7] text-[#a85c14] text-[11px] font-bold uppercase tracking-wider mb-2.5 border border-[#e6cbb0]">
+        <div className="bg-gradient-to-br from-[#fcf9f4] via-[#f7f0e4] to-[#f4e8d8] rounded-2xl p-5 sm:p-7 border border-[#e8dac6] shadow-xs">
+          <div className="text-center max-w-2xl mx-auto mb-5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#faebd7] text-[#a85c14] text-[11px] font-bold uppercase tracking-wider mb-2 border border-[#e6cbb0]">
               <MapPin className="w-3.5 h-3.5" />
               <span>Delhi Coverage</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#b7651a]">
               Serving All Areas of Delhi
             </h2>
-            <p className="text-xs sm:text-sm text-[#665342] mt-2">
+            <p className="text-xs sm:text-sm text-[#665342] mt-1.5">
               Available for in-person consultations across all Delhi regions as well as seamless online video sessions across India &amp; globally.
             </p>
           </div>
@@ -54,12 +54,12 @@ export const FaqAndAreasSection: React.FC = () => {
         </div>
 
         {/* 2. Frequently Asked Questions (Centered Layout) */}
-        <div className="mt-16 sm:mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="mt-8 sm:mt-10">
+          <div className="text-center max-w-2xl mx-auto mb-5">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#b7651a]">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-[#685545] mt-2">
+            <p className="text-xs sm:text-sm text-[#685545] mt-1.5">
               Common questions about astrological consultations, Janam Kundli analysis, and remedies.
             </p>
           </div>

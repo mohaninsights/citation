@@ -31,7 +31,7 @@ export const MetricsBar: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-[#2c1d13] via-[#3d2719] to-[#25170e] text-[#f2e6d6] py-5 border-y border-[#543b27]">
+    <section className="bg-gradient-to-r from-[#2c1d13] via-[#3d2719] to-[#25170e] text-[#f2e6d6] py-3.5 border-y border-[#543b27]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-[#543b27]/60">
           {metrics.map((item, index) => {

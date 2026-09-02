@@ -12,7 +12,7 @@ export const VideoSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-8 sm:py-10 bg-[#f5ede2] border-y border-[#ebdccb] relative overflow-hidden">
+    <section className="py-5 sm:py-6 bg-[#f5ede2] border-y border-[#ebdccb] relative overflow-hidden">
       {/* Background Subtle Vedic Glow */}
       <div className="absolute right-0 top-0 w-80 h-80 bg-[#dfbe95]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute left-0 bottom-0 w-80 h-80 bg-[#c97a29]/10 rounded-full blur-3xl pointer-events-none" />

@@ -107,7 +107,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   };
 
   return (
-    <section id="services" className="py-10 sm:py-14 bg-[#faf7f2] relative overflow-hidden">
+    <section id="services" className="py-5 sm:py-7 bg-[#faf7f2] relative overflow-hidden">
       
       {/* Background Sacred Geometric Mandala Accents */}
       <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 opacity-[0.03] pointer-events-none text-[#b3681b]">

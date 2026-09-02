@@ -13,7 +13,7 @@ export const WhyTrustSection: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 bg-[#f7f2ea] border-t border-[#ebdfcf]">
+    <section id="about" className="py-5 sm:py-7 bg-[#f7f2ea] border-t border-[#ebdfcf]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Why People in Delhi Trust Card with Astrologer Image */}
