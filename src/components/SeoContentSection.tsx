@@ -28,10 +28,10 @@ export const SeoContentSection: React.FC = () => {
           </div>
 
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#b7651a] tracking-tight leading-tight">
-            Best Astrologer in Delhi: Authentic Vedic Guidance for Clarity &amp; Success
+            Best Astrologer in Delhi: Authentic Vedic Guidance for Clarity and Success
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-[#6f5a49] font-medium max-w-2xl mx-auto">
-            A comprehensive guide to understanding Vedic astrology, Janam Kundali analysis, Kundali Milan, and Astro-Vastu solutions in Delhi NCR.
+            Janam Kundali analysis, Kundali Milan, Career Guidance and Astro-Vastu solutions for individuals and families in Delhi NCR are provided under one roof.
           </p>
         </div>
 
@@ -41,11 +41,11 @@ export const SeoContentSection: React.FC = () => {
           {/* Article Lead Introduction (Always Visible) */}
           <div className="prose prose-stone max-w-none text-[#374151] text-xs sm:text-sm lg:text-[15px] leading-relaxed space-y-4">
             <p>
-              In today’s fast-paced metropolitan environment of <strong>Delhi NCR</strong>, balancing career aspirations, commercial ventures, marital relationships, and personal peace often brings moments of uncertainty. Vedic Astrology (<em>Jyotish Shastra</em>) is an ancient, mathematical science that decodes planetary configurations at the exact moment of birth to provide actionable clarity. When looking for the <strong>Best Astrologer in Delhi</strong>, seekers seek not just predictions, but rational, practical, and non-fear based guidance that transforms challenges into tangible opportunities.
+              Multitasking becomes a way of life when living in the hustle and bustle of <strong>Delhi NCR</strong>, where one has to handle work goals, business commitments, relationships, finances and personal choices simultaneously. Vedic Astrology (<em>Jyotish Shastra</em>) is the study of planetary positions at the birth time to obtain clarity of the important life patterns. While looking for the best person to see in Delhi, people do not just want to see a prediction on the horoscope; they want to understand the situation and make logical, practical decisions without fear.
             </p>
 
             <p>
-              With over 17 years of dedicated experience and thousands of consultations across Delhi, Gurugram, Noida, and globally, <strong>Hanish Bagga</strong> is widely recognized for combining classical Parashari principles, Jaimini astrology, and Astro-Vastu sciences. Rather than relying on superstition or fatalistic views, consultations are designed to help you understand your unique planetary DNA, current <em>Vimshottari Mahadasha</em> cycles, and auspicious karmic timings.
+              <strong>Hanish Bagga</strong> has more than 17 years of experience and thousands of consultations in Delhi, Gurugram, Noida and around the globe with classical Parashar principles, Jaimini astrology and Astro-Vastu sciences. Rather than fostering fear or superstition, consultations aim to grasp the unique planetary arrangements, current <em>Vimshottari Mahadasha</em> periods, pivotal transits and auspicious times in your chart. The fact that it is a structured approach makes it more relevant in today's personal and professional aspects to consult an experienced astrologer in Delhi.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export const SeoContentSection: React.FC = () => {
             <div className="bg-[#faf6f0] p-3 rounded-xl border border-[#e6d8c7] flex items-center gap-2.5">
               <Briefcase className="w-4 h-4 text-[#b3681b] flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-[#271b12]">Career &amp; Business</p>
+                <p className="text-xs font-bold text-[#271b12]">Career and Business</p>
                 <p className="text-[11px] text-[#705c4d]">10th House Karma Bhava</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export const SeoContentSection: React.FC = () => {
               <HeartHandshake className="w-4 h-4 text-[#b3681b] flex-shrink-0" />
               <div>
                 <p className="text-xs font-bold text-[#271b12]">Kundali Milan</p>
-                <p className="text-[11px] text-[#705c4d]">7th &amp; Navamsha (D9)</p>
+                <p className="text-[11px] text-[#705c4d]">7th and Navamsha (D9)</p>
               </div>
             </div>
 
@@ -90,40 +90,40 @@ export const SeoContentSection: React.FC = () => {
             {/* Section 1 */}
             <div>
               <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
-                1. Janam Kundli Analysis: Decoding Your Cosmic Blueprint
+                Janam Kundli Analysis – Your Personal Cosmic Blueprint
               </h3>
               <p>
-                Your birth chart (<em>Lagna Kundli</em>) acts as a cosmic roadmap dividing the sky into 12 houses (<em>Bhavas</em>), each governing a distinct facet of human life—such as longevity (1st), wealth (2nd), siblings and courage (3rd), mother and property (4th), intellect and progeny (5th), competitive strength and health (6th), marriage and business partners (7th), sudden events (8th), fortune and dharma (9th), profession (10th), gains (11th), and expenditure (12th). By synthesizing house lords, planetary conjunctions, and Nakshatra placements, a genuine Vedic astrologer pinpoints exactly when promising opportunities will blossom and when caution is advised.
+                Your birth chart (<em>Lagna Kundli</em>) is like a detailed map of the Universe that is split into 12 houses or divisions, each pertaining to one of the areas of life: longevity (1st), wealth (2nd), courage and siblings (3rd), mother and property (4th), intelligence and children (5th), health and competition (6th), marriage and partnerships (7th), unexpected changes (8th), fortune and dharma (9th), profession (10th), gains (11th) and expenses (12th). The best astrologer of Delhi NCR can analyze the supportive period along with possible challenging periods and the areas where it may be advisable to be cautious about by studying the house lords, planetary conjunctions, aspects, nakshatras and active dashas.
               </p>
             </div>
 
             {/* Section 2 */}
             <div>
               <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
-                2. Kundali Milan &amp; Marital Harmony Solutions
+                Kundali Milan and Guidance for Marital Harmony
               </h3>
               <p>
-                In Delhi and North India, marriage is a profound union of two individuals and their families. While conventional horoscope matching evaluates the basic 36 Guna Ashtakoota score, deeper astrological assessment requires examining the 7th house (spouse), 8th house (marital longevity), and 12th house (bed comforts and emotional peace), alongside the Navamsha (D9) divisional chart. Resolving <em>Mangal Dosha</em>, <em>Nadi Dosha</em>, and planetary malefic aspects through non-fear Vedic remedies ensures long-lasting marital harmony, mutual understanding, and family prosperity.
+                In Delhi and North India, marriage is not only about the union of the two individuals; it's also the coming together of the two families. Traditional horoscope matching is done on 36 Guna Ashtakoota score but meaningful analysis needs to be done on 7th house, 8th house, 12th house, planetary aspects and Navamsha (D9) horoscope. Some other diseases like <em>Mangal Dosha</em>, <em>Nadi Dosha</em> and difficult planetary combinations also can be studied carefully. With the help of the practical advice from the Vedic science this can help couples understand compatibility, understand their emotional needs and expectations, understand communication patterns and understand the harmony in marriage in the long term.
               </p>
             </div>
 
             {/* Section 3 */}
             <div>
               <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
-                3. Career Growth, Corporate Transitions &amp; Business Astrology
+                Career Growth, Corporate Changes and Business Astrology
               </h3>
               <p>
-                Whether you are navigating corporate restructuring in Gurugram, planning a startup in South Delhi, or seeking overseas settlement, timing is the catalyst for success. By tracking planetary transits (<em>Gochar</em>) of Jupiter, Saturn, Rahu, and Ketu against your Dasha timeline, you gain foresight on when to initiate business expansions, negotiate promotions, sign property deeds, or avoid risky financial speculations.
+                From transitioning at a corporate level in Gurugram to thinking about a start-up in South Delhi or a promotion or even moving to another country to look for opportunities, timing plays a major factor in decision-making. Planetary transits (<em>Gochar</em>) of Jupiter, Saturn, Rahu and Ketu are also examined with your current Dasha periods to see when the developments are likely to be more supported. An astrologer in Delhi would be able to offer you guidance on business expansion, career change, promotions, property buying, investments and when it is not wise to take on unnecessary financial risks.
               </p>
             </div>
 
             {/* Section 4 */}
             <div>
               <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2 leading-snug">
-                4. Astro-Vastu: Harmonizing Physical Spaces with Planetary Energy
+                Astro-Vastu: Harmonizing space with planetary energies
               </h3>
               <p>
-                Astro-Vastu is the sacred synergy between personal horoscope planetary placements and the directional architectural energies of your living or working premises. Instead of requiring costly structural demolition, Hanish Bagga provides precise, elemental remedies—such as customized metal strip installations, color therapy, yantra energization, and direction-specific object realignment—to activate the Northeast (<em>Ishan</em>) for clarity and the Southeast (<em>Agneya</em>) for cash flow.
+                Astro-Vastu is a fusion between the key directional energies in the home, office, shop or commercial space and the individual horoscope analysis. Hanish Bagga doesn't rush to a single solution of rebuilding or structural demolition but suggests practical corrections based on the need of the space. These can involve using the right kind of metallic strips, correct colours, energised Yantras, balancing of elements and positioning of objects according to direction. The Northeast (<em>Ishan</em>) can be evaluated for clarity and positive thinking, while the Southeast (<em>Agneya</em>) is traditionally believed to be a source of fire energy, financial activity and financial movements.
               </p>
             </div>
 
@@ -131,25 +131,25 @@ export const SeoContentSection: React.FC = () => {
             <div className="bg-[#faf6f0] p-4 sm:p-5 rounded-xl border border-[#e6d8c7]">
               <h3 className="font-serif text-base sm:text-lg font-bold text-black mb-1.5 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#b7651a]" />
-                Practical &amp; Result-Oriented Vedic Remedies
+                Practical and Result-Oriented Vedic Remedies
               </h3>
               <p className="text-xs sm:text-[13.5px] text-[#5e4b3c] leading-relaxed">
-                Astrological remedies are designed to strengthen weak benefic planets and pacify malefic planetary friction. Recommendations include pure certified natural gemstones, energized Rudraksha beads, Vedic mantra chanting (<em>Japa</em>), planetary charity (<em>Daan</em>), and behavioral modifications tailored specifically to your birth chart.
+                The purpose of the Vedic cures is to reinforce the positive planetary influences and mitigate the adverse planetary influences. Treatment suggestions vary according to individual birth chart analysis and may involve the use of certified natural gemstones, energized Rudraksha beads, Vedic mantra chanting (<em>Japa</em>), planetary charity (<em>Daan</em>), spiritual practices and behavioral changes. For deeper learning enthusiasts, there are also courses on astrology in Delhi that can delve into the traditional astrological beliefs and concepts in a systematic way.
               </p>
             </div>
 
           </div>
 
-          {/* Delhi NCR Coverage Footer Note */}
+          {/* Delhi Coverage Footer Note */}
           <div className="mt-6 pt-4 border-t border-[#ede1d3] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#705b4b]">
             <div className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4 text-[#b3681b] flex-shrink-0" />
               <span>
-                <strong>Serving All Delhi NCR:</strong> South Delhi, West Delhi, North Delhi, East Delhi, Dwarka, Rohini, Noida &amp; Gurugram.
+                <strong>Serving All Delhi:</strong> East Delhi, West Delhi, North Delhi, and South Delhi.
               </span>
             </div>
             <span className="text-[#b3681b] font-semibold">
-              Available for In-Person &amp; Online Video Consultations
+              Available for In-Person and Online Video Consultations
             </span>
           </div>
 

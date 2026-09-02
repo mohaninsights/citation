@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
     {
       id: 'hanish-india-gate',
       name: 'Hanish Bagga (Vedic Portrait)',
-      subtitle: 'Celebrity Vedic Astrologer in Delhi',
+      subtitle: 'Astro Vastu Expert in Delhi',
       src: portraitIndiaGateMobile
     },
     {
@@ -211,7 +211,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 Hanish Bagga
               </span>
               <span className="text-[10px] sm:text-[11px] font-semibold text-[#665040] tracking-wide">
-                Celebrity Vedic Astrologer
+                Astro Vastu Expert
               </span>
             </div>
           </div>
@@ -233,7 +233,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   </span>
                 </h1>
                 <p className="mt-1.5 text-xs sm:text-sm text-[#523e30] font-medium leading-snug">
-                  Trusted Celebrity Vedic Astrologer for Accurate &amp; Confidential Guidance
+                  Trusted Vedic Astrologer for Accurate &amp; Confidential Guidance
                 </p>
               </div>
 

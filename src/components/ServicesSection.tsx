@@ -12,7 +12,6 @@ import {
   Scale,
   ArrowRight,
   Sparkles,
-  CheckCircle2,
   Calendar,
   HeartCrack,
   Compass,
@@ -198,26 +197,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Bottom Assurance Note */}
-        <div className="mt-8 text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 px-5 py-2.5 rounded-xl bg-white border border-[#e6dac9] shadow-xs text-xs text-[#594435] font-medium">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#a85c14]" />
-              <span>100% Confidential</span>
-            </span>
-            <span className="hidden sm:inline text-[#d9c7b2]">•</span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#a85c14]" />
-              <span>Hindi &amp; English</span>
-            </span>
-            <span className="hidden sm:inline text-[#d9c7b2]">•</span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#a85c14]" />
-              <span>Delhi Center &amp; Video Calls</span>
-            </span>
-          </div>
-        </div>
 
       </div>
     </section>

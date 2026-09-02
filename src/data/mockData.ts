@@ -9,7 +9,7 @@ import vastuConsultationImg from '../assets/images/regenerated_image_17883263101
 import loveAstrologyImg from '../assets/images/regenerated_image_1788327796760.webp';
 import astrologyGuidanceImg from '../assets/images/regenerated_image_1788327798134.webp';
 import divorceAstrologyImg from '../assets/images/regenerated_image_1788179337214.webp';
-import kundliAnalysisImg from '../assets/images/regenerated_image_1788180294455.webp';
+import kundliAnalysisImg from '../assets/images/regenerated_image_1788352739160.jpg';
 import propertyAstrologyImg from '../assets/images/regenerated_image_1788175921390.webp';
 
 export const SERVICES_LIST: ServiceItem[] = [
@@ -323,39 +323,35 @@ export const FAQ_LIST: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'Is online consultation available for Delhi residents?',
-    answer: 'Yes! While in-person consultations are conducted at our Delhi center by prior appointment, we also offer high-definition video calls (Google Meet/WhatsApp) and phone consultations with the exact same precision and personalized remedy report.'
+    answer: 'Yes, video consultations can be made online by Delhi NCR residents. An astrologer in Delhi can interpret your horoscope, astrological periods, concerns and relevant planets and give you customized tips. Online sessions can provide as much intensive analysis, but offer appointments that are more convenient, accessible and time efficient.'
   },
   {
     id: 'faq-2',
-    question: 'What information do I need to provide?',
-    answer: 'To prepare an accurate Vedic horoscope (Kundli), please provide your Date of Birth, Exact Time of Birth (with AM/PM), and Place of Birth (City/State). If exact birth time is unavailable, Acharya Ji can perform Prashna Kundli (Horary Astrology) or Palmistry.'
+    question: 'What are the requirements to provide?',
+    answer: 'Note: If you need to consult correctly, you need to provide your full name, date of birth, exact time of birth and the birthplace. It\'s also important to have a short description of the main concern that you want to discuss. These details help the best astrologer in Delhi examine your Janam Kundli properly and thoroughly.'
   },
   {
     id: 'faq-3',
-    question: 'How long does a consultation take?',
-    answer: 'Standard comprehensive consultations take 30 to 45 minutes of detailed one-on-one discussion. There is ample time to ask all your personal, professional, and family questions without rushing.'
+    question: 'How long does the consultation last?',
+    answer: 'The time for consultation varies according to the type of service you choose and your questions. There is enough time in most sessions to consider significant planetary aspects, talk about issues that are in your face and discuss positive times and what to do to make them work to your advantage. The exact session time can be verified beforehand with the astrology support team during your booking.'
   },
   {
     id: 'faq-4',
     question: 'Will my information be kept confidential?',
-    answer: 'Absolutely 100%. We strictly maintain complete client confidentiality and privacy. Your birth details, personal concerns, and consultation recordings are never shared with any third party.'
+    answer: 'Yes. All personal birth information, family, professional, financial and consultation notes are kept confidential. Sessions held in a confidential and professional manner. Your information is securely used for astrological analysis and guidance in your requested astrological consultation topics, either online or physically.'
   },
   {
     id: 'faq-5',
-    question: 'Can you predict future accurately?',
-    answer: 'Vedic Astrology is an empirical cosmic science practiced for over 5,000 years. Hanish Bagga combines multi-chart verification (Lagna, Moon, Navamsha, and Vimshottari Dasha transits) to deliver predictions with a proven 98% accuracy track record.'
+    question: 'Do you have any idea of what is to come in the future?',
+    answer: 'In Astrology many things are considered to provide details on periods and challenges such as planets, Dashas, transits, houses and divisional. Should not be considered a certain event in the future. The responsible astrologer gives you real help, time information and intelligent possibilities in a way that you can make better decisions with confidence.'
   }
 ];
 
 export const DELHI_AREAS: DelhiArea[] = [
-  { name: 'South Delhi', description: 'Greater Kailash, Saket, Hauz Khas, Vasant Kunj, Defense Colony' },
-  { name: 'Rohini', description: 'Sectors 1-30, Pitampura, Prashant Vihar, Mangolpuri' },
-  { name: 'North Delhi', description: 'Civil Lines, Model Town, Kamla Nagar, Shalimar Bagh' },
-  { name: 'Dwarka', description: 'Sectors 1-24, Uttam Nagar, Janakpuri, Palam' },
-  { name: 'West Delhi', description: 'Rajouri Garden, Punjabi Bagh, Paschim Vihar, Patel Nagar' },
-  { name: 'Noida', description: 'Sectors 15 to 150, Noida Expressway, Greater Noida' },
-  { name: 'East Delhi', description: 'Mayur Vihar, Laxmi Nagar, Preet Vihar, Anand Vihar' },
-  { name: 'Gurugram', description: 'DLF Phases 1-5, Golf Course Road, Cyber City, Sohna Road' }
+  { name: 'East Delhi', description: 'Mayur Vihar, Laxmi Nagar, Preet Vihar, Anand Vihar, Patparganj, Nirman Vihar, Vivek Vihar' },
+  { name: 'West Delhi', description: 'Rajouri Garden, Punjabi Bagh, Janakpuri, Dwarka, Paschim Vihar, Patel Nagar, Tilak Nagar' },
+  { name: 'North Delhi', description: 'Civil Lines, Model Town, Kamla Nagar, Rohini, Pitampura, Shalimar Bagh, Ashok Vihar' },
+  { name: 'South Delhi', description: 'Greater Kailash, Saket, Hauz Khas, Vasant Kunj, Defense Colony, Lajpat Nagar, Malviya Nagar' }
 ];
 
 export const ARTICLES_LIST: ArticleItem[] = [

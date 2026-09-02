@@ -95,19 +95,14 @@ export const TestimonialsSection: React.FC = () => {
                 className="bg-white rounded-xl p-5 border border-[#e5d8c6] shadow-2xs flex flex-col justify-between hover:shadow-md hover:border-[#c97a29]/50 transition-colors duration-300 relative group"
               >
                 <div>
-                  {/* Top: Avatar & 5 Stars */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <img
-                      src={testimonial.avatarUrl}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover ring-2 ring-[#e8dac8] flex-shrink-0"
-                      referrerPolicy="no-referrer"
-                    />
+                  {/* Top: 5 Stars Rating & Subtle Quote Accent */}
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex text-[#f59e0b] gap-0.5">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-[#f59e0b]" />
+                        <Star key={i} className="w-4 h-4 fill-[#f59e0b]" />
                       ))}
                     </div>
+                    <Quote className="w-4 h-4 text-[#d49b54]/40" />
                   </div>
 
                   {/* Quote */}

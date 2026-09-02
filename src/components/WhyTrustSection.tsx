@@ -6,14 +6,14 @@ export const WhyTrustSection: React.FC = () => {
   const trustPoints = [
     '17+ Years of Experience in Vedic Astrology',
     '50,000+ Satisfied Clients Worldwide',
-    'Celebrity Astrologer & TV Panelist',
+    'Certified Vastu Consultant',
     'Specialist in Accurate Birth Chart (Kundli) & Dasha Analysis',
     'Practical Remedies with 98% Accuracy',
     '100% Confidential & Personalized Guidance'
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-[#f7f2ea] border-t border-[#ebdfcf]">
+    <section id="about" className="py-12 sm:py-16 bg-[#f7f2ea] border-t border-[#ebdfcf]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Why People in Delhi Trust Card with Astrologer Image */}
@@ -31,7 +31,7 @@ export const WhyTrustSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#20150d]/80 via-transparent to-transparent" />
               <div className="absolute bottom-3.5 left-3 right-3 text-center">
                 <span className="text-[11px] font-semibold tracking-wider uppercase text-[#f6d7a7] bg-[#22160d]/80 px-3 py-1 rounded-full border border-[#d4994e]/50 backdrop-blur-xs">
-                  Vedic Jyotish Acharya
+                  Hanish Bagga
                 </span>
               </div>
             </div>

@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   Hanish Bagga
                 </span>
                 <span className="text-[10px] tracking-wider uppercase text-[#b3681b] font-semibold mt-1">
-                  Celebrity Vedic Astrologer
+                  Astro Vastu Expert
                 </span>
               </div>
             </div>
